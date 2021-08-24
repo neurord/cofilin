@@ -10,7 +10,7 @@
           <xi:include href="Morph2.xml" />        
           <xi:include href="IC_Cof-PDE4General-SSH1500.xml" />
           <xi:include href="Out_Cof.xml" />
-	  
+	  <xi:include href="Stim_Cof-Ca2000.xml" />
 	   
     <!--2D means the morphology is interpreted like a flatworm, 3D for
 
