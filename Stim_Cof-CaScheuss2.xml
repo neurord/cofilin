@@ -1,0 +1,26 @@
+ 
+<StimulationSet>
+
+  <!--onset and duration in ms, rate in particles/ms-->
+
+
+<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+  
+        <onset>               3000          </onset>
+        <duration>        1         </duration> 
+        <rate>             800       </rate>
+	<period>             100       </period>
+	<end>             3550       </end>
+	
+
+		
+</InjectionStim>
+
+
+
+
+
+</StimulationSet>
+
+
+

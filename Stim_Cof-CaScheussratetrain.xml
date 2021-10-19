@@ -1,0 +1,189 @@
+ 
+<StimulationSet>
+
+  <!--onset and duration in ms, rate in particles/ms-->
+
+
+<!--train1-->
+<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+  
+  <rates>3000 500
+         3001 100
+	 3020 90
+	 3040 80
+	 3060 70
+	 3080 60
+	 3100 50
+	 3110 0
+
+     </rates>
+		
+</InjectionStim>
+
+<InjectionStim specieID="Ca" injectionSite="dend:submembrane">
+ <rates>3000 70
+        3001 10
+	3020 90
+	3040 80
+	3060 70
+	3080 60
+	3100 50
+	3101 0
+     </rates>
+	
+        	
+</InjectionStim>
+
+<!--train2-->
+<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+  
+  <rates>3100 500
+         3101 100
+	 3120 90
+	 3140 80
+	 3160 70
+	 3180 60
+	 3200 50
+	 3201 0
+
+     </rates>
+		
+</InjectionStim>
+
+<InjectionStim specieID="Ca" injectionSite="dend:submembrane">
+<rates>3100 70
+         3101 10
+	 3120 9
+	 3140 8
+	 3160 7
+	 3180 6
+	 3200 5
+	 3201 0
+
+     </rates>
+		
+</InjectionStim>
+
+<!--train3-->
+<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+  
+  <rates>3200 500
+         3201 100
+	 3220 90
+	 3240 80
+	 3260 70
+	 3280 60
+	 3300 50
+	 3301 0
+
+     </rates>
+		
+</InjectionStim>
+
+<InjectionStim specieID="Ca" injectionSite="dend:submembrane">
+<rates>3200 70
+         3201 10
+	 3220 9
+	 3240 8
+	 3260 7
+	 3280 6
+	 3300 5
+	 3301 0
+
+     </rates>
+		
+</InjectionStim>
+
+<!--train4-->
+<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+  
+  <rates>3300 500
+         3301 100
+	 3320 90
+	 3340 80
+	 3360 70
+	 3380 60
+	 3400 50
+	 3401 0
+
+     </rates>
+		
+</InjectionStim>
+
+<InjectionStim specieID="Ca" injectionSite="dend:submembrane">
+  <rates>3300 70
+         3301 10
+	 3320 9
+	 3340 8
+	 3360 7
+	 3380 6
+	 3400 5
+	 3401 0
+
+     </rates>
+		
+</InjectionStim>
+
+<!--train5-->
+<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+  
+  <rates>3400 500
+         3401 100
+	 3420 90
+	 3440 80
+	 3460 70
+	 3480 60
+	 3500 50
+	 3501 0
+
+     </rates>
+		
+</InjectionStim>
+
+<InjectionStim specieID="Ca" injectionSite="dend:submembrane">
+<rates>3400 70
+         3401 10
+	 3420 9
+	 3440 8
+	 3460 7
+	 3480 6
+	 3500 5
+	 3501 0
+
+     </rates>
+		
+</InjectionStim>
+
+<!--train6-->
+<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+  
+  <rates>3500 500
+         3501 100
+	 3520 90
+	 3540 80
+	 3560 70
+	 3580 60
+	 3600 50
+	 3601 0
+
+     </rates>
+		
+</InjectionStim>
+
+<InjectionStim specieID="Ca" injectionSite="dend:submembrane">
+  <rates>3500 70
+         3501 10
+	 3520 9
+	 3540 8
+	 3560 7
+	 3580 6
+	 3600 50
+	 3601 0
+
+     </rates>		
+</InjectionStim>
+
+</StimulationSet>
+
+
+

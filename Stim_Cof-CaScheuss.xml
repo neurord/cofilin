@@ -1,0 +1,33 @@
+ 
+<StimulationSet>
+
+  <!--onset and duration in ms, rate in particles/ms-->
+
+
+
+<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+  
+        <rates>
+          <xi:include href="rates.txt" parse="text" />
+     </rates>
+		
+</InjectionStim>
+
+
+<InjectionStim specieID="Ca" injectionSite="dend:submembrane">
+  <rates>
+          <xi:include href="ratesdend.txt" parse="text" />
+     </rates>
+	
+        	
+</InjectionStim>
+
+
+
+
+
+
+</StimulationSet>
+
+
+

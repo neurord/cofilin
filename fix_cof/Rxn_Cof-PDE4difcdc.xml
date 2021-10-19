@@ -2,7 +2,7 @@
 
 <ReactionScheme>
 <!-- First version of merges Gq Gs coupled pathway reactions
-     when reactions differ between the models, notes indicate which was source.
+     when reactions differ between the models, notes indicate which was source
      Either StriatumCRCNS/StochasticSP1/MSPNfinalxml/MSPNreactions_4spine_new50.xml for Gs
      or MURI/BoHung/FinalMarch2012/mglu_2ag_reac12mar20desens025.xml for Gq
 phosphatase reactions take from revision of Gs to improve Ca dep dphos of Dp32-->
@@ -10,23 +10,33 @@ phosphatase reactions take from revision of Gs to improve Ca dep dphos of Dp32--
 <!-- Molecules species and diffusion constants -->
 
 
-<Specie name="Cof" id="Cof" kdiff="2.6" kdiffunit="mu2/s"  />
-<Specie name="pCof" id="pCof"  kdiff="10.5" kdiffunit="mu2/s"/>
+<Specie name="Cof" id="Cof" kdiff="5.77" kdiffunit="mu2/s"  />
+<Specie name="pCof" id="pCof"  kdiff="22.91" kdiffunit="mu2/s"/>
 <Specie name="pLIMKCof" id="pLIMKCof"  kdiff="0" kdiffunit="mu2/s"/>
 <Specie name="LIMK" id="LIMK" kdiff="6.7" kdiffunit="mu2/s"/>
-<Specie kdiffunit="mu2/s" kdiff="6.7" id="pLIMK" name="pLIMK"/>
+<Specie kdiffunit="mu2/s" kdiff="14.50" id="pLIMK" name="pLIMK"/>
 <Specie kdiffunit="mu2/s" kdiff="0" id="RacPAKLIMK" name="RacPAKLIMK"/>
-<Specie kdiffunit="mu2/s" kdiff="7.1" id="PAK" name="PAK"/>
+<Specie kdiffunit="mu2/s" kdiff="15.53" id="PAK" name="PAK"/>
 <Specie kdiffunit="mu2/s" kdiff="7.1" id="RacPAK" name="RacPAK"/>
-<Specie kdiffunit="mu2/s" kdiff="10.18" id="RacGTP" name="RacGTP"/>
+<Specie kdiffunit="mu2/s" kdiff="22.15" id="RacGTP" name="RacGTP"/>
 <Specie kdiffunit="mu2/s" kdiff="0" id="RacGDP" name="RacGDP"/>
 <Specie kdiffunit="mu2/s" kdiff="0" id="RacGap" name="RacGap"/>
 <Specie kdiffunit="mu2/s" kdiff="6.8" id="Gap" name="Gap"/>
 
-<Specie kdiffunit="mu2/s" kdiff="5.0" id="pKalRac" name="pKalRac"/>
-<Specie kdiffunit="mu2/s" kdiff="5.0" id="pKal" name="pKal"/>
+<Specie kdiffunit="mu2/s" kdiff="0" id="Cdc42PAKLIMK" name="Cdc42PAKLIMK"/>
+<Specie kdiffunit="mu2/s" kdiff="7.1" id="Cdc42PAK" name="Cdc42PAK"/>
+<Specie kdiffunit="mu2/s" kdiff="22.04" id="Cdc42GTP" name="Cdc42GTP"/>
+<Specie kdiffunit="mu2/s" kdiff="0" id="Cdc42GDP" name="Cdc42GDP"/>
+<Specie kdiffunit="mu2/s" kdiff="0" id="Cdc42Gap" name="Cdc42Gap"/>
+
+<Specie kdiffunit="mu2/s" kdiff="10.88" id="pKalCdc42" name="pKalCdc42"/>
+<Specie kdiffunit="mu2/s" kdiff="10.88" id="pKalRac" name="pKalRac"/>
+
+<Specie kdiffunit="mu2/s" kdiff="10.88" id="pKal" name="pKal"/>
+<Specie kdiffunit="mu2/s" kdiff="0" id="pKalPP1" name="pKalPP1"/> <!-- is that correct -->
 <Specie kdiffunit="mu2/s" kdiff="0" id="KalCKpCamCa4" name="KalCKpCamCa4"/>
-<Specie kdiffunit="mu2/s" kdiff="5.0" id="Kal" name="Kal"/>
+<Specie kdiffunit="mu2/s" kdiff="0" id="KalCKCamCa4" name="KalCKCamCa4"/>
+<Specie kdiffunit="mu2/s" kdiff="10.88" id="Kal" name="Kal"/>
 
 <Specie name="CaN"           id="CaN"          kdiff="0"     kdiffunit="mu2/s"/>
 <Specie name="CaNCam"        id="CaNCam"       kdiff="0"     kdiffunit="mu2/s"/>
@@ -149,7 +159,7 @@ phosphatase reactions take from revision of Gs to improve Ca dep dphos of Dp32--
 Now, the reactions themselves
 ****************************************************************************-->
 <!--activation of Kal-->
-<!--CamKII to Kal -->
+<!--CamKII to Kal INCREASE RATE LATER BY ABOUT 20% -->
 <!--CamKII+Kal<->CamKII +pKal-->
 <Reaction id="Kal+CKpCamCa4--KalCKpCamCa4" name="Kal+CKpCamCa4--KalCKpCamCa4">
 <Reactant specieID="Kal"/>
@@ -157,8 +167,8 @@ Now, the reactions themselves
 <Product specieID="KalCKpCamCa4"/>
 
 <!--forwardRate> 0</forwardRate-->
-<forwardRate> 0.00005e-3 </forwardRate>
-<reverseRate> 0.04e-3 </reverseRate>
+<forwardRate> 0.001448e-3 </forwardRate>
+<reverseRate> 10e-3 </reverseRate>
 
 </Reaction>
 <Reaction id="KalCKpCamCa4--pKal+CKpCamCa4" name="KalCKpCamCa4--pKal+CKpCamCa4">
@@ -166,11 +176,35 @@ Now, the reactions themselves
 <Product specieID="CKpCamCa4"/>
 <Product specieID="pKal"/>
 
-<forwardRate> 0.01e-3 </forwardRate>
+<forwardRate> 2.5e-3 </forwardRate>
 <reverseRate> 0 </reverseRate>
 
 </Reaction>
 
+
+<!--CamKII to Kal -->
+<!--CamKII+Kal<->CamKII +pKal-->
+<Reaction id="Kal+CKCamCa4--KalCKCamCa4" name="Kal+CKCamCa4--KalCKCamCa4">
+<Reactant specieID="Kal"/>
+<Reactant specieID="CKCamCa4"/>
+<Product specieID="KalCKCamCa4"/>
+
+<!--forwardRate> 0</forwardRate-->
+<forwardRate> 0.00124e-3 </forwardRate>
+<reverseRate> 8e-3 </reverseRate>
+
+</Reaction>
+<Reaction id="KalCKCamCa4--pKal+CKCamCa4" name="KalCKCamCa4--pKal+CKCamCa4">
+<Reactant specieID="KalCKCamCa4"/>
+<Product specieID="CKCamCa4"/>
+<Product specieID="pKal"/>
+
+<forwardRate> 2e-3 </forwardRate>
+<reverseRate> 0 </reverseRate>
+
+</Reaction>
+
+ 
 <!--PKA to Kal -->
 <!--PKAc+Kal<->PKAc +pKal-->
 <Reaction id="Kal+PKAc--KalPKAc" name="Kal+PKAc--KalPKAc">
@@ -179,8 +213,8 @@ Now, the reactions themselves
 <Product specieID="KalPKAc"/>
 
 <!--forwardRate> 0</forwardRate-->
-<forwardRate> 0.00005e-3 </forwardRate>
-<reverseRate> 0.04e-3 </reverseRate>
+<forwardRate> 0.00124e-3 </forwardRate>
+<reverseRate> 8e-3 </reverseRate>
 
 </Reaction>
 <Reaction id="KalPKAc--pKal+PKAc" name="KalPKAc--pKal+PKAc">
@@ -188,7 +222,7 @@ Now, the reactions themselves
 <Product specieID="PKAc"/>
 <Product specieID="pKal"/>
 
-<forwardRate> 0.01e-3 </forwardRate>
+<forwardRate> 2e-3 </forwardRate>
 <reverseRate> 0 </reverseRate>
 
 </Reaction>
@@ -205,6 +239,29 @@ Now, the reactions themselves
 
 </Reaction>
 
+<!--pKal inactivation with PP1 -->
+<!--pKal+PP1<->Kal+PP1-->
+<Reaction id="pKal+PP1--Kal+PP1" name="pKal+PP1--Kal+PP1">
+  <Reactant specieID="pKal"/>
+  <Reactant specieID="PP1"/>
+  <Product specieID="pKalPP1"/>
+  
+<!--forwardRate> 0</forwardRate-->
+<forwardRate> 0.00005e-3 </forwardRate>
+<reverseRate> 0.04e-3</reverseRate>
+
+</Reaction>
+
+<Reaction id="pKal+PP1--Kal+PP1" name="pKal+PP1--Kal+PP1">
+  <Reactant specieID="pKalPP1"/>
+  <Product specieID="PP1"/>
+  <Product specieID="Kal"/>
+
+<!--forwardRate> 0</forwardRate-->
+<forwardRate> 0.01e-3 </forwardRate>
+<reverseRate> 0</reverseRate>
+
+</Reaction>
 
 <!--RacGTP activation -->
 <!--RacGDP+ pKal<->RacGTP + pKal-->
@@ -214,8 +271,8 @@ Now, the reactions themselves
 <Product specieID="pKalRac"/>
 
 <!--forwardRate> 0</forwardRate-->
-<forwardRate> 0.0001875e-3 </forwardRate>
-<reverseRate> 0.15e-3 </reverseRate>
+<forwardRate> 0.003703704e-3 </forwardRate>
+<reverseRate> 4e-3 </reverseRate>
 
 </Reaction>
 
@@ -224,7 +281,7 @@ Now, the reactions themselves
 <Product specieID="RacGTP"/>
 <Product specieID="pKal"/>
 
-<forwardRate> 0.0375e-3 </forwardRate>
+<forwardRate> 1e-3 </forwardRate>
 <reverseRate> 0 </reverseRate>
 
 </Reaction>
@@ -238,8 +295,8 @@ Now, the reactions themselves
 <Product specieID="RacGap"/>
 
 <!--forwardRate> 0</forwardRate-->
-<forwardRate> 0.0025e-3 </forwardRate>
-<reverseRate> 0.4e-3</reverseRate>
+<forwardRate> 0.00022e-3 </forwardRate>
+<reverseRate> 4.82e-3</reverseRate>
 
 </Reaction>
 
@@ -248,11 +305,22 @@ Now, the reactions themselves
 <Product specieID="RacGDP"/>
 <Product specieID="Gap"/>
 
-<forwardRate> 0.1e-3 </forwardRate>
+<forwardRate> 1.21e-3 </forwardRate>
 <reverseRate> 0e-3 </reverseRate>
 
 </Reaction>
 
+<!--RacGTP intrinsic inactivation -->
+<!--RacGTP<->RacGDP-->
+<Reaction id="RacGTP--RacGTP" name="RacGTP--RacGTP">
+<Reactant specieID="RacGTP"/>
+<Product specieID="RacGDP"/>
+
+<!--forwardRate> 0</forwardRate-->
+<forwardRate> 0.000009e-3 </forwardRate>
+<reverseRate> 0e-3</reverseRate>
+
+</Reaction>
 
 <!--RacGTP activate PAK-->
 <!--RacGTP+PAK <->RacPAK-->
@@ -263,12 +331,84 @@ Now, the reactions themselves
 
 
 <!--forwardRate> 0</forwardRate-->
-<forwardRate> 0.02e-3 </forwardRate>
-<reverseRate> 1e-3 </reverseRate>
+<forwardRate> 0.0096e-3 </forwardRate>
+<reverseRate> 1.5e-3 </reverseRate>
 
 </Reaction>
 
 
+<!--Cdc42GTP activation -->
+<!--Cdc42GDP+ pKal<->Cdc42GTP + pKal-->
+<Reaction id="Cdc42GDP+Kal--Cdc42GDPpKal" name="Cdc42GDP+pKal--pKalCdc42GDP">
+<Reactant specieID="pKal"/>
+<Reactant specieID="Cdc42GDP"/>
+<Product specieID="pKalCdc42"/>
+
+<!--forwardRate> 0</forwardRate-->
+<forwardRate> 0.008518519e-3 </forwardRate>
+<reverseRate> 9.2e-3 </reverseRate>
+
+</Reaction>
+
+<Reaction id="Cdc42GDP+pKal--Cdc42GTP+pKal" name="Cdc42GDP+pKal--pKal+Cdc42GTP">
+<Reactant specieID="pKalCdc42"/>
+<Product specieID="Cdc42GTP"/>
+<Product specieID="pKal"/>
+
+<forwardRate> 2.3e-3 </forwardRate>
+<reverseRate> 0 </reverseRate>
+
+</Reaction>
+
+
+<!--Cdc42GTP inactivation -->
+<!--Cdc42GTP+ Gap<->Cdc42GDP + Gap-->
+<Reaction id="Cdc42GTP+Gap--Cdc42GTPGap" name="Cdc42GTP+Gap--GapCdc42GTP">
+<Reactant specieID="Gap"/>
+<Reactant specieID="Cdc42GTP"/>
+<Product specieID="Cdc42Gap"/>
+
+<!--forwardRate> 0</forwardRate-->
+<forwardRate> 0.56923e-3 </forwardRate>
+<reverseRate> 140.26e-3</reverseRate>
+
+</Reaction>
+
+<Reaction id="Cdc42GTP+Gap--Cdc42GTPGap" name="Cdc42GTP+Gap--Gap+Cdc42GDP">
+<Reactant specieID="Cdc42Gap"/>
+<Product specieID="Cdc42GDP"/>
+<Product specieID="Gap"/>
+
+<forwardRate> 35.065e-3 </forwardRate>
+<reverseRate> 0e-3 </reverseRate>
+
+</Reaction>
+
+<!--Cdc42GTP intrinsic inactivation -->
+<!--Cdc42GTP<->Cdc42GDP-->
+<Reaction id="Cdc42GTP--Cdc42GTP" name="Cdc42GTP--Cdc42GTP">
+<Reactant specieID="Cdc42GTP"/>
+<Product specieID="Cdc42GDP"/>
+
+<!--forwardRate> 0</forwardRate-->
+<forwardRate> 0.000567e-3 </forwardRate>
+<reverseRate> 0e-3</reverseRate>
+
+</Reaction>
+
+<!--Cdc42GTP activate PAK-->
+<!--Cdc42GTP+PAK <->Cdc42PAK-->
+<Reaction id="Cdc42GTP+PAK--Cdc42GTPPAK" name="PAK+Cdc42GTP--Cdc42GTPPAK">
+<Reactant specieID="PAK"/>
+<Reactant specieID="Cdc42GTP"/>
+<Product specieID="Cdc42PAK"/>
+
+
+<!--forwardRate> 0</forwardRate-->
+<forwardRate> 0.0096e-3 </forwardRate>
+<reverseRate> 1.5e-3 </reverseRate>
+
+</Reaction>
 
 <!--LIMK activated by PAK-->
 <!--PAK+LIMK <->pLIMK+PAK-->
@@ -278,7 +418,7 @@ Now, the reactions themselves
 <Product specieID="RacPAKLIMK"/>
 
 <!--forwardRate> 0</forwardRate-->
-<forwardRate> 0.000342052e-3 </forwardRate>
+<forwardRate> 0.00342052e-3 </forwardRate>
 <reverseRate> 1.36e-3 </reverseRate>
 
 </Reaction>
@@ -294,6 +434,29 @@ Now, the reactions themselves
 
 </Reaction>
 
+<!--LIMK activated by PAK-->
+<!--PAK+LIMK <->pLIMK+PAK-->
+<Reaction id="Cdc42PAK+LIMK--LIMKCdc42PAK" name="Cdc42PAK+LIMK--LIMKCdc42PAK">
+<Reactant specieID="Cdc42PAK"/>
+<Reactant specieID="LIMK"/>
+<Product specieID="Cdc42PAKLIMK"/>
+
+<!--forwardRate> 0</forwardRate-->
+<forwardRate> 0.00342052e-3 </forwardRate>
+<reverseRate> 1.36e-3 </reverseRate>
+
+</Reaction>
+
+
+<Reaction id="Cdc42PAK+LIMK--Cdc42PAK+pLIMK" name="Cdc42PAK+LIMK--pLIMK+Cdc42PAK">
+<Reactant specieID="Cdc42PAKLIMK"/>
+<Product specieID="pLIMK"/>
+<Product specieID="Cdc42PAK"/>
+
+<forwardRate> 0.34e-3 </forwardRate>
+<reverseRate> 0 </reverseRate>
+
+</Reaction>
 
 <!--LIMK activated by PKA-->
 <!--PKA+LIMK <->pLIMK+PKA-->
