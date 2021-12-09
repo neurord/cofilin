@@ -17,8 +17,8 @@ exp_name='Bosch_cof'
 mol=['Cof']
 #directory to store output during optimization
 tmpdir='/tmp/'+dirname#how again
-start_stim=40.8 # time stim start sec 
-#norm_method ='percent' # do we need this
+start_stim=36 # time stim start sec 
+#norm_method ='percent'
 
 
 # number of iterations, use 1 for testing
@@ -35,7 +35,7 @@ if not dirname in os.listdir(rootdir):
 os.chdir(dirname)
 exp=loadconc.CSV_conc_set(exp_name,
                           stim_time=start_stim)
-
+print('***********************************',exp.data[0].waves['Cof'].wave)
 #specify parameters to vary, either from ReactionScheme or InitialConditions
 P = aju.xml.XMLParam
 #Double check. #2
