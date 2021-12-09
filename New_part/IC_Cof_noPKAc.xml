@@ -2,7 +2,6 @@
   <ConcentrationSet>
     
     <NanoMolarity specieID="KalCKpCamCa4" value="0" />
-    <NanoMolarity specieID="KalPKAc" value="0" />
     <NanoMolarity specieID="pKal" value="0" />
     <NanoMolarity specieID="pKalRac" value="0" />
     <NanoMolarity specieID="Gap" value="1000" />
@@ -13,7 +12,6 @@
     <NanoMolarity specieID="RacPAKGap" value="0" />
     <NanoMolarity specieID="RacPAKLIMK" value="0" />
    
-    <NanoMolarity specieID="PKAcLIMK" value="0" />
     <NanoMolarity specieID="LIMK" value="2000" />
     <NanoMolarity specieID="pLIMK" value="0" />
     <NanoMolarity specieID="pLIMKCof" value="0" /> 
@@ -32,7 +30,6 @@
     <NanoMolarity specieID="CKCamCa4" value="40" />
     <NanoMolarity specieID="CKpCamCa4" value="20" />
 
-    <NanoMolarity specieID="PKAc" value="15.0" />
     <NanoMolarity specieID="PP1" value="1000.0" />
    
   </ConcentrationSet>

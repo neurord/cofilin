@@ -1,0 +1,58 @@
+<!--Cdc42GTP activation -->
+<!--Cdc42GDP+ pKal<->Cdc42GTP + pKal-->
+<Reaction id="Cdc42GDP+Kal--Cdc42GDPpKal" name="Cdc42GDP+pKal--pKalCdc42GDP">
+<Reactant specieID="pKal"/>
+<Reactant specieID="Cdc42GDP"/>
+<Product specieID="pKalCdc42"/>
+
+<!--forwardRate> 0</forwardRate-->
+<forwardRate> 0.0001875e-3 </forwardRate>
+<reverseRate> 0.15e-3 </reverseRate>
+
+</Reaction>
+
+<Reaction id="Cdc42GDP+pKal--Cdc42GTP+pKal" name="Cdc42GDP+pKal--pKal+Cdc42GTP">
+<Reactant specieID="pKalCdc42"/>
+<Product specieID="Cdc42GTP"/>
+<Product specieID="pKal"/>
+
+<forwardRate> 0.0375e-3 </forwardRate>
+<reverseRate> 0 </reverseRate>
+
+</Reaction>
+
+
+<!--Cdc42GTP inactivation with GAP-->
+<!--Cdc42GTP+ Gap<->Cdc42GDP + Gap-->
+<Reaction id="Cdc42GTP+Gap--Cdc42GTPGap" name="Cdc42GTP+Gap--GapCdc42GTP">
+<Reactant specieID="Gap"/>
+<Reactant specieID="Cdc42GTP"/>
+<Product specieID="Cdc42Gap"/>
+
+<!--forwardRate> 0</forwardRate-->
+<forwardRate> 0.0569e-3 </forwardRate>
+<reverseRate> 140.26e-3</reverseRate>
+
+</Reaction>
+
+<Reaction id="Cdc42GTP+Gap--Cdc42GTPGap" name="Cdc42GTP+Gap--Gap+Cdc42GDP">
+<Reactant specieID="Cdc42Gap"/>
+<Product specieID="Cdc42GDP"/>
+<Product specieID="Gap"/>
+
+<forwardRate> 35.065e-3 </forwardRate>
+<reverseRate> 0e-3 </reverseRate>
+
+</Reaction>
+
+<!--Cdc42GTP inactivation -->
+<!--Cdc42GTP<->Cdc42GD-->
+<Reaction id="Cdc42GTP--Cdc42GTP" name="Cdc42GTP--Cdc42GDP">
+<Reactant specieID="Cdc42GTP"/>
+<Product specieID="Cdc42GDP"/>
+
+<!--forwardRate> 0</forwardRate-->
+<forwardRate> 0.00056e-3 </forwardRate>
+<reverseRate> 0</reverseRate>
+
+</Reaction>

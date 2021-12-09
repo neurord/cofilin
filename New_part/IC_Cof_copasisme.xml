@@ -1,0 +1,31 @@
+<InitialConditions>
+  <ConcentrationSet>
+    
+    
+    <NanoMolarity specieID="RacPAK" value="50" />
+    <NanoMolarity specieID="RacPAKLIMK" value="0" />
+   
+    <NanoMolarity specieID="LIMK" value="2000" />
+    <NanoMolarity specieID="pLIMK" value="0" />
+    <NanoMolarity specieID="pLIMKCof" value="0" /> 
+    <NanoMolarity specieID="Cof" value="0" />
+    <NanoMolarity specieID="pCof" value="2000" />
+    
+    <NanoMolarity specieID="SSH" value="0" />
+    <NanoMolarity specieID="SSHpCof" value="0" />
+    <NanoMolarity specieID="SSHpLIMK" value="0" />
+    
+
+    <NanoMolarity specieID="CaNCamCa4" value="10.0" />
+    <NanoMolarity specieID="CaNCamCa4pSSH" value="0" />
+    <NanoMolarity specieID="RacPAKSSH" value="0" />
+   
+  </ConcentrationSet>
+
+  
+  <ConcentrationSet region="head">
+ <NanoMolarity specieID="pSSH" value="2000" />
+</ConcentrationSet>
+
+
+</InitialConditions>
