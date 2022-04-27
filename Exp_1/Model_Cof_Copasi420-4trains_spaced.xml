@@ -6,11 +6,11 @@
 
 	 reaction data brought in from other files --> 
 
-          <xi:include href="Rxn_Cof-PDE4dif.xml" />
-          <xi:include href="Morph2.xml" />        
-          <xi:include href="IC_Cof-PDE4General-SSH1500.xml" />
+          <xi:include href="Rxn_Cof_copasie420.xml" />
+          <xi:include href="Morph_dend_0.6um_spine1.xml" />        
+          <xi:include href="IC_Cof.xml" />
           <xi:include href="Out_Cof.xml" />
-	  <xi:include href="Stim_Cof-CaScheussratetrain.xml" />
+	  <xi:include href="Stim_Cof-4trains_spaced.xml" />
 	   
     <!--2D means the morphology is interpreted like a flatworm, 3D for
 
@@ -38,7 +38,7 @@ results. depth 2D units are microns  -->
 
 	<!-- default largest size for elements in bulk volumes (dendrites), microns -->	
 
-       <defaultMaxElementSide>1.0</defaultMaxElementSide> 
+       <defaultMaxElementSide>0.3</defaultMaxElementSide> 
        <spineDeltaX> 0.1  </spineDeltaX>
         
     <surfaceLayers> 0.1,0.2 </surfaceLayers>

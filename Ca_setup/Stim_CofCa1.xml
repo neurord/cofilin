@@ -1,0 +1,129 @@
+<StimulationSet>
+
+  <!--onset and duration in ms, rate in particles/ms-->
+   <!--ligan --> 
+<InjectionStim specieID="L" injectionSite="sa1[0].pointA">
+        <onset>10000   </onset>
+        <duration>1    </duration>
+        <rate> 3 </rate>
+	<period>  10    </period>
+	<end>    11000   </end>
+        
+
+</InjectionStim>
+
+<InjectionStim specieID="L" injectionSite="dend:submembrane">
+        <onset>10000</onset>
+        <duration>1</duration>
+        <rate>0.30</rate>
+        <period>        10             </period>
+	<end>          11000           </end>
+
+</InjectionStim>
+
+ <!--Ca -->
+
+ <InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+           <onset>               10000          </onset>
+        <duration>        1         </duration> 
+       	<rate>               9000      </rate>
+      
+</InjectionStim>
+
+
+<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+           <onset>               10002          </onset>
+        <duration>        3         </duration> 
+       	<rate>               2000     </rate>
+      	
+</InjectionStim>
+
+<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+           <onset>               10010          </onset>
+        <duration>        3         </duration> 
+       	<rate>               1500      </rate>
+      	<period>        10             </period>
+	<end>          10100           </end>
+</InjectionStim>
+
+<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+           <onset>               10110          </onset>
+        <duration>        3         </duration> 
+       	<rate>               1200      </rate>
+      	<period>        10             </period>
+	<end>          10200           </end>
+</InjectionStim>
+
+<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+           <onset>               10210          </onset>
+        <duration>        3         </duration> 
+       	<rate>               1000      </rate>
+      	<period>        10             </period>
+	<end>          10300           </end>
+</InjectionStim>
+
+<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+           <onset>               10310          </onset>
+        <duration>        3         </duration> 
+       	<rate>               600     </rate>
+      	<period>        10             </period>
+	<end>          10400           </end>
+</InjectionStim>
+
+<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+           <onset>               10410          </onset>
+        <duration>        3         </duration> 
+       	<rate>            500         </rate>
+      	<period>        10             </period>
+	<end>          10500           </end>
+</InjectionStim>
+
+<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+           <onset>               10510          </onset>
+        <duration>        3         </duration> 
+       	<rate>               400      </rate>
+      	<period>        10             </period>
+	<end>          10600           </end>
+</InjectionStim>
+
+<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+           <onset>               10610          </onset>
+        <duration>        3         </duration> 
+       	<rate>               300      </rate>
+      	<period>        10             </period>
+	<end>          10700           </end>
+</InjectionStim>
+
+<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+           <onset>               10710          </onset>
+        <duration>        3         </duration> 
+       	<rate>               260     </rate>
+      	<period>        10             </period>
+	<end>          11000           </end>
+</InjectionStim>
+
+<InjectionStim specieID="Ca" injectionSite="dend:submembrane">
+           <onset>               10000          </onset>
+        <duration>   1  </duration> 
+       	<rate>    900     </rate>
+      	
+</InjectionStim>
+
+<InjectionStim specieID="Ca" injectionSite="dend:submembrane">
+        <onset>      10002  </onset>
+        <duration>        1         </duration> 
+       	<rate>     800      </rate>
+</InjectionStim>
+
+<InjectionStim specieID="Ca" injectionSite="dend:submembrane">
+           <onset>    10010          </onset>
+        <duration>        3         </duration> 
+       	<rate>               100      </rate>
+      	<period>       10             </period>
+	<end>          11000           </end>
+</InjectionStim>
+
+
+
+
+</StimulationSet>
