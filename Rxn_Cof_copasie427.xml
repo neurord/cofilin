@@ -261,8 +261,8 @@ Now, the reactions themselves
 <Reactant specieID="RacGDP"/>
 <Product specieID="pKalRac"/>
 
-<forwardRate> 0.000001996342723 </forwardRate>
-<reverseRate> 0.00005156417689 </reverseRate>
+<forwardRate> 1.482368015e-7</forwardRate>
+<reverseRate> 0.0005120358579 </reverseRate>
 
 </Reaction>
 
@@ -271,7 +271,7 @@ Now, the reactions themselves
 <Product specieID="RacGTP"/>
 <Product specieID="pKal"/>
 
-<forwardRate> 0.00001430538135 </forwardRate>
+<forwardRate> 0.0004644241741 </forwardRate>
 <reverseRate> 0 </reverseRate>
 
 </Reaction>
@@ -309,8 +309,8 @@ Now, the reactions themselves
 <Product specieID="RacPAK"/>
 
 <!--forwardRate> 0</forwardRate-->
-<forwardRate> 0.000003193656402 </forwardRate>
-<reverseRate> 0.002614798388 </reverseRate>
+<forwardRate> 9.021301423e-6 </forwardRate>
+<reverseRate> 0.001255356077 </reverseRate>
 
 </Reaction>
 
@@ -321,8 +321,8 @@ Now, the reactions themselves
 <Reactant specieID="LIMK"/>
 <Product specieID="RacPAKLIMK"/>
 
-<forwardRate> 0.003326332 </forwardRate>
-<reverseRate> 0.9841609962 </reverseRate>
+<forwardRate> 0.003180805912 </forwardRate>
+<reverseRate> 2.747978866 </reverseRate>
 
 </Reaction>
 
@@ -331,7 +331,7 @@ Now, the reactions themselves
 <Product specieID="pLIMK"/>
 <Product specieID="RacPAK"/>
 
-<forwardRate>0.02606772698</forwardRate>
+<forwardRate>0.03727082386</forwardRate>
 <reverseRate> 0 </reverseRate>
 
 </Reaction>
@@ -343,8 +343,8 @@ Now, the reactions themselves
 <Reactant specieID="LIMK"/>
 <Product specieID="PKAcLIMK"/>
 
-<forwardRate> 0.003326332 </forwardRate>
-<reverseRate> 0.9841609962 </reverseRate>
+<forwardRate> 0.003180805912 </forwardRate>
+<reverseRate> 2.747978866 </reverseRate>
 </Reaction>
 
 <Reaction id="LIMKPKAc--PKAc+pLIMK" name="LIMKPKAc--PKAc+pLIMK">
@@ -352,7 +352,7 @@ Now, the reactions themselves
 <Product specieID="pLIMK"/>
 <Product specieID="PKAc"/>
 
-<forwardRate>0.02606772698</forwardRate>
+<forwardRate>0.03727082386</forwardRate>
 <reverseRate> 0 </reverseRate>
 
 </Reaction>
@@ -364,8 +364,8 @@ Now, the reactions themselves
 <Reactant specieID="SSH"/>
 <Product specieID="SSHpLIMK"/>
 
-<forwardRate>0.000276186</forwardRate>
-<reverseRate>0.012625481</reverseRate>
+<forwardRate>0.0008112890751</forwardRate>
+<reverseRate>0.00928672589</reverseRate>
 
 </Reaction>
 
@@ -375,7 +375,7 @@ Now, the reactions themselves
 <Product specieID="SSH"/>
 <Product specieID="LIMK"/>
 
-<forwardRate>0.013400469</forwardRate>
+<forwardRate>0.2303887195</forwardRate>
 <reverseRate> 0 </reverseRate>
 </Reaction>
 
@@ -386,8 +386,8 @@ Now, the reactions themselves
         <Reactant specieID="CaNCamCa4"/>
         <Product specieID="CaNCamCa4pSSH"/>
 
-        <forwardRate>5.46E-06</forwardRate>
-        <reverseRate>0.00094117</reverseRate>
+        <forwardRate>1.359982324e-5</forwardRate>
+        <reverseRate>5.482284571e-5</reverseRate>
 </Reaction>
 
 <!--  CaNCam+pSSH <->CaNCam+SSH       -->
@@ -396,7 +396,7 @@ Now, the reactions themselves
         <Product specieID="CaNCamCa4"/>
         <Product specieID="SSH"/>
 	
-        <forwardRate>0.00004052680287</forwardRate>
+        <forwardRate>0.0003230907381</forwardRate>
         <reverseRate> 0 </reverseRate>
 </Reaction>
 
@@ -406,8 +406,8 @@ Now, the reactions themselves
 <Reactant specieID="SSH"/>
 <Product specieID="RacPAKSSH"/>
 
-<forwardRate>0.00009634513139</forwardRate>
-<reverseRate>0.4259339492</reverseRate>
+<forwardRate>2.041603347e-5</forwardRate>
+<reverseRate>0.2977006633</reverseRate>
 </Reaction>
 
 <Reaction id="SSHRacPAK--pSSH+RacPAK" name="SSHRacPAK--pSSH+RacPAK">
@@ -415,7 +415,7 @@ Now, the reactions themselves
 <Product specieID="pSSH"/>
 <Product specieID="RacPAK"/>
 
-<forwardRate>0.002303599</forwardRate>
+<forwardRate>0.004393947815</forwardRate>
 <reverseRate> 0 </reverseRate>
 
 </Reaction>
@@ -427,8 +427,8 @@ Now, the reactions themselves
 <Reactant specieID="pLIMK"/>
 <Product specieID="pLIMKCof"/>
 
-<forwardRate>0.00013</forwardRate>
-<reverseRate>0.5576071636</reverseRate>
+<forwardRate>0.008927893343</forwardRate>
+<reverseRate>0.4419729937</reverseRate>
 
 </Reaction>
 
@@ -437,7 +437,7 @@ Now, the reactions themselves
 <Product specieID="pLIMK"/>
 <Product specieID="pCof"/>
 
-<forwardRate>0.02827203268</forwardRate>
+<forwardRate>0.02874034362</forwardRate>
 <reverseRate> 0 </reverseRate>
 </Reaction>
 
@@ -449,8 +449,8 @@ Now, the reactions themselves
 <Reactant specieID="SSH"/>
 <Product specieID="SSHpCof"/>
 
-<forwardRate>0.000003801677169</forwardRate>
-<reverseRate>11.54579852</reverseRate>
+<forwardRate>0.0001091826266</forwardRate>
+<reverseRate>0.1468879445</reverseRate>
 
 </Reaction>
 
@@ -459,7 +459,7 @@ Now, the reactions themselves
 <Product specieID="SSH"/>
 <Product specieID="Cof"/>
 
-<forwardRate>2.737765371</forwardRate>
+<forwardRate>0.1293927027</forwardRate>
 <reverseRate> 0 </reverseRate>
 </Reaction>
 
@@ -469,8 +469,8 @@ Now, the reactions themselves
 <Reactant specieID="Cof"/>
 <Product specieID="Cofactin"/>
 
-<forwardRate> 0.00000002266726172 </forwardRate>
-<reverseRate> 0.0004847741145 </reverseRate>
+<forwardRate>3.584974046e-8 </forwardRate>
+<reverseRate>0.000703589083 </reverseRate>
 </Reaction>
 
 <!-- Calcium binding -->
