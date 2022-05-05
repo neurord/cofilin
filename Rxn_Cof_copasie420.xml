@@ -22,7 +22,7 @@ phosphatase reactions take from revision of Gs to improve Ca dep dphos of Dp32--
 <!-- Rac pathway -->
 <Specie name="RacGTP" id="RacGTP" kdiff="10.18" kdiffunit="mu2/s" />
 <Specie name="RacGDP" id="RacGDP" kdiff="0" kdiffunit="mu2/s" />
-<Specie name="RacGap" id="RacGap" kdiff="0" kdiffunit="mu2/s" />
+<Specie name="RacGap" id="RacGap" kdiff="6.8" kdiffunit="mu2/s" />
 <Specie name="Gap" id="Gap" kdiff="6.8" kdiffunit="mu2/s" />
 
 <!-- PAK pathway -->
@@ -44,13 +44,13 @@ phosphatase reactions take from revision of Gs to improve Ca dep dphos of Dp32--
 
 <!-- Cof pathway -->
 <Specie name="Cof" id="Cof" kdiff="10.5" kdiffunit="mu2/s"  />
-<Specie name="pCof" id="pCof"  kdiff="10.5" kdiffunit="mu2/s"/>
+<Specie name="pCof" id="pCof"  kdiff="7.5" kdiffunit="mu2/s"/>
 <Specie name="pLIMKCof" id="pLIMKCof"  kdiff="0" kdiffunit="mu2/s"/>
 <Specie name="SSHpCof" id="SSHpCof" kdiff="0" kdiffunit="mu2/s"/>
 
 <!-- actin binding to Cof -->    
-<Specie name="actin"                            id="actin"                kdiff="0"    kdiffunit="mu2/s"/>
-<Specie name="Cofactin"                            id="Cofactin"                kdiff="0"    kdiffunit="mu2/s"/>
+<Specie name="actin"      id="actin"    kdiff="0"    kdiffunit="mu2/s"/>
+<Specie name="Cofactin"     id="Cofactin"    kdiff="3.5"    kdiffunit="mu2/s"/>
 
 <!-- calcium reaction subset, to adjust for proper basal calcium -->
 <!-- calcium stuff first -->
@@ -159,6 +159,8 @@ phosphatase reactions take from revision of Gs to improve Ca dep dphos of Dp32--
 <!-- Epac -->
   <Specie name="Epac"               id="Epac"               kdiff="5.62"             kdiffunit="mu2/s"/>
   <Specie name="EpacAMP"            id="EpacAMP"           kdiff="5.61"             kdiffunit="mu2/s"/>
+ <Specie name="IP"               id="IP"               kdiff="0"             kdiffunit="mu2/s"/>
+  <Specie name="IPPKAc"            id="IPPKAc"           kdiff="0"             kdiffunit="mu2/s"/> 
 
 <!--****************************************************************************
 Now, the reactions themselves
@@ -1416,6 +1418,14 @@ Now, the reactions themselves
         <reverseRate> 0.1452e-3   </reverseRate>
     </Reaction>
 
+<!--(PKAc inhibitor) IP+PKAc <-> IPPKAc-->
+    <Reaction name = "IP+PKAc--IPPKAc" id="IP+PKAc--IPPKAc">
+        <Reactant specieID="IP"           />
+        <Reactant  specieID="PKAc"               />
+        <Product  specieID="IPPKAc"               />
 
+        <forwardRate> 3e-3   </forwardRate>
+        <reverseRate> 0   </reverseRate>
+    </Reaction>
 
 </ReactionScheme>

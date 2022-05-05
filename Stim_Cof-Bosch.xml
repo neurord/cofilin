@@ -8,17 +8,19 @@
 <InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
            <onset>               10800          </onset>
         <duration>        1         </duration> 
-       	<rate>               30000      </rate>
+       	<rate>               11000      </rate>
+	<!--rate>               30000      </rate-->
       	<period>        1000             </period>
-	<end>          60800           </end>
+	<end>          70800           </end>
 </InjectionStim>
 
 
 <InjectionStim specieID="Ca" injectionSite="dend:submembrane">
            <onset>               10800          </onset>
         <duration>        1         </duration> 
-       	<rate>               3000      </rate>
+       	<rate>               1100      </rate>
+	<!--rate>               3000      </rate-->
       	<period>        1000             </period>
-	<end>          60800           </end>
+	<end>          70800           </end>
 </InjectionStim>
 </StimulationSet>
