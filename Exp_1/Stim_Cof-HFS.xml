@@ -92,11 +92,11 @@
         <duration>        3         </duration> 
        	<rate>               500.82     </rate>
       	<period>        10             </period>
-	<end>          100800           </end>
+	<end>          200800           </end>
 </InjectionStim>
 
 <InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
-           <onset>               100810          </onset>
+           <onset>               200810          </onset>
         <duration>        3         </duration> 
        	<rate>               485.82     </rate>
       	<period>        10             </period>
