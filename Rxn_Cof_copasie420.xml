@@ -20,15 +20,15 @@ phosphatase reactions take from revision of Gs to improve Ca dep dphos of Dp32--
 <Specie name="pKalPP1" id="pKalPP1" kdiff="0.0" kdiffunit="mu2/s" />
 
 <!-- Rac pathway -->
-<Specie name="RacGTP" id="RacGTP" kdiff="10.18" kdiffunit="mu2/s" />
+<Specie name="RacGTP" id="RacGTP" kdiff="0.25" kdiffunit="mu2/s" />
 <Specie name="RacGDP" id="RacGDP" kdiff="0" kdiffunit="mu2/s" />
-<Specie name="RacGap" id="RacGap" kdiff="6.8" kdiffunit="mu2/s" />
+<Specie name="RacGap" id="RacGap" kdiff="0.0" kdiffunit="mu2/s" />
 <Specie name="Gap" id="Gap" kdiff="6.8" kdiffunit="mu2/s" />
 
 <!-- PAK pathway -->
 <Specie name="PAK" id="PAK" kdiff="7.1" kdiffunit="mu2/s" />
 <Specie name="RacPAKLIMK" id="RacPAKLIMK" kdiff="0" kdiffunit="mu2/s"  />
-<Specie name="RacPAK" id="RacPAK" kdiff="7.1" kdiffunit="mu2/s" />
+<Specie name="RacPAK" id="RacPAK" kdiff="0.0" kdiffunit="mu2/s" />
 
 <!-- LIMK pathway -->
 <Specie name="LIMK" id="LIMK" kdiff="6.7" kdiffunit="mu2/s"/>
@@ -43,14 +43,14 @@ phosphatase reactions take from revision of Gs to improve Ca dep dphos of Dp32--
 <Specie name="CaNCamCa4pSSH"        id="CaNCamCa4pSSH"       kdiff="0"     kdiffunit="mu2/s"/>
 
 <!-- Cof pathway -->
-<Specie name="Cof" id="Cof" kdiff="10.5" kdiffunit="mu2/s"  />
-<Specie name="pCof" id="pCof"  kdiff="7.5" kdiffunit="mu2/s"/>
+<Specie name="Cof" id="Cof" kdiff="0.01" kdiffunit="mu2/s"  />
+<Specie name="pCof" id="pCof"  kdiff="0.01" kdiffunit="mu2/s"/>
 <Specie name="pLIMKCof" id="pLIMKCof"  kdiff="0" kdiffunit="mu2/s"/>
 <Specie name="SSHpCof" id="SSHpCof" kdiff="0" kdiffunit="mu2/s"/>
 
 <!-- actin binding to Cof -->    
 <Specie name="actin"      id="actin"    kdiff="0"    kdiffunit="mu2/s"/>
-<Specie name="Cofactin"     id="Cofactin"    kdiff="3.5"    kdiffunit="mu2/s"/>
+<Specie name="Cofactin"     id="Cofactin"    kdiff="0"    kdiffunit="mu2/s"/>
 
 <!-- calcium reaction subset, to adjust for proper basal calcium -->
 <!-- calcium stuff first -->
@@ -354,7 +354,8 @@ Now, the reactions themselves
 <Product specieID="pLIMK"/>
 <Product specieID="PKAc"/>
 
-<forwardRate>0.02606772698</forwardRate>
+<!--forwardRate>0.02606772698</forwardRate-->
+<forwardRate>0.07806772698</forwardRate>
 <reverseRate> 0 </reverseRate>
 
 </Reaction>
@@ -398,7 +399,9 @@ Now, the reactions themselves
         <Product specieID="CaNCamCa4"/>
         <Product specieID="SSH"/>
 	
-        <forwardRate>0.00004052680287</forwardRate>
+        <!--forwardRate>0.00004052680287</forwardRate-->
+	<!--forwardRate>0.00012052680287</forwardRate-->
+	<forwardRate>0.00008052680287</forwardRate>
         <reverseRate> 0 </reverseRate>
 </Reaction>
 

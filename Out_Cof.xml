@@ -16,7 +16,7 @@ So the "io file" will be dependent on information stated in the
 <OutputSpecie name="Ca"/>
 </OutputSet>
 
-<OutputSet filename = "lowres"  dt="100.0">
+<OutputSet filename = "lowres"  dt="200.0">
   <OutputSpecie name="Kal"/>
   <OutputSpecie name="KalCKCamCa4"/>
   <OutputSpecie name="KalCKpCamCa4"/>
