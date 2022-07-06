@@ -1,0 +1,21 @@
+<StimulationSet>
+
+  <!--onset and duration in ms, rate in particles/ms-->
+    
+<InjectionStim specieID="RacGTP" injectionSite="pointA">
+    <onset>               60000          </onset>
+        <duration>        1         </duration> 
+       	<rate>               0.075      </rate>
+      	<period>        100             </period>
+	<end>          180000           </end>
+</InjectionStim>
+
+<InjectionStim specieID="RacGTP" injectionSite="pointA">
+    <onset>               180100          </onset>
+        <duration>        1         </duration> 
+       	<rate>               0.01      </rate>
+      	<period>        100             </period>
+	<end>          1800000           </end>
+</InjectionStim>
+
+</StimulationSet>
