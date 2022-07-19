@@ -1,8 +1,6 @@
 <InitialConditions>
   <ConcentrationSet>
-    <NanoMolarity specieID="X" value="0" />
-    <NanoMolarity specieID="Y" value="0" />
-    
+<NanoMolarity specieID="X" value="0" />
     <NanoMolarity specieID="pKal" value="0" />
     <NanoMolarity specieID="Gap" value="1000" />
     <NanoMolarity specieID="RacGap" value="0" />
@@ -23,11 +21,10 @@
     <NanoMolarity specieID="RacPAKSSH" value="0" />
     <NanoMolarity specieID="pSSH" value="2000" />
     <NanoMolarity specieID="SSH" value="0" />
-    
-    
+
     <NanoMolarity specieID="pLIMKCof" value="0" /> 
-    <NanoMolarity specieID="Cof" value="300" />
-    <NanoMolarity specieID="pCof" value="1600" />
+    <NanoMolarity specieID="Cof" value="150" />
+    <NanoMolarity specieID="pCof" value="1850" />
     <NanoMolarity specieID="SSHpCof" value="0" />
 
 
