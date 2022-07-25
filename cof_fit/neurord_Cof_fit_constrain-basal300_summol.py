@@ -10,11 +10,11 @@ import os
 
 dirname='cof_opt_sum'
 #name of model xml file for optimization
-model_set='Model_Cof_fit'
+model_set='Model_Cof_fit.xml'
 #name of experimental data, a simulation file in this case
 exp_name='Bosch_Hedrick_cof-basal300'
 #molecule to compare between 'experiments' and simulations
-mol={'RacGTP': ['RacGTP'],'Cof':['Cof','Cofactin']}#mol=['RacGTP','Cofactin']
+mol={'RacGTP':['RacGTP'],'Cofactin':['Cof', 'Cofactin']}#mol={'RacGTP': ['RacGTP'],'Cof':['Cof','Cofactin']}
 #directory to store output during optimization
 tmpdir='/tmp/'+dirname
 start_stim=90 # time stim start sec 

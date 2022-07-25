@@ -8,7 +8,7 @@ from ajustador import drawing,loadconc,nrd_fitness
 from ajustador.helpers import converge,save_params
 import os
 
-dirname='cof_opt'
+dirname='cof_opt_300'
 #name of model xml file for optimization
 model_set='Model_Cof_fit'
 #name of experimental data, a simulation file in this case

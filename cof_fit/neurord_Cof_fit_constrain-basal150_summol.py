@@ -14,7 +14,7 @@ model_set='Model_Cof_fit'
 #name of experimental data, a simulation file in this case
 exp_name='Bosch_Hedrick_cof-basal150'
 #molecule to compare between 'experiments' and simulations
-mol={'RacGTP': ['RacGTP'],'Cof':['Cof','Cofactin']}#['RacGTP','Cofactin']
+mol={'RacGTP':['RacGTP'],'Cofactin':['Cof', 'Cofactin']}#{'RacGTP': ['RacGTP'],'Cof':['Cof','Cofactin']}
 #directory to store output during optimization
 tmpdir='/tmp/'+dirname
 start_stim=90 # time stim start sec 
