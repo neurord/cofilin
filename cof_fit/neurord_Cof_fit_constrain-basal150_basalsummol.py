@@ -8,16 +8,16 @@ from ajustador import drawing,loadconc,nrd_fitness
 from ajustador.helpers import converge,save_params
 import os
 
-dirname='cof_opt_150_sum'
+dirname='cof_opt_basal150'
 #name of model xml file for optimization
-model_set='Model_Cof_fitcopasie.xml'
+model_set='Model_Cof_fitbasal.xml'
 #name of experimental data, a simulation file in this case
-exp_name='Bosch_Hedrick_cof-basal150'
+exp_name='Nadia_cof-basal150'
 #molecule to compare between 'experiments' and simulations
-mol={'RacPAK':['RacPAK','RacGTP'],'Cofactin':['Cof', 'Cofactin']}#mol={'RacGTP': ['RacGTP'],'Cof':['Cof','Cofactin']}
+mol={'RacGTP':['RacGTP'],'Cofactin':['Cof', 'Cofactin'],'pCof':['pCof']}#mol={'RacGTP': ['RacGTP'],'Cof':['Cof','Cofactin']}
 #directory to store output during optimization
-tmpdir='/tmp/'+dirname+'updatenormPAK'
-start_stim=90 # time stim start sec 
+tmpdir='/tmp/'+dirname+'basal'
+start_stim=0 # time stim start sec 
 #norm_method ='percent'
 
 
@@ -25,7 +25,7 @@ start_stim=90 # time stim start sec
 iterations=100
 # default popsize=8, use 3 for testing
 popsize=8
-test_size=25#
+test_size=25#25#
 rootdir='./' ### doesn't work if using at
 if not dirname in os.listdir(rootdir):
     os.mkdir(rootdir+dirname)
@@ -38,7 +38,6 @@ exp=loadconc.CSV_conc_set(exp_name,
 #print('***********************************',exp.data[0].waves['Cof'].wave)
 #specify parameters to vary, either from ReactionScheme or InitialConditions
 P = aju.xml.XMLParam
-#Double check. #2
 params = aju.optimize.ParamSet(P('Racact_fwd_rate',1.94e-6, min=2e-8, max=2.8e-4, xpath='//Reaction[@id="RacGDP+Kal--pKalRacGDP"]/forwardRate'),
                                P('Racact_bckd_rate',1.99e-5, fixed='Racact_kcat_rate',constant=4, xpath='//Reaction[@id="RacGDP+Kal--pKalRacGDP"]/reverseRate'),
                                P('Racact_kcat_rate',2.98e-5, min=3e-7, max=3e-3, xpath='//Reaction[@id="pKalRacGDP--pKal+RacGTP"]/forwardRate'),
@@ -53,7 +52,7 @@ params = aju.optimize.ParamSet(P('Racact_fwd_rate',1.94e-6, min=2e-8, max=2.8e-4
                                P('Cofact_fwd_rate',4.22e-5, min=4.2e-7, max=4.2e-3, xpath='//Reaction[@id="pCof+SSH--SSHpCof"]/forwardRate'),
                                P('Cofact_bckd_rate',0.99, fixed='Cofact_kcat_rate',constant=4, xpath='//Reaction[@id="pCof+SSH--SSHpCof"]/reverseRate'),
                                P('Cofact_kcat_rate',0.25, min=0.25e-2, max=0.25e2, xpath='//Reaction[@id="SSHpCof--Cof+SSH"]/forwardRate'),
-                               P('actinact_fwd_rate',2.54e-8, min=2.5e-10, max=2.5e-6, xpath='//Reaction[@id="actin+Cof--Cofactin"]/forwardRate'),
+                               P('actinact_fwd_rate',2.54e-6, min=2.5e-8, max=2.5e-4, xpath='//Reaction[@id="actin+Cof--Cofactin"]/forwardRate'),
                                P('actinact_bckd_rate',0.002, min=0.002e-2, max=0.002e2, xpath='//Reaction[@id="actin+Cof--Cofactin"]/reverseRate'),
                                P('LIMKinact_fwd_rate',0.0005, min=0.0005e-2, max=0.0005e2, xpath='//Reaction[@id="pLIMK+SSH--SSHpLIMK"]/forwardRate'),
                                P('LIMKinact_bckd_rate',0.04, fixed='LIMKinact_kcat_rate',constant=4, xpath='//Reaction[@id="pLIMK+SSH--SSHpLIMK"]/reverseRate'),
