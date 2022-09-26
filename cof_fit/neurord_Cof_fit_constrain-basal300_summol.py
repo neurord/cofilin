@@ -10,13 +10,13 @@ import os
 
 dirname='cof_opt_basal300'
 #name of model xml file for optimization
-model_set='Model_Cof_fitbasal_aju133-811.xml'
+model_set='Model_Cof_fitbasal_aju446-818.xml'
 #name of experimental data, a simulation file in this case
 exp_name='Bosch_Hedrick_cof-basal300'
 #molecule to compare between 'experiments' and simulations
 mol={'RacPAK':['RacPAK','RacGTP'],'Cofactin':['Cof', 'Cofactin']}#mol={'RacGTP': ['RacGTP'],'Cof':['Cof','Cofactin']}
 #directory to store output during optimization
-tmpdir='/tmp/'+dirname+'ajustim'
+tmpdir='/tmp/'+dirname+'ajustimunewversion'
 start_stim=90 # time stim start sec 
 #norm_method ='percent'
 
@@ -39,31 +39,33 @@ exp=loadconc.CSV_conc_set(exp_name,
 #specify parameters to vary, either from ReactionScheme or InitialConditions
 P = aju.xml.XMLParam
 #Double check. #2
-params = aju.optimize.ParamSet(P('Racact_fwd_rate',1.3e-6, min=2e-8, max=2e-4, xpath='//Reaction[@id="RacGDP+Kal--pKalRacGDP"]/forwardRate'),
-                               P('Racact_bckd_rate',4.7e-5, fixed='Racact_kcat_rate',constant=4, xpath='//Reaction[@id="RacGDP+Kal--pKalRacGDP"]/reverseRate'),
-                               P('Racact_kcat_rate',1.2e-5, min=1.5e-7, max=1.5e-3, xpath='//Reaction[@id="pKalRacGDP--pKal+RacGTP"]/forwardRate'),
-                               P('PAKact_fwd_rate',3.1e-5, min=3.1e-7, max=3.1e-3, xpath='//Reaction[@id="RacGTP+PAK--RacGTPPAK"]/forwardRate'),
-                               P('PAKact_bckd_rate',0.004, min=0.004e-2, max=0.004e2, xpath='//Reaction[@id="RacGTP+PAK--RacGTPPAK"]/reverseRate'),
-                               P('LIMKact_fwd_rate',0.0012, min=0.0012e-2, max=0.0012e2, xpath='//Reaction[@id="RacPAK+LIMK--LIMKRacPAK"]/forwardRate'),
-                               P('LIMKact_bckd_rate',1.02, fixed='LIMKact_kcat_rate',constant=4, xpath='//Reaction[@id="RacPAK+LIMK--LIMKRacPAK"]/reverseRate'),
-                               P('LIMKact_kcat_rate',0.25, min=0.3e-2, max=0.3e2, xpath='//Reaction[@id="LIMKRacPAK--RacPAK+pLIMK"]/forwardRate'),
-                               P('SSHact_fwd_rate',3.3e-5, min=3.3e-7, max=3.3e-3, xpath='//Reaction[@id="CaNCamCa4+pSSH--CaNCamCa4pSSH"]/forwardRate'),
-                               P('SSHact_bckd_rate',0.003,fixed='SSHact_kcat_rate',constant=4 , xpath='//Reaction[@id="CaNCamCa4+pSSH--CaNCamCa4pSSH"]/reverseRate'),
-                               P('SSHact_kcat_rate',0.0007, min=0.0007e-2, max=0.0007e2, xpath='//Reaction[@id="CaNCamCa4pSSH--SSH+CaNCamCa4"]/forwardRate'),
-                               P('Cofact_fwd_rate',2.29e-5, min=2.29e-7, max=2.29e-3, xpath='//Reaction[@id="pCof+SSH--SSHpCof"]/forwardRate'),
-                               P('Cofact_bckd_rate',0.56, fixed='Cofact_kcat_rate',constant=4, xpath='//Reaction[@id="pCof+SSH--SSHpCof"]/reverseRate'),
-                               P('Cofact_kcat_rate',0.14, min=0.14e-2, max=0.14e2, xpath='//Reaction[@id="SSHpCof--Cof+SSH"]/forwardRate'),
-                               P('actinact_fwd_rate',4.32e-6, min=4.32e-8, max=4.32e-4, xpath='//Reaction[@id="actin+Cof--Cofactin"]/forwardRate'),
-                               P('actinact_bckd_rate',0.0098, min=0.01e-2, max=0.01e2, xpath='//Reaction[@id="actin+Cof--Cofactin"]/reverseRate'),
-                               P('LIMKinact_fwd_rate',0.001, min=0.001e-2, max=0.001e2, xpath='//Reaction[@id="pLIMK+SSH--SSHpLIMK"]/forwardRate'),
-                               P('LIMKinact_bckd_rate',3.31, fixed='LIMKinact_kcat_rate',constant=4, xpath='//Reaction[@id="pLIMK+SSH--SSHpLIMK"]/reverseRate'),
-                               P('LIMKinact_kcat_rate',0.83, min=0.83e-2, max=0.83e2, xpath='//Reaction[@id="SSHpLIMK--pLIMK+SSH"]/forwardRate'),
-                               P('SSHinact_fwd_rate',2.13e-5, min=2.13e-7, max=2.13e-3, xpath='//Reaction[@id="RacPAK+SSH--SSHRacPAK"]/forwardRate'),
-                               P('SSHinact_bckd_rate',0.18, fixed='SSHinact_kcat_rate',constant=4, xpath='//Reaction[@id="RacPAK+SSH--SSHRacPAK"]/reverseRate'),
-                               P('SSHinact_kcat_rate',0.46, min=0.46e-2, max=0.46e2, xpath='//Reaction[@id="SSHRacPAK--pSSH+RacPAK"]/forwardRate'),
-                               P('Cofinact_fwd_rate',0.0033, min=0.0033e-2, max=0.0033e2, xpath='//Reaction[@id="Cof+pLIMK--pLIMKCof"]/forwardRate'),
-                               P('Cofinact_bckd_rate',0.4, fixed='Cofinact_kcat_rate',constant=4, xpath='//Reaction[@id="Cof+pLIMK--pLIMKCof"]/reverseRate'),
-                               P('Cofinact_kcat_rate',0.1, min=0.1e-2, max=0.1e2, xpath='//Reaction[@id="pLIMKCof--pCof+pLIMK"]/forwardRate'))
+params = aju.optimize.ParamSet(P('Racact_fwd_rate',8.4e-8, min=8.4e-10, max=8e-6, xpath='//Reaction[@id="RacGDP+Kal--pKalRacGDP"]/forwardRate'),
+                               P('Racact_bckd_rate',0.0001, fixed='Racact_kcat_rate',constant=4, xpath='//Reaction[@id="RacGDP+Kal--pKalRacGDP"]/reverseRate'),
+                               P('Racact_kcat_rate',2.7e-5, min=3e-7, max=3e-3, xpath='//Reaction[@id="pKalRacGDP--pKal+RacGTP"]/forwardRate'),
+                               
+                               P('PAKact_fwd_rate',0.00014, min=0.00014e-6, max=0.00014e2, xpath='//Reaction[@id="RacGTP+PAK--RacGTPPAK"]/forwardRate'),
+                               P('PAKact_bckd_rate',0.0008, min=0.0008e-2, max=0.0008e2, xpath='//Reaction[@id="RacGTP+PAK--RacGTPPAK"]/reverseRate'),
+                               P('LIMKact_fwd_rate',0.0048, min=0.0048e-2, max=0.0048e2, xpath='//Reaction[@id="RacPAK+LIMK--LIMKRacPAK"]/forwardRate'),
+                               P('LIMKact_bckd_rate',0.602, fixed='LIMKact_kcat_rate',constant=4, xpath='//Reaction[@id="RacPAK+LIMK--LIMKRacPAK"]/reverseRate'),
+                               P('LIMKact_kcat_rate',0.15, min=0.15e-2, max=0.15e2, xpath='//Reaction[@id="LIMKRacPAK--RacPAK+pLIMK"]/forwardRate'),
+                               P('SSHact_fwd_rate',5.47e-5, min=5.47e-7, max=5.47e-3, xpath='//Reaction[@id="CaNCamCa4+pSSH--CaNCamCa4pSSH"]/forwardRate'),
+                               P('SSHact_bckd_rate',0.01,fixed='SSHact_kcat_rate',constant=4 , xpath='//Reaction[@id="CaNCamCa4+pSSH--CaNCamCa4pSSH"]/reverseRate'),
+                               P('SSHact_kcat_rate',0.0026, min=0.0026e-2, max=0.0026e2, xpath='//Reaction[@id="CaNCamCa4pSSH--SSH+CaNCamCa4"]/forwardRate'),
+                               P('Cofact_fwd_rate',1.99e-5, min=2e-7, max=2e-3, xpath='//Reaction[@id="pCof+SSH--SSHpCof"]/forwardRate'),
+                               P('Cofact_bckd_rate',0.52, fixed='Cofact_kcat_rate',constant=4, xpath='//Reaction[@id="pCof+SSH--SSHpCof"]/reverseRate'),
+                               P('Cofact_kcat_rate',0.13, min=0.13e-2, max=0.13e2, xpath='//Reaction[@id="SSHpCof--Cof+SSH"]/forwardRate'),
+                               P('actinact_fwd_rate',1.7e-6, min=1.7e-8, max=1.7e-4, xpath='//Reaction[@id="actin+Cof--Cofactin"]/forwardRate'),
+                               P('actinact_bckd_rate',0.009, min=0.009e-2, max=0.009e2, xpath='//Reaction[@id="actin+Cof--Cofactin"]/reverseRate'),
+                               P('LIMKinact_fwd_rate',0.0001, min=0.0001e-2, max=0.0001e2, xpath='//Reaction[@id="pLIMK+SSH--SSHpLIMK"]/forwardRate'),
+                               P('LIMKinact_bckd_rate',2.17, fixed='LIMKinact_kcat_rate',constant=4, xpath='//Reaction[@id="pLIMK+SSH--SSHpLIMK"]/reverseRate'),
+                               P('LIMKinact_kcat_rate',0.54, min=0.54e-2, max=0.54e2, xpath='//Reaction[@id="SSHpLIMK--pLIMK+SSH"]/forwardRate'),
+                               P('SSHinact_fwd_rate',1.03e-5, min=1.03e-7, max=1.03e-3, xpath='//Reaction[@id="RacPAK+SSH--SSHRacPAK"]/forwardRate'),
+                               P('SSHinact_bckd_rate',2.46, fixed='SSHinact_kcat_rate',constant=4, xpath='//Reaction[@id="RacPAK+SSH--SSHRacPAK"]/reverseRate'),
+                               P('SSHinact_kcat_rate',0.61, min=0.61e-2, max=0.61e2, xpath='//Reaction[@id="SSHRacPAK--pSSH+RacPAK"]/forwardRate'),
+                               P('Cofinact_fwd_rate',0.00197, min=0.002e-4, max=0.002e2, xpath='//Reaction[@id="Cof+pLIMK--pLIMKCof"]/forwardRate'),
+                               P('Cofinact_bckd_rate',0.92, fixed='Cofinact_kcat_rate',constant=4, xpath='//Reaction[@id="Cof+pLIMK--pLIMKCof"]/reverseRate'),
+                               P('Cofinact_kcat_rate',0.23, min=0.23e-4, max=0.23e2, xpath='//Reaction[@id="pLIMKCof--pCof+pLIMK"]/forwardRate'),
+                               P('PAKin_fwd_rate',0.1e-6, min=0.1e-8, max=0.1e-4,xpath='//Reaction[@id="RacPAK--RacGDP+PAK"]/forwardRate'))
 
 #this command indicates that experiments are from a previous simulation
 ###################### END CUSTOMIZATION #######################################
@@ -91,7 +93,7 @@ for i,p in enumerate(fit.params.unscale(result[0])):
 save_params.save_params(fit,0,1)
 
 #to look at fit history
-aju.drawing.plot_history(fit,fit.measurement,mol_dict=mol)
+#aju.drawing.plot_history(fit,fit.measurement,mol_dict=mol)
 
 '''
 fit[830]                  

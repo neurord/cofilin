@@ -8,9 +8,10 @@ phosphatase reactions take from revision of Gs to improve Ca dep dphos of Dp32--
 
 <!-- Molecules species and diffusion constants -->
 <!-- Cofilin signaling pathway reaction subset -->
-<Specie name="X" id="X" kdiff="0.0" kdiffunit="mu2/s"/>
-<Specie name="XpKal" id="XpKal" kdiff="0.0" kdiffunit="mu2/s"/>
+<Specie name="PP1" id="PP1" kdiff="0.0" kdiffunit="mu2/s"/>
+<Specie name="pKalPP1" id="pKalPP1" kdiff="0.0" kdiffunit="mu2/s"/>
 <Specie name="pKal" id="pKal" kdiff="0.0" kdiffunit="mu2/s"/>
+<Specie name="Kal" id="Kal" kdiff="0.0" kdiffunit="mu2/s"/>
 <Specie name="pKalRac" id="pKalRac" kdiff="0.0" kdiffunit="mu2/s"/>
 
 <!-- Rac pathway -->
@@ -23,6 +24,7 @@ phosphatase reactions take from revision of Gs to improve Ca dep dphos of Dp32--
 <Specie name="PAK" id="PAK" kdiff="7.1" kdiffunit="mu2/s"/>
 <Specie name="RacPAKLIMK" id="RacPAKLIMK" kdiff="0" kdiffunit="mu2/s"/>
 <Specie name="RacPAK" id="RacPAK" kdiff="0.0" kdiffunit="mu2/s"/>
+<Specie name="RacPAKGap" id="RacPAKGap" kdiff="0.0" kdiffunit="mu2/s"/>
 
 <!-- LIMK pathway -->
 <Specie name="LIMK" id="LIMK" kdiff="6.7" kdiffunit="mu2/s"/>
@@ -34,9 +36,12 @@ phosphatase reactions take from revision of Gs to improve Ca dep dphos of Dp32--
 <Specie name="SSH" id="SSH" kdiff="0.0" kdiffunit="mu2/s"/>
 <Specie name="RacPAKSSH" id="RacPAKSSH" kdiff="0" kdiffunit="mu2/s"/>
 <Specie name="CaNCamCa4pSSH" id="CaNCamCa4pSSH" kdiff="0" kdiffunit="mu2/s"/>
-<Specie name="CaNCamCa4" id="CaNCamCa4" kdiff="0" kdiffunit="mu2/s"/>
 <Specie name="Y" id="Y" kdiff="0.0" kdiffunit="mu2/s"/>
 <Specie name="YCaNCamCa4" id="YCaNCamCa4" kdiff="0.0" kdiffunit="mu2/s"/>
+
+<!-- CaN pathway -->
+
+<Specie name="CaNCamCa4" id="CaNCamCa4" kdiff="0" kdiffunit="mu2/s"/>
 
 <!-- Cof pathway -->
 <Specie name="Cof" id="Cof" kdiff="0.01" kdiffunit="mu2/s"/>
@@ -53,23 +58,36 @@ phosphatase reactions take from revision of Gs to improve Ca dep dphos of Dp32--
 Now, the reactions themselves
 ****************************************************************************-->
 
-<!--X+pKal<->XpKal-->
-<Reaction id="X--XpKal" name="X+pKal--XpKal">
-<Reactant specieID="pKal"/>
-<Reactant specieID="X"/>
-<Product specieID="XpKal"/>
-
-<forwardRate> 1e7 </forwardRate>
-<reverseRate> 0 </reverseRate>
-</Reaction>
-
+    
 <!--Y+CaNCamCa4<->YCaNCamCa4-->
 <Reaction id="Y--YCaNCamCa4" name="Y+CaNCamCa4--YCaNCamCa4">
 <Reactant specieID="CaNCamCa4"/>
 <Reactant specieID="Y"/>
 <Product specieID="YCaNCamCa4"/>
 
-<forwardRate> 1e7 </forwardRate>
+<forwardRate> 0.1e-9 </forwardRate>
+<reverseRate> 0 </reverseRate>
+
+</Reaction>
+
+<!--PP1 inactivates Kal -->
+<!--PP1+Kal<->PP1 +pKal-->
+<Reaction id="pKal+PP1--pKalPP1" name="pKal+PP1--pKalPP1">
+<Reactant specieID="pKal"/>
+<Reactant specieID="PP1"/>
+<Product specieID="pKalPP1"/>
+
+<!--forwardRate> 0</forwardRate-->
+<forwardRate> 0.00005e-3 </forwardRate>
+<reverseRate> 0.04e-3 </reverseRate>
+
+</Reaction>
+<Reaction id="pKalPP1--Kal+PP1" name="pKalPP1--Kal+PP1">
+<Reactant specieID="pKalPP1"/>
+<Product specieID="PP1"/>
+<Product specieID="Kal"/>
+
+<forwardRate> 0.01e-3 </forwardRate>
 <reverseRate> 0 </reverseRate>
 
 </Reaction>
@@ -104,6 +122,7 @@ Now, the reactions themselves
 <Reactant specieID="RacGTP"/>
 <Product specieID="RacGap"/>
 
+
 <!--forwardRate> 0</forwardRate-->
 <forwardRate> 0.00022e-3 </forwardRate>
 <reverseRate> 4.82e-3</reverseRate>
@@ -131,6 +150,43 @@ Now, the reactions themselves
 <!--forwardRate> 0</forwardRate-->
 <forwardRate>0.00013805261294491151</forwardRate>
 <reverseRate>0.0007656916634588156</reverseRate>
+
+</Reaction>
+
+<!-- intrinsic inactivation of PAK-->
+<!--RacPAK<->RacGDP+PAK-->
+<Reaction id="RacPAK--RacGDP+PAK" name="RacPAK--RacGDP+PAK">
+<Reactant specieID="RacPAK"/>
+<Product specieID="RacGDP"/>
+<Product specieID="RacPAK"/>
+
+<!--forwardRate> 0</forwardRate-->
+<forwardRate>0.1e-6</forwardRate>
+<reverseRate>0</reverseRate>
+
+</Reaction>
+
+<!--RacPAK inactivation -->
+<!--RacPAK+ Gap<->RacGDP + Gap+PAK-->
+<Reaction id="RacPAK+Gap--GapRacPAK" name="RacPAK+Gap--GapRacPAK">
+<Reactant specieID="Gap"/>
+<Reactant specieID="RacPAK"/>
+<Product specieID="RacPAKGap"/>
+
+<forwardRate> 0</forwardRate>
+<!--forwardRate> 0.00022e-3 </forwardRate-->
+<reverseRate> 4.82e-3</reverseRate>
+
+</Reaction>
+
+<Reaction id="GapRacPAK--RacGDP+Gap" name="GapRacPAK--RacGDP+Gap">
+<Reactant specieID="RacPAKGap"/>
+<Product specieID="RacGDP"/>
+<Product specieID="PAK"/>
+<Product specieID="Gap"/>
+
+<forwardRate> 0.01205e-3 </forwardRate>
+<reverseRate> 0 </reverseRate>
 
 </Reaction>
 
@@ -272,6 +328,7 @@ Now, the reactions themselves
 <forwardRate>1.665604539598831e-06</forwardRate>
 <reverseRate>0.00918627101236707</reverseRate>
 </Reaction>
+
 
 
 </ReactionScheme>

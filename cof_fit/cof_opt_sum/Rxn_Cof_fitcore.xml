@@ -47,7 +47,7 @@ Now, the reactions themselves
 <Reactant specieID="X"/>
 <Product specieID="XRacPAK"/>
 
-<forwardRate> 1e7 </forwardRate>
+<forwardRate> 0.1e-6 </forwardRate>
 <reverseRate> 0 </reverseRate>
 </Reaction>
 
@@ -57,70 +57,13 @@ Now, the reactions themselves
 <Reactant specieID="Y"/>
 <Product specieID="YCaNCamCa4"/>
 
-<forwardRate> 1e7 </forwardRate>
+<forwardRate> 0.1e-6 </forwardRate>
 <reverseRate> 0 </reverseRate>
 
 </Reaction>
 
 
-<!--RacGDP+ pKal<->RacGTP + pKal-->
-<Reaction id="RacGDP+Kal--pKalRacGDP" name="RacGDP+pKal--pKalRacGDP">
-<Reactant specieID="pKal"/>
-<Reactant specieID="RacGDP"/>
-<Product specieID="pKalRac"/>
 
-<forwardRate> 2.79888e-07 </forwardRate>
-<reverseRate> 4.8e-3</reverseRate>
-
-</Reaction>
-
-<Reaction id="pKalRacGDP--pKal+RacGTP" name="pKalRacGDP--pKal+RacGTP">
-<Reactant specieID="pKalRac"/>
-<Product specieID="RacGTP"/>
-<Product specieID="pKal"/>
-
-<forwardRate> 1.2e-3 </forwardRate>
-<reverseRate> 0 </reverseRate>
-
-</Reaction>
-
-
-<!--RacGTP inactivation -->
-<!--RacGTP+ Gap<->RacGDP + Gap-->
-<Reaction id="RacGTP+Gap--GapRacGTP" name="RacGTP+Gap--GapRacGTP">
-<Reactant specieID="Gap"/>
-<Reactant specieID="RacGTP"/>
-<Product specieID="RacGap"/>
-
-<!--forwardRate> 0</forwardRate-->
-<forwardRate> 0.00022e-3 </forwardRate>
-<reverseRate> 4.82e-3</reverseRate>
-
-</Reaction>
-
-<Reaction id="GapRacGTP--RacGDP+Gap" name="GapRacGTP--RacGDP+Gap">
-<Reactant specieID="RacGap"/>
-<Product specieID="RacGDP"/>
-<Product specieID="Gap"/>
-
-<forwardRate> 1.205e-3 </forwardRate>
-<reverseRate> 0 </reverseRate>
-
-</Reaction>
-
-
-<!--RacGTP activate PAK-->
-<!--RacGTP+PAK <->RacPAK-->
-<Reaction id="RacGTP+PAK--RacGTPPAK" name="RacGTP+PAK--RacGTPPAK">
-<Reactant specieID="PAK"/>
-<Reactant specieID="RacGTP"/>
-<Product specieID="RacPAK"/>
-
-<!--forwardRate> 0</forwardRate-->
-<forwardRate> 9.6e-06 </forwardRate>
-<reverseRate> 0.0015 </reverseRate>
-
-</Reaction>
 
 <!--LIMK activated by PAK-->
 <!--PAK+LIMK <->pLIMK+PAK-->
@@ -129,8 +72,8 @@ Now, the reactions themselves
 <Reactant specieID="LIMK"/>
 <Product specieID="RacPAKLIMK"/>
 
-<forwardRate>0.00485182 </forwardRate>
-<reverseRate> 0.353238 </reverseRate>
+<forwardRate>0.0191144 </forwardRate>
+<reverseRate> 1e-12 </reverseRate>
 
 </Reaction>
 
@@ -139,7 +82,7 @@ Now, the reactions themselves
 <Product specieID="pLIMK"/>
 <Product specieID="RacPAK"/>
 
-<forwardRate>0.00875 </forwardRate>
+<forwardRate>2.33938 </forwardRate>
 <reverseRate> 0 </reverseRate>
 
 </Reaction>
@@ -152,8 +95,8 @@ Now, the reactions themselves
 <Reactant specieID="SSH"/>
 <Product specieID="SSHpLIMK"/>
 
-<forwardRate> 0.000175181  </forwardRate>
-<reverseRate> 0.087791 </reverseRate>
+<forwardRate> 0.000600583 </forwardRate>
+<reverseRate> 0.00021423 </reverseRate>
 
 </Reaction>
 
@@ -163,7 +106,7 @@ Now, the reactions themselves
 <Product specieID="SSH"/>
 <Product specieID="LIMK"/>
 
-<forwardRate> 0.0283655 </forwardRate>
+<forwardRate> 0.337446 </forwardRate>
 <reverseRate> 0 </reverseRate>
 </Reaction>
 
@@ -174,8 +117,8 @@ Now, the reactions themselves
         <Reactant specieID="CaNCamCa4"/>
         <Product specieID="CaNCamCa4pSSH"/>
 
-        <forwardRate> 5.31825e-06  </forwardRate>
-        <reverseRate>0.000487042  </reverseRate>
+        <forwardRate>  1.69154e-6 </forwardRate>
+        <reverseRate> 3.32867e-5 </reverseRate>
 </Reaction>
 
 <!--  CaNCam+pSSH <->CaNCam+SSH       -->
@@ -184,7 +127,7 @@ Now, the reactions themselves
         <Product specieID="CaNCamCa4"/>
         <Product specieID="SSH"/>
 	
-        <forwardRate> 0.000122 </forwardRate>
+        <forwardRate>0.0109215 </forwardRate>
         <reverseRate> 0 </reverseRate>
 </Reaction>
 
@@ -194,8 +137,8 @@ Now, the reactions themselves
 <Reactant specieID="SSH"/>
 <Product specieID="RacPAKSSH"/>
 
-<forwardRate> 0.000117539 </forwardRate>
-<reverseRate> 0.0914291  </reverseRate>
+<forwardRate> 4.30563e-7 </forwardRate>
+<reverseRate> 0.275724  </reverseRate>
 </Reaction>
 
 <Reaction id="SSHRacPAK--pSSH+RacPAK" name="SSHRacPAK--pSSH+RacPAK">
@@ -203,7 +146,7 @@ Now, the reactions themselves
 <Product specieID="pSSH"/>
 <Product specieID="RacPAK"/>
 
-<forwardRate> 0.0225 </forwardRate>
+<forwardRate> 2.22113e-5 </forwardRate>
 <reverseRate> 0 </reverseRate>
 
 </Reaction>
@@ -215,8 +158,8 @@ Now, the reactions themselves
 <Reactant specieID="pLIMK"/>
 <Product specieID="pLIMKCof"/>
 
-<forwardRate> 0.0013069 </forwardRate>
-<reverseRate> 0.066559 </reverseRate>
+<forwardRate> 9.6972e-5 </forwardRate>
+<reverseRate> 0.0741395 </reverseRate>
 
 </Reaction>
 
@@ -225,7 +168,7 @@ Now, the reactions themselves
 <Product specieID="pLIMK"/>
 <Product specieID="pCof"/>
 
-<forwardRate> 0.017 </forwardRate>
+<forwardRate> 0.00276918 </forwardRate>
 <reverseRate> 0 </reverseRate>
 </Reaction>
 
@@ -237,8 +180,8 @@ Now, the reactions themselves
 <Reactant specieID="SSH"/>
 <Product specieID="SSHpCof"/>
 
-<forwardRate>1.08022e-05  </forwardRate>
-<reverseRate>1.27473 </reverseRate>
+<forwardRate>1.71578e-5 </forwardRate>
+<reverseRate>5.78416 </reverseRate>
 
 </Reaction>
 
@@ -247,19 +190,10 @@ Now, the reactions themselves
 <Product specieID="SSH"/>
 <Product specieID="Cof"/>
 
-<forwardRate> 0.35 </forwardRate>
+<forwardRate>0.112397</forwardRate>
 <reverseRate> 0 </reverseRate>
 </Reaction>
 
-<!--Actin binding to Cof -->
-<Reaction id= "actin+Cof--Cofactin" name="actin+Cof--Cofactin">
-<Reactant specieID="actin"/>
-<Reactant specieID="Cof"/>
-<Product specieID="Cofactin"/>
-
-<forwardRate> 5e-6 </forwardRate>
-<reverseRate> 0.001 </reverseRate>
-</Reaction>
 
 
 
