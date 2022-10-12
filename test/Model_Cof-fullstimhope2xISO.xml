@@ -7,9 +7,9 @@
 	 reaction data brought in from other files --> 
 
 	  <xi:include href="Rxn_Cof_hope2x.xml" />
-          <xi:include href="../../Morph_dend_0.6um_spine1.xml" />        
+          <xi:include href="../Morph_dend_0.6um_spine1.xml" />        
           <xi:include href="IC_Cof-fullhope2xh5_update.xml" />
-          <xi:include href="../../Out_Cof_test.xml" />
+          <xi:include href="../Out_Cof_test.xml" />
 	  <xi:include href="Stim_Cof-ISO.xml" />
 	   
     <!--2D means the morphology is interpreted like a flatworm, 3D for
