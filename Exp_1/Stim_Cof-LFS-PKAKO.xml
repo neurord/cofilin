@@ -4,15 +4,15 @@
   <!--PKAc inhibitor --> 
 <InjectionStim specieID="IP" injectionSite="sa1[0].pointA">
         <onset>0 </onset>
-        <duration>1000</duration>
-        <rate> 100</rate>
+        <duration>1000000</duration>
+        <rate> 10</rate>
 
 </InjectionStim>
 
 <InjectionStim specieID="IP" injectionSite="dend:submembrane">
         <onset>0</onset>
-        <duration>1000</duration>
-        <rate>50</rate>
+        <duration>1000000</duration>
+        <rate>5</rate>
    
 </InjectionStim>
  <!--Ligan -->
@@ -34,10 +34,10 @@
 
   <!--Ca -->
 
- <InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
         <onset>               200000          </onset>
         <duration>        1         </duration> 
-       	<rate>               3000      </rate>
+       	<rate>               1500      </rate>
       	<period>        200             </period>
 	<end>          380000           </end>
 </InjectionStim>
@@ -46,7 +46,7 @@
 <InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
            <onset>               200002          </onset>
         <duration>        3         </duration> 
-       	<rate>              129      </rate>
+       	<rate>              70      </rate>
       	<period>        200             </period>
 	<end>          380000           </end>
 </InjectionStim>
@@ -54,7 +54,7 @@
 <InjectionStim specieID="Ca" injectionSite="dend:submembrane">
            <onset>               200000          </onset>
         <duration>        1         </duration> 
-       	<rate>               300      </rate>
+       	<rate>               130      </rate>
       	<period>        200             </period>
 	<end>          380000           </end>
 </InjectionStim>
@@ -63,11 +63,10 @@
 <InjectionStim specieID="Ca" injectionSite="dend:submembrane">
         <onset>               200002  </onset>
         <duration>        3         </duration> 
-       	<rate>               20      </rate>
+       	<rate>               10      </rate>
       	<period>        200             </period>
 	<end>          380000           </end>
 </InjectionStim>
-
 
 
 

@@ -18,13 +18,13 @@ exp_name='Bosch_Hedrick_cof-basal300'
 #molecule to compare between 'experiments' and simulations
 mol={'RacPAK':['RacPAK','RacGTP'],'Cofactin':['Cof', 'Cofactin']}#mol={'RacGTP': ['RacGTP'],'Cof':['Cof','Cofactin']}
 #directory to store output during optimization
-tmpdir='/tmp/'+dirname
+tmpdir='/tmp/'+dirname+'newversionNEW'
 start_stim=30 # time stim start sec 
 #norm_method ='percent'
 
 
 # number of iterations, use 1 for testing
-iterations=50
+iterations=100
 # default popsize=8, use 3 for testing
 popsize=8
 test_size=25
@@ -52,9 +52,6 @@ params = aju.optimize.ParamSet(P('Racact_fwd_rate',8.4e-8, min=9e-10, max=9e-6, 
                                P('LIMKact_fwd_rate',0.103e-3, min=0.103e-5, max=0.103e-1, xpath='//Reaction[@id="RacPAK+LIMK--LIMKRacPAK"]/forwardRate'),
                                P('LIMKact_bckd_rate',0.333, fixed='LIMKact_kcat_rate',constant=4, xpath='//Reaction[@id="RacPAK+LIMK--LIMKRacPAK"]/reverseRate'),
                                P('LIMKact_kcat_rate',0.083, min=0.083e-2, max=0.083e2, xpath='//Reaction[@id="LIMKRacPAK--RacPAK+pLIMK"]/forwardRate'),
-                               P('LIMKactPKAc_fwd_rate',0.3e-3, fixed='LIMKact_fwd_rate', constant=3,xpath='//Reaction[@id="PKAc+LIMK--LIMKPKAc"]/forwardRate'),
-                               P('LIMKactPKAc_bckd_rate',1.0, fixed='LIMKact_kcat_rate',constant=4, xpath='//Reaction[@id="PKAc+LIMK--LIMKPKAc"]/reverseRate'),
-                               P('LIMKactPKAc_kcat_rate',0.25, fixed='LIMKact_kcat_rate',constant=3, xpath='//Reaction[@id="LIMKPKAc--PKAc+pLIMK"]/forwardRate'),
                                P('SSHact_fwd_rate',4.89e-5, min=4.89e-7, max=4.89e-3, xpath='//Reaction[@id="CaNCamCa4+pSSH--CaNCamCa4pSSH"]/forwardRate'),
                                P('SSHact_bckd_rate',0.0005,fixed='SSHact_kcat_rate',constant=4 , xpath='//Reaction[@id="CaNCamCa4+pSSH--CaNCamCa4pSSH"]/reverseRate'),
                                P('SSHact_kcat_rate',0.00012, min=0.00012e-2, max=0.00012e2, xpath='//Reaction[@id="CaNCamCa4pSSH--SSH+CaNCamCa4"]/forwardRate'),
@@ -83,6 +80,7 @@ fit = aju.optimize.Fit(tmpdir, exp, model_set, None, fitness, params,
                        _result_constructor=aju.xml.NeurordResult)
 fit.load()
 fit.do_fit(iterations, sigma=0.3,popsize=popsize)
+save_params.save_params(fit,0,1)
 mean_dict,std_dict,CV=converge.iterate_fit(fit,test_size,popsize)
 ########################################### Done with fitting
 
