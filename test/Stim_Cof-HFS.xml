@@ -26,9 +26,9 @@
  
 <InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
            <onset>               200000          </onset>
-        <duration>        3         </duration> 
-       	<rate>               1787.68     </rate>
-      	
+           <duration>        3         </duration>
+       	   <rate>               1787.68     </rate>
+
 </InjectionStim>
 
 <InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
@@ -110,6 +110,7 @@
       	<period>        10             </period>
 	<end>          201000           </end>
 </InjectionStim>
+
 
 
 </StimulationSet>

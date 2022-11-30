@@ -1,6 +1,7 @@
 <InitialConditions>
   <ConcentrationSet>
 
+
     <NanoMolarity specieID="KalCKpCamCa4" value="0.013" />
     <NanoMolarity specieID="KalCKCamCa4" value="4.435" />
     <NanoMolarity specieID="KalPKAc" value="0.279" />
@@ -16,8 +17,9 @@
 
     <NanoMolarity specieID="CaNCamCa4pSSH" value="203.236" />
     <NanoMolarity specieID="RacPAKSSH" value="0.293" />
+
 <NanoMolarity specieID="pSSH" value="1570.353" />
-     
+    
 
     <NanoMolarity specieID="RacPAKLIMK" value="9.695" />
     <NanoMolarity specieID="PKAcLIMK" value="0.968" />
