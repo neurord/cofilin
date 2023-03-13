@@ -73,7 +73,7 @@
 ## This allows tasks to run on any set of cores in the cluster.  Programs can
 ## use this approache in combination with threads (if designed to).
 ## In that case, use parameters from here and the "Parallel Threads" section.
-##SBATCH --ntasks 10         # Number of processes you plan to launch
+#SBATCH --ntasks 10         # Number of processes you plan to launch
 ##SBATCH --nodes 3           # If you want some control over how tasks are
                                #    distributed on nodes.  <T> >= <N>
 ##SBATCH --ntasks-per-node 5 # If you want more control over how tasks are

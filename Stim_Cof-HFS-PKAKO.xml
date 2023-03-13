@@ -131,19 +131,19 @@
 
 <InjectionStim specieID="Cbuff" injectionSite="sa1[0].pointA">
            <onset>               301000          </onset>
-        <duration>        50         </duration> 
-       	<rate>            450        </rate>
-	<period>        1000             </period>
-	<end>         301010           </end>
+        <duration>        1000         </duration> 
+       	<rate>            21        </rate>
+	<period>        2000             </period>
+	<end>         302060           </end>
 	 
 </InjectionStim>
 
 <InjectionStim specieID="Cbuff" injectionSite="dend:submembrane">
            <onset>              301000          </onset>
-        <duration>       50         </duration> 
-       	<rate>           450        </rate>
-	<period>        1000             </period>
-	<end>          301010           </end>
+        <duration>       1000         </duration> 
+       	<rate>           21        </rate>
+	<period>        2000             </period>
+	<end>          302060           </end>
 	 
 </InjectionStim>
 

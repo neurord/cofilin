@@ -77,7 +77,7 @@
     <NanoMolarity specieID="LOut" value="2500009.315" />
 
 <NanoMolarity specieID="IP" value="0" />
-
+<NanoMolarity specieID="CB" value="3500000" />
   </ConcentrationSet>
 
   

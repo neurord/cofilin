@@ -98,4 +98,4 @@ module load HDFView/3.1.1
 ##module load openjdk/11.0.2-k2
 
 ## Run your program or script
-java -Djava.library.path='/cm/shared/apps/HDFView/3.1.1/lib' -jar /home/nminingo/neurord-3.3.0-all-deps.jar -t 1200000 -Dneurord.trials=5 Model_Cof_5um3spines-LFS.xml Model_Cof_5um3spines-ALFS-Bnone
+java -Djava.library.path='/cm/shared/apps/HDFView/3.1.1/lib' -jar /home/nminingo/neurord-3.3.0-all-deps.jar -t 1200000 -Dneurord.trials=10 Model_Cof_5um3spines-LFS.xml Model_Cof_5um3spines-ALFS-Bnone

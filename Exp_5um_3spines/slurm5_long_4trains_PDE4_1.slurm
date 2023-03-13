@@ -76,7 +76,7 @@
 #SBATCH --ntasks 10         # Number of processes you plan to launch
 ##SBATCH --nodes 2           # If you want some control over how tasks are
                                #    distributed on nodes.  <T> >= <N>
-#SBATCH --ntasks-per-node 5 # If you want more control over how tasks are
+##SBATCH --ntasks-per-node 5 # If you want more control over how tasks are
                                #    distributed on nodes.  <T> = <N> * <Z>
 
 ## ----- Array Jobs -----
