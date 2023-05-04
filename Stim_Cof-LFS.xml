@@ -3,7 +3,7 @@
   <!--onset and duration in ms, rate in particles/ms-->
  <!--Ligan -->
   <InjectionStim specieID="L" injectionSite="sa1[0].pointA">
-        <onset>300000</onset>
+        <onset>100000</onset>
         <duration>180000</duration>
         <rate>0.015</rate>
      
@@ -11,7 +11,7 @@
 </InjectionStim>
 
 <InjectionStim specieID="L" injectionSite="dend:submembrane">
-        <onset>300000</onset>
+        <onset>100000</onset>
         <duration>180000</duration>
         <rate>0.0015</rate>
         
@@ -21,37 +21,37 @@
   <!--Ca -->
 
  <InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
-        <onset>               300000          </onset>
+        <onset>               100000          </onset>
         <duration>        1         </duration> 
        	<rate>               1500      </rate>
       	<period>        200             </period>
-	<end>          480000           </end>
+	<end>          280000           </end>
 </InjectionStim>
 
 
 <InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
-           <onset>               300002          </onset>
+           <onset>               100002          </onset>
         <duration>        3         </duration> 
        	<rate>              70      </rate>
       	<period>        200             </period>
-	<end>          480000           </end>
+	<end>          280000           </end>
 </InjectionStim>
 
 <InjectionStim specieID="Ca" injectionSite="dend:submembrane">
-           <onset>               300000          </onset>
+           <onset>               100000          </onset>
         <duration>        1         </duration> 
        	<rate>               130      </rate>
       	<period>        200             </period>
-	<end>          480000           </end>
+	<end>          280000           </end>
 </InjectionStim>
 
 
 <InjectionStim specieID="Ca" injectionSite="dend:submembrane">
-        <onset>               300002  </onset>
+        <onset>               100002  </onset>
         <duration>        3         </duration> 
        	<rate>               10      </rate>
       	<period>        200             </period>
-	<end>          480000           </end>
+	<end>          280000           </end>
 </InjectionStim>
 
 
