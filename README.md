@@ -9,7 +9,7 @@ Model files for simulating the cofilin signaling pathway underlying hippocampal 
 
     3. Cofilin activation via Ca/CaMKII and cAMP/PKA: Rac, PAK, SSH and LIMK 
 
-  .. figure:: https://github.com/neurord/cofilin/blob/master/Cofilin_diagram.jpg
+   figure:: https://github.com/neurord/cofilin/blob/master/Cofilin_diagram.jpg
         :alt: ERK signaling pathwway diagram
         :figclass: align-center 
     
@@ -20,7 +20,7 @@ Model files for simulating the cofilin signaling pathway underlying hippocampal 
 
 Model_Cofxxx.xml contains the entire model specification, which combines Reaction file (*Rxn_Cof*.xml*), Morphology file (*Morph*.xml*), initial conditions file (*IC_Cof*.xml*), output file (*Out_Cof*.xml*) and stimulation (*Stim_Cof*.xml*). To run simulations, use NeuroRDv3.3.0: 
 
- 	java -jar /path/to/neurord-3.2.4-all-deps.jar /path/to/Modelfile.xml`` 
+ 	java -jar /path/to/neurord-3.2.4-all-deps.jar /path/to/Modelfile.xml
 
  All output files were first processed using nrdh5_analv2 in https://github.com/neurord/NeuroRDanal 
 
