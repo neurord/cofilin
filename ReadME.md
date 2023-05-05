@@ -17,8 +17,7 @@
     **Figure: Schematic representation of signaling pathways activating Cofilin**
     
 
- **Note**: *[morphology.pdf](https://github.com/neurord/cofilin/files/11410689/morphology.pdf)
-1 and 2 are (from published model (Jȩdrzejewska-Szmek, J., Luczak, V., Abel, T., Blackwell, K.T., 2017. β-adrenergic signaling broadly contributes to LTP induction. PLOS Computational Biology 13, e1005657.)* 
+ **Note**: *1 and 2 are (from published model (Jȩdrzejewska-Szmek, J., Luczak, V., Abel, T., Blackwell, K.T., 2017. β-adrenergic signaling broadly contributes to LTP induction. PLOS Computational Biology 13, e1005657.)* 
 
 Model_Cofxxx.xml contains the entire model specification, which combines Reaction file (*Rxn_Cof*.xml*), Morphology file (*Morph*.xml*), initial conditions file (*IC_Cof*.xml*), output file (*Out_Cof*.xml*) and stimulation (*Stim_Cof*.xml*). To run simulations, use NeuroRDv3.3.0: 
 
