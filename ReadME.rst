@@ -10,7 +10,7 @@
 
     3. Cofilin activation via Ca/CaMKII and cAMP/PKA: Rac, PAK, SSH and LIMK 
 
-   figure:: https://github.com/neurord/cofilin/blob/master/Cofilin_diagram.jpg
+   .. figure:: https://github.com/neurord/cofilin/blob/master/Cofilin_diagram.jpg
         :alt: ERK signaling pathwway diagram
         :figclass: align-center 
     
