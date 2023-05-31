@@ -8,10 +8,10 @@
           <xi:include href="../Rxn_Cof.xml" />
           <xi:include href="../Morph_dend_0.6um_spine1.xml" />
 	  <!--xi:include href="IC_Cof.xml" /-->
-	  <xi:include href="IC_Cofh5_update_PKAKO.xml" />
+	  <xi:include href="IC_Cofh5_updateh5_updateh5_update_PKAKO.xml" />
           <xi:include href="../Out_Cof.xml" />
-	  <xi:include href="Stim_Cof-PKAKO.xml" />       
-    <!--2D means the morphology is interpreted like a flatworm, 3D for
+
+	  <!--2D means the morphology is interpreted like a flatworm, 3D for
 
 	roundworms. The 2D case is good for testing as it is easy to visualize the
 

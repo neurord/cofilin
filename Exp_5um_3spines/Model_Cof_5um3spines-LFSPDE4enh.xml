@@ -8,7 +8,7 @@
 
           <xi:include href="../Rxn_Cof.xml" />
           <xi:include href="../Morph_5um_dend_spines.xml" />       
-          <xi:include href="../IC_Cofh5_update_PDE4enh.xml" />
+          <xi:include href="../IC_Cofh5_update_PDE4enhh5_update_PDE4enh.xml" />
           <xi:include href="../Out_Cof.xml" />
 	  <xi:include href="../Stim_Cof-LFS.xml" />
 	   

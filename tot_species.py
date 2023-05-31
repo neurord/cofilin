@@ -19,9 +19,9 @@ sub_species={'Kal':['Kal','KalCKCamCa4','KalCKpCamCa4','KalPKAc','pKal','pKalPP1
              'PDE1':['PDE1','PDE1CamCa4','PDE1CamCa4cAMP']}
 '''
 sub_species={'PKA':['PKA'],'PKAr':['PKA','PKAr','PKAcAMP2','PKAcAMP4'],
-             'PKAc':['PKAc','KalPKAc','PKAcLIMK','PKAc_PDE4_cAMP','PKAcPDE4','PKAcLR','PKAcpLR','PKAcppLR'],'actCof':['Cof','pLIMKCof','Cofactin','SSHpCof'],'InCof':['pCof'],'actRac':['RacGTP','RacPAK']}
+             'PKAc':['PKAc','KalPKAc','PKAcLIMK','PKAc_PDE4_cAMP','PKAcPDE4','PKAcLR','PKAcpLR','PKAcppLR'],'actCof':['Cof','Cofactin'],'InCof':['pCof'],'actRac':['RacGTP','RacPAK'], 'totCof':['Cof','Cofactin','pCof','SSHpCof','pLIMKCof']}
 
-tot_species=['Rac','SSH','LIMK','Kal','PKA','actCof','InCof','actRac']#['ncx','pmca','PKAc','Cof','LIMK','SSH','Rac','Kal','PAK','Cam','CaN','PKAr','actin','Gap','CK','PP1','Ip35','AC1','AC8','PDE4','PDE1','Epac','Calbin']#
+tot_species=['totCof','actCof','InCof']#['ncx','pmca','PKAc','Cof','LIMK','SSH','Rac','Kal','PAK','Cam','CaN','PKAr','actin','Gap','CK','PP1','Ip35','AC1','AC8','PDE4','PDE1','Epac','Calbin']#
 weight={}
 
 

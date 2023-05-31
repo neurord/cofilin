@@ -51,8 +51,8 @@ def measurments(region,tindex_dict,denom_mol,denom_array,num_array):
     return ratio_meas
 
 #create total molecues
-#total_array={to_mol:{reg:np.zeros(len(files_df)) for reg in region} for to_mol in tot_mol.keys()}
 def total_species (tot_mol,region,files_df,exp_name):
+    total_array={to_mol:{reg:np.zeros(len(files_df)) for reg in region} for to_mol in tot_mol.keys()}
     for t_mol, l_mol in tot_mol.items():
         for reg in region:
             for mol in l_mol:
@@ -62,6 +62,9 @@ def total_species (tot_mol,region,files_df,exp_name):
 
 def ratio_accrosstime(index,files_df,region,denom_mol,num_mol,mov_avg_filt,exp_name):
     #this is used to calculate ratio accross time
+    denom_array={reg:np.zeros(len(files_df)) for reg in region}
+    num_array={reg:np.zeros(len(files_df)) for reg in region}
+
     for reg in region:
         if not denom_mol:
             denom_array[reg]=1
@@ -80,7 +83,7 @@ def ratio_accrosstime(index,files_df,region,denom_mol,num_mol,mov_avg_filt,exp_n
     if filt_length>1:   
         for reg in ratio.keys():
                 ratio[reg]=np.convolve(mov_avg_filt,ratio[reg],'same')
-    return ratio
+    return ratio, denom_array, num_array
 
 ###variable###
 ######change everytime#####
@@ -104,67 +107,65 @@ plot=0
 main_col,files_df=get_data(files_folder,globpattern)
 region=np.unique([r.split("_")[-1] for r in main_col if r!='Time' and not r.endswith('All')])#fix for all
 #create arrays for denominators or numerators mol
-denom_array={reg:np.zeros(len(files_df)) for reg in region}
-num_array={reg:np.zeros(len(files_df)) for reg in region}
-
 #ratio accross time
-ratio_accross=ratio_accrosstime(index,files_df,region,denom_mol,num_mol,mov_avg_filt,exp_name)
+ratio_accross,denom_array,num_array=ratio_accrosstime(index,files_df,region,denom_mol,num_mol,mov_avg_filt,exp_name)
 #ratio at an interval of time       
 tindex_dict={}
 for t in time:
     tindex_dict[tuple(t)]=(index(t[0],files_df),index(t[1],files_df))
 ratio_interval=measurments(region,tindex_dict,denom_mol,denom_array,num_array)
 #total molecules calling
-total_array={to_mol:{reg:np.zeros(len(files_df)) for reg in region} for to_mol in tot_mol.keys()}
 total_molecules=total_species(tot_mol,region,files_df,exp_name)
+
+##############ploting###########
+
+#ratio
 
 for reg,source in ratio_interval.items():
     labl=reg
-    for inter, data in source.items():
-        plt.bar([str(i) for i in inter],data,label=labl)
+    plt.bar([str(i) for i in source.keys()], [data for data in source.values()],label=labl)
     plt.legend()
-    plt.show()
-
+   
 ###################pairing
-'''
-#get molecules list 
-mol_list=[]
-pair_ext={reg:[] for reg in region}
-for m in files_df.columns:
-    mol_list.append(m.split('_')[0])
-    mollist=np.unique(mol_list)
-for reg in region:
-    for pair in mol_pairs:
-        pair_ext[reg][pair]=[]
-        for mol in pair:
-          pair_fullname=mol+"_"+exp_name+"_"+reg  
-          pair_ext[pair][reg].append(pair_fullname)
-'''
 
 for pair in mol_pairs:
-    fig=[]
-    for reg in region:
-        labl=reg
-        plt.figure()
-        plt.title('---'.join(pair))
+    #fig=[]
+    fig,axes=plt.subplots(len(region),1,sharex=True)
+    fig.suptitle('---'.join(pair))
+    for ax,reg in enumerate(region):
+        labl=reg          
         if pair[0] and pair[1] in total_molecules:
-            X=list(total_molecules[pair[0]])
-            Y=list(total_molecules[pair[1]])
+            X=total_molecules[pair[0]][reg]
+            Y=total_molecules[pair[1]][reg]
+            axes[ax].plot(X,Y, label=labl, linestyle='--')
         elif pair[0] in total_molecules:
-            X=list(total_molecules[pair[0]])
+            X=total_molecules[pair[0]][reg]
             Y=files_df[pair[1]+"_"+exp_name+"_"+reg]
+            axes[ax].plot(X,Y, label=labl, linestyle='--')
         elif pair[1] in total_molecules:
             X=files_df[pair[1]+"_"+exp_name+"_"+reg]
-            Y=list(total_molecules[pair[0]])
+            Y=total_molecules[pair[0]][reg]
+            axes[ax].plot(X,Y, label=labl, linestyle='--')
         else:
             X=files_df[pair[0]+"_"+exp_name+"_"+reg]
             Y=files_df[pair[1]+"_"+exp_name+"_"+reg]
-        f,a=plt.subplots(len(pair),len(reg))
-        plt.plot(X,Y, label=labl, linestyle='--')
-        fig.append(f)
-        plt.xlabel(pair[1])
-        plt.ylabel(pair[0])
-        plt.legend()
-        plt.show()
+            axes[ax].plot(X,Y, label=labl, linestyle='--')
+        
+        axes[ax].legend()
+        axes[ax].set_ylabel(pair[1])
+    axes[ax].set_xlabel(pair[0])
+    #plt.show()
         
 
+#ratio accross time
+import numpy
+times=np.unique(files_df.Time)[~numpy.isnan(np.unique(files_df.Time))]
+#Times=times[~numpy.isnan(times)]#somehow, shape is change so used numpy
+fig,axes=plt.subplots(len(reg),1,sharex=True)
+#fig.suptitle('---'.join(str(list(num_mol),'/',list(denom_mol))))
+for ax,reg in enumerate(ratio_accross.keys()):
+    labl=reg
+    axes[ax].plot(times,ratio_accross[reg],label=labl)  
+    axes[ax].legend()
+    axes[ax].set_ylabel('ratio')
+axes[ax].set_xlabel('Time')
