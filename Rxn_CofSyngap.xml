@@ -161,10 +161,7 @@ phosphatase reactions take from revision of Gs to improve Ca dep dphos of Dp32--
   <Specie name="CB"            id="CB"            kdiff="0"   kdiffunit="mu2/s"/>
   <Specie name="CaB"      id="CaB" kdiff="0" kdiffunit="mu2/s"/>
 
-  <Specie name="SynGap"                              id="SynGap"                kdiff="0.25"     kdiffunit="mu2/s"/>
-  <Specie name="pSynGap"                             id="pSynGap"               kdiff="0.25"     kdiffunit="mu2/s"/>
-  <Specie name="CKpCamCa4SynGap"                    id="CKpCamCa4SynGap"               kdiff="0.25"     kdiffunit="mu2/s"/>
-
+ 
 <!--****************************************************************************
 Now, the reactions themselves
 ****************************************************************************-->

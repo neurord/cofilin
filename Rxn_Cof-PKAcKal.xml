@@ -74,10 +74,10 @@ phosphatase reactions take from revision of Gs to improve Ca dep dphos of Dp32--
     <Specie name="CamCa2N"           id="CamCa2N"           kdiff="11"    kdiffunit="mu2/s"/>
     <Specie name="CamCa4"            id="CamCa4"            kdiff="11"    kdiffunit="mu2/s"/>
     
-    <Specie name="CK"                                  id="CK"                    kdiff="0.32"     kdiffunit="mu2/s"/>
-    <Specie name="CKp"                                 id="CKp"                   kdiff="0.32"     kdiffunit="mu2/s"/>
-    <Specie name="CKCamCa4"                            id="CKCamCa4"              kdiff="0.32"     kdiffunit="mu2/s"/>
-    <Specie name="CKpCamCa4"                           id="CKpCamCa4"             kdiff="0.32"     kdiffunit="mu2/s"/>
+    <Specie name="CK"                                  id="CK"                    kdiff="3.6"     kdiffunit="mu2/s"/>
+    <Specie name="CKp"                                 id="CKp"                   kdiff="3.6"     kdiffunit="mu2/s"/>
+    <Specie name="CKCamCa4"                            id="CKCamCa4"              kdiff="3.6"     kdiffunit="mu2/s"/>
+    <Specie name="CKpCamCa4"                           id="CKpCamCa4"             kdiff="3.6"     kdiffunit="mu2/s"/>
     
     <Specie name="PP1"                                 id="PP1"               kdiff="0"    kdiffunit="mu2/s"/>
     <Specie name="CKpPP1"                              id="CKpPP1"            kdiff="0"    kdiffunit="mu2/s"/>
@@ -166,7 +166,7 @@ phosphatase reactions take from revision of Gs to improve Ca dep dphos of Dp32--
   <Specie name="CB"            id="CB"            kdiff="0"   kdiffunit="mu2/s"/>
   <Specie name="CaB"      id="CaB" kdiff="0" kdiffunit="mu2/s"/>
 
-  
+ 
 <!--****************************************************************************
 Now, the reactions themselves
 ****************************************************************************-->
@@ -224,8 +224,8 @@ Now, the reactions themselves
 <Reactant specieID="PKAc"/>
 <Product specieID="KalPKAc"/>
 
-<forwardRate>0.00030e-3</forwardRate>
-<reverseRate> 2.4e-3</reverseRate>
+<forwardRate>0</forwardRate>
+<reverseRate>0</reverseRate>
 
 
 </Reaction>
@@ -234,7 +234,7 @@ Now, the reactions themselves
 <Product specieID="PKAc"/>
 <Product specieID="pKal"/>
 
-<forwardRate>0.6e-3 </forwardRate>
+<forwardRate>0 </forwardRate>
 <reverseRate> 0 </reverseRate>
 
 </Reaction>
