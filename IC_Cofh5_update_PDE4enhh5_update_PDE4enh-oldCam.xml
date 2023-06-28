@@ -41,7 +41,7 @@
     <NanoMolarity specieID="CKpCamCa4" value="0.0" />
     <NanoMolarity specieID="Complex" value="0.01" />
     <NanoMolarity specieID="pComplex" value="0.01" />  
-    <NanoMolarity specieID="PP1" value="9921.7177" />
+    <NanoMolarity specieID="PP1" value="10921.7177" />
     <NanoMolarity specieID="CKpPP1" value="0.0" />
     <NanoMolarity specieID="CKpCamCa4PP1" value="0.0" />
 
@@ -51,6 +51,7 @@
     <NanoMolarity specieID="NgCam" value="19150.7005" />
 
     <NanoMolarity specieID="Ca" value="51.5395" />
+    <NanoMolarity specieID="Caext" value="2000000" />
     <NanoMolarity specieID="Caext" value="1789972.2108" />
     <NanoMolarity specieID="Calbin" value="149965.6203" />
     <NanoMolarity specieID="CalbinC" value="10991.3206" />
@@ -131,10 +132,10 @@
     <NanoMolarity specieID="PKAcAMP2" value="370.8771" />
     <NanoMolarity specieID="PKAcAMP4" value="3.5238" />
     
-    <NanoMolarity specieID="ncx" value="5766.6541" />
-    <NanoMolarity specieID="ncxCa" value="298.6397" />
-    <NanoMolarity specieID="pmca" value="815.7534" />
-    <NanoMolarity specieID="pmcaCa" value="214.9501" />
+     <NanoMolarity specieID="ncx" value="0.01" />
+    <NanoMolarity specieID="ncxCa" value="0.01" />
+    <NanoMolarity specieID="pmca" value="0.01" />
+    <NanoMolarity specieID="pmcaCa" value="0.01" />
 
     <NanoMolarity specieID="Kal" value="3545.0916" />
     <NanoMolarity specieID="pKal" value="54.6185" />
@@ -170,17 +171,18 @@
     <NanoMolarity specieID="pKalRac" value="344.2455" />
     
     <NanoMolarity specieID="RCapGDP" value="7663.3925" />
-
+ <NanoMolarity specieID="RCap" value="0.01" />
     <NanoMolarity specieID="SCappSSH" value="17808.6053" />
-
+ <NanoMolarity specieID="SCap" value="0.01" />
      </ConcentrationSet>
 
   <ConcentrationSet region="neck">
     
-    <NanoMolarity specieID="ncx" value="48185.6346" />
-    <NanoMolarity specieID="ncxCa" value="2556.6929" />
-    <NanoMolarity specieID="pmca" value="4878.4676" />
-    <NanoMolarity specieID="pmcaCa" value="1111.9461" />
+    <NanoMolarity specieID="ncx" value="20000" />
+    <NanoMolarity specieID="ncxCa" value="2000" />
+    <NanoMolarity specieID="pmca" value="2000" />
+    <NanoMolarity specieID="pmcaCa" value="970" />
+    
     
   </ConcentrationSet>
   
@@ -248,9 +250,9 @@
     <PicoSD specieID="pKalRac" value="1.5222" />
     
     <PicoSD specieID="RCapGDP" value="340.4128" />
-
+    <PicoSD specieID="RCap" value="0.0" />
     <PicoSD specieID="SCappSSH" value="251.1565" />
-   
+   <PicoSD specieID="SCap" value="0.0" />
   </SurfaceDensitySet>
 
 </InitialConditions>
