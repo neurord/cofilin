@@ -15,13 +15,14 @@
  
 </InjectionStim>
 
-<!--Ca -->
+<!--Ca 30% INCREASE FIRST INJECT-->
 
  
 <InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
            <onset>               400000          </onset>
         <duration>        3         </duration> 
-       	<rate>               1787.68     </rate> 	
+       	<rate>               2323.78     </rate>
+	<!--rate>               1787.68     </rate--> 
 	<period>        1000             </period>
 	<end>          400100           </end>
 

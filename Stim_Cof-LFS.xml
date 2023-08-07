@@ -25,7 +25,7 @@
         <duration>        1         </duration> 
        	<rate>               1500      </rate>
       	<period>        200             </period>
-	<end>          480000           </end>
+	<end>          580000           </end>
 </InjectionStim>
 
 
@@ -34,7 +34,7 @@
         <duration>        3         </duration> 
        	<rate>              70      </rate>
       	<period>        200             </period>
-	<end>          480000           </end>
+	<end>          580000           </end>
 </InjectionStim>
 
 <InjectionStim specieID="Ca" injectionSite="dend:submembrane">
@@ -42,7 +42,7 @@
         <duration>        1         </duration> 
        	<rate>               130      </rate>
       	<period>        200             </period>
-	<end>          480000           </end>
+	<end>          580000           </end>
 </InjectionStim>
 
 
@@ -51,7 +51,7 @@
         <duration>        3         </duration> 
        	<rate>               10      </rate>
       	<period>        200             </period>
-	<end>          480000           </end>
+	<end>          580000           </end>
 </InjectionStim>
 
 
