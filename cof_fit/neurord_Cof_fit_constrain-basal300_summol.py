@@ -22,10 +22,10 @@ start_stim=90 # time stim start sec
 
 
 # number of iterations, use 1 for testing
-iterations=100
+iterations=1
 # default popsize=8, use 3 for testing
 popsize=8
-test_size=25#
+test_size=0#25#
 rootdir='./' ### doesn't work if using at
 if not dirname in os.listdir(rootdir):
     os.mkdir(rootdir+dirname)
@@ -87,7 +87,7 @@ for i,p in enumerate(fit.params.unscale(result[0])):
         print(fit.param_names()[i],'=',p, '+/-', fit.params.unscale(result[6])[i])
 
 #to look at fit history
-aju.drawing.plot_history(fit,fit.measurement)
+#aju.drawing.plot_history(fit,fit.measurement)
 
 #to save
 save_params.save_params(fit,0,1)
