@@ -1,0 +1,27 @@
+<StimulationSet>
+
+  <!--onset and duration in ms, rate in particles/ms-->
+    
+
+ <!--Ca -->
+
+<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+           <onset>               300000         </onset>
+        <duration>        1         </duration> 
+       	<rate>           3000      </rate>
+	<!--rate>           9899.575  10000     </rate-->
+      	<period>        2000             </period>
+	<end>          361000         </end>
+</InjectionStim>
+
+
+<InjectionStim specieID="Ca" injectionSite="dend:submembrane">
+           <onset>               300000        </onset>
+        <duration>        1         </duration> 
+       	<rate>               350     </rate>
+      	<period>        2000             </period>
+	<end>          361000           </end>
+</InjectionStim>
+
+ 
+</StimulationSet>

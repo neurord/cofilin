@@ -61,7 +61,7 @@ Now, the reactions themselves
 <Reactant specieID="X"/>
 <Product specieID="XpKal"/>
 
-<forwardRate> 1e3 </forwardRate>
+<forwardRate> 1e7 </forwardRate>
 <reverseRate> 0 </reverseRate>
 </Reaction>
 

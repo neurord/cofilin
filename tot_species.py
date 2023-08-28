@@ -19,14 +19,21 @@ sub_species={'Kal':['Kal','KalCKCamCa4','KalCKpCamCa4','KalPKAc','pKal','pKalPP1
              'PDE1':['PDE1','PDE1CamCa4','PDE1CamCa4cAMP']}
 '''
 sub_species={'PKA':['PKA'],'PKAr':['PKA','PKAr','PKAcAMP2','PKAcAMP4'],
-             'PKAc':['PKAc','KalPKAc','PKAcLIMK','PKAc_PDE4_cAMP','PKAcPDE4','PKAcLR','PKAcpLR','PKAcppLR'],'actCof':['Cof','Cofactin'],'InCof':['pCof'],'totPAK':['RacPAK','RacPAKLIMK','RacPAKSSH'], 'totCof':['Cof','Cofactin','pCof','SSHpCof','pLIMKCof'],'totRac':['pKalRac','RacGap','RacGDP','RacGTP','RacPAK','RacPAKLIMK','RacPAKSSH'],'CKp':['KalCKCamCa4','KalCKpCamCa4','CKp','CKCamCa4','CKpCamCa4','CKpPP1','CKpCamCa4PP1'],'PKAc':['PKAc','KalPKAc','PKAcLIMK','PKAc_PDE4_cAMP','PKAcPDE4','PKAcLR','PKAcpLR','PKAcppLR']}
+             'PKAc':['PKAc','KalPKAc','PKAcLIMK','PKAc_PDE4_cAMP','PKAcPDE4','PKAcLR','PKAcpLR','PKAcppLR'],
+             'actCof':['Cof','Cofactin'],'InCof':['pCof'],
+             'totPAK':['RacPAK','RacPAKLIMK','RacPAKSSH'],
+             'totCof':['Cof','Cofactin','pCof','SSHpCof','pLIMKCof'],
+             'totRac':['pKalRac','RacGap','RacGDP','RacGTP','RacPAK','RacPAKLIMK','RacPAKSSH'],
+             'CKp':['KalCKCamCa4','KalCKpCamCa4','CKp','CKCamCa4','CKpCamCa4','CKpPP1','CKpCamCa4PP1']}
 
 tot_species=['totRac','totCof','actCof','CKp','PKAc']#['ncx','pmca','PKAc','Cof','LIMK','SSH','Rac','Kal','PAK','Cam','CaN','PKAr','actin','Gap','CK','PP1','Ip35','AC1','AC8','PDE4','PDE1','Epac','Calbin']#
+
 weight={}
 #signature molecules must be in tot_species
 signature={'kinase':{'num':['CKp','PKAc'],'denom':[]}, 'cof':{'num':['actCof'],'denom':['pCof']}}
 #thresh keys must be regions in the morphology
 thresh={'dend':0.1,'sa1[0]':0.2}
+
 
 
  

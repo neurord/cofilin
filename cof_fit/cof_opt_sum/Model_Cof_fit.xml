@@ -9,7 +9,7 @@
           <xi:include href="Rxn_Cof_fit.xml" />
           <xi:include href="Morph.xml" />        
           <xi:include href="IC_Cof_fit.xml" />
-	  <xi:include href="Stim_cof_fit_racgtp.xml" />
+	  <!--xi:include href="Stim_cof_fit_racgtp.xml" /-->
           	   
     <!--2D means the morphology is interpreted like a flatworm, 3D for
 

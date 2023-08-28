@@ -18,21 +18,21 @@
     <NanoMolarity specieID="LIMK" value="1996.798" />
     <NanoMolarity specieID="SSHpLIMK" value="0" />
 
-    <NanoMolarity specieID="CaNCamCa4" value="1.079" />
-     <NanoMolarity specieID="CaNCamCa4pSSH" value="3.072" />
+    <NanoMolarity specieID="CaNCamCa4" value="0.457" />
+     <NanoMolarity specieID="CaNCamCa4pSSH" value="3.695" />
     <NanoMolarity specieID="RacPAKSSH" value="0" />
-    <NanoMolarity specieID="pSSH" value="1947.937" />
-    <NanoMolarity specieID="SSH" value="54.0920" />
+    <NanoMolarity specieID="pSSH" value="1922.53" />
+    <NanoMolarity specieID="SSH" value="83.027" />
     
     
     <NanoMolarity specieID="pLIMKCof" value="0" /> 
-    <NanoMolarity specieID="Cof" value="8.344" />
-    <NanoMolarity specieID="pCof" value="1602.42" />
-    <NanoMolarity specieID="SSHpCof" value="0" />
+    <NanoMolarity specieID="Cof" value="158.914" />
+    <NanoMolarity specieID="pCof" value="1681.337" />
+    <NanoMolarity specieID="SSHpCof" value="0.0420" />
 
 
-    <NanoMolarity specieID="actin" value="999710.811" />
-    <NanoMolarity specieID="Cofactin" value="290.553" />
+    <NanoMolarity specieID="actin" value="19840.533" />
+    <NanoMolarity specieID="Cofactin" value="160.657" />
   </ConcentrationSet>
    
 </InitialConditions>

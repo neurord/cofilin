@@ -1,0 +1,22 @@
+<StimulationSet>
+
+  <!--onset and duration in ms, rate in particles/ms-->
+    
+
+ 
+<!--PKAc inhibitor --> 
+<InjectionStim specieID="IP" injectionSite="sa1[0].pointA">
+        <onset>0 </onset>
+        <duration>1000000</duration>
+        <rate> 10</rate>
+
+</InjectionStim>
+
+<InjectionStim specieID="IP" injectionSite="dend:submembrane">
+        <onset>0</onset>
+        <duration>1000000</duration>
+        <rate>5</rate>
+   
+</InjectionStim>
+
+</StimulationSet>
