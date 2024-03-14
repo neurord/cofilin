@@ -368,8 +368,10 @@ Now, the reactions themselves
 
         <!--forwardRate>0.336e-06</forwardRate-->
         <!--reverseRate>1.344e-3</reverseRate-->
-	<forwardRate>0.48e-06</forwardRate>
-        <reverseRate>1.92e-3</reverseRate>
+	<!--forwardRate>0.48e-06</forwardRate>
+        <reverseRate>1.92e-3</reverseRate-->
+	<forwardRate>0.96e-06</forwardRate>
+        <reverseRate>2.56e-3</reverseRate>
 
 </Reaction>
 
@@ -381,7 +383,7 @@ Now, the reactions themselves
 	<Product specieID="SCap"/>
 	
        	<!--forwardRate>0.336e-3</forwardRate-->
-	<forwardRate>0.48e-3</forwardRate>
+	<forwardRate>0.64e-3</forwardRate>
         <reverseRate> 0 </reverseRate>
 </Reaction>
 
@@ -391,7 +393,9 @@ Now, the reactions themselves
 <Reactant specieID="SSH"/>
 <Product specieID="RacPAKSSH"/>
 
-
+<!-- decrease RacPAK SSH to reduce pSSH, but that could increase RacPAK LIMK -->
+<!--forwardRate>0.1e-6</forwardRate>
+<reverseRate>0.33e-3</reverseRate-->
 <forwardRate>0.1e-6</forwardRate>
 <reverseRate>0.33e-3</reverseRate>
 </Reaction>
@@ -401,6 +405,8 @@ Now, the reactions themselves
 <Product specieID="pSSH"/>
 <Product specieID="RacPAK"/>
 
+<!-- decrease RacPAK SSH catalytic rate to reduce pSSH, without increasing RacPAK LIMK ?-->
+<!--forwardRate>0.083e-3</forwardRate-->
 <forwardRate>0.083e-3</forwardRate>
 <reverseRate> 0 </reverseRate>
 
@@ -415,6 +421,9 @@ Now, the reactions themselves
 
 <forwardRate>0.2e-6</forwardRate>
 <reverseRate>0.68e-3</reverseRate>
+<!--increase rate to compensate for less SSH dephos?-->
+<!--forwardRate>0.4e-6</forwardRate>
+<reverseRate>1.36e-3</reverseRate-->
 
 </Reaction>
 
@@ -423,6 +432,7 @@ Now, the reactions themselves
 <Product specieID="pLIMK"/>
 <Product specieID="RacPAK"/>
 
+<!--forwardRate>0.366e-3</forwardRate-->
 <forwardRate>0.168e-3</forwardRate>
 <reverseRate> 0 </reverseRate>
 
