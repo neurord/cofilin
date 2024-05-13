@@ -88,7 +88,7 @@
   
   <ConcentrationSet region="head">
     <NanoMolarity specieID="R" value="176.1886" />
-    <NanoMolarity specieID="LR" value="4.4047" />
+    <NanoMolarity specieID="LR" value="4.4057" />
     <NanoMolarity specieID="GsR" value="927.6332" />
     <NanoMolarity specieID="LRGs" value="1.7619" />
     <NanoMolarity specieID="LRGsbg" value="0.0" />
@@ -100,7 +100,7 @@
     <NanoMolarity specieID="PKAcLR" value="0.01" />
     <NanoMolarity specieID="pLR" value="0.01" />
     <NanoMolarity specieID="PKAcpLR" value="0.01" />
-    <NanoMolarity specieID="ppLR" value="0.01" />
+    <NanoMolarity specieID="ppLR" value="0.0" />
     <NanoMolarity specieID="PKAcppLR" value="0.01" />
     <NanoMolarity specieID="ppLRGi" value="0.01" />
   
@@ -128,8 +128,8 @@
     
     <NanoMolarity specieID="PKA" value="18407.3079" />
     <NanoMolarity specieID="PKAr" value="0.0" />
-    <NanoMolarity specieID="PKAcAMP2" value="377.9246" />
-    <NanoMolarity specieID="PKAcAMP4" value="5.2857" />
+    <NanoMolarity specieID="PKAcAMP2" value="383.2103" />
+    <NanoMolarity specieID="PKAcAMP4" value="0.0" />
     
     <NanoMolarity specieID="ncx" value="0.01" />
     <NanoMolarity specieID="ncxCa" value="0.01" />
