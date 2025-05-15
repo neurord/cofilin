@@ -58,7 +58,7 @@ phosphatase reactions take from revision of Gs to improve Ca dep dphos of Dp32--
 
 <!-- calcium stuff first -->
     <Specie name="Ca"                id="Ca"                kdiff="174.3" kdiffunit="mu2/s"/>
-    <Specie name="Caext"             id="Caext"             kdiff="174.3" kdiffunit="mu2/s"/>
+    <Specie name="Caext"             id="Caext"             kdiff="17.43" kdiffunit="mu2/s"/>
     <Specie name="CaextLeak"         id="CaextLeak"         kdiff="0"     kdiffunit="mu2/s"/>
     <Specie name="Leak"              id="Leak"              kdiff="0"     kdiffunit="mu2/s"/>
     <Specie name="pmca"              id="pmca"              kdiff="0"     kdiffunit="mu2/s"/>

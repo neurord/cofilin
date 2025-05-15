@@ -22,68 +22,47 @@ tot_species=['actCof','CKtot','PKAphos','phoslimk','dualPKA_PAK','dualCK_PKA']#'
 #tot_species=['CK','PKAc','ncx','pmca','PKAc','Cof','LIMK','SSH','ssh','Rac','Kal','PAK','Cam','CaN','PKAr','actin','Gap','CK','PP1','Ip35','AC1','AC8','PDE4','PDE1','Epac','Calbin']
 weight={}
 #signature molecules must be in tot_species
-signature={'kinase':{'num':['CKtot','PKAphos'],'denom':[]}, 'CK_PKA_PAK':{'num':['CKtot','PKAphos','dualPKA_PAK','dualCK_PKA'],'denom':[]},'CK_PKA':{'num':['CKtot','PKAphos','dualCK_PKA'],'denom':[]},'cof_act':{'num':['actCof'],'denom':[]}}
+signature={'kinase':{'num':['CKtot','PKAphos'],'denom':[]}, 'CK_PKA_PAK':{'num':['CKtot','PKAphos','dualPKA_PAK','dualCK_PKA'],'denom':[]},'cof_act':{'num':['actCof'],'denom':[]}} #,'CK_PKA':{'num':['CKtot','PKAphos','dualCK_PKA'],'denom':[]}
 #thresh keys must be regions in the morphology
-thresh={'kinase':{'dend':0.2,'dendsub':0.2,'sa1[0]':0.2},'CK_PKA_PAK':{'dend':0.2,'dendsub':0.2,'sa1[0]':0.3},'CK_PKA':{'dend':0.2,'dendsub':0.2,'sa1[0]':0.3},'cof_act':{'dend':0.2,'dendsub':0.2,'sa1[0]':0.3}}
-min_max={}   
-'''
+thresh={'kinase':{'dend':0.2,'dendsub':0.2,'sa1[0]':0.2},'CK_PKA_PAK':{'dend':0.2,'dendsub':0.2,'sa1[0]':0.3},'cof_act':{'dend':0.2,'dendsub':0.2,'sa1[0]':0.3}} #,'CK_PKA':{'dend':0.2,'dendsub':0.2,'sa1[0]':0.3}
+min_max={}
 min_max = {
     'kinase': {
         'num': {
             'CKtot': {
                 'dend': {'max': 15763.796584706137, 'min': 0.8302693915813638},
-                'dendsub': {'max': 1684.8241628664823, 'min': 0.8302693915813638},
-                'sa1[0]': {'max': 31199.881689536902, 'min': 0.8302693915813638}
+                'dendsub': {'max': 1684.8241628664823, 'min': 0.0},
+                'sa1[0]': {'max': 31199.881689536902, 'min': 0.0}
             },
             'PKAphos': {
                 'dend': {'max': 1514.2981516910081, 'min': 16.812955179522614},
                 'dendsub': {'max': 375.48933234267525, 'min': 13.595661287140112},
-                'sa1[0]': {'max': 1634.2916960090529, 'min': 13.28431026530654}
+                'sa1[0]': {'max': 1634.2916960090529, 'min': 13.28431026530418}
             }
         },
         'denom': {}
     },
     'CK_PKA_PAK': {
         'num': {
-            'CKtot': {
-                'dend': {'max': 15763.796584706137, 'min': 0.8302693915813638},
-                'dendsub': {'max': 1684.8241628664823, 'min': 0.8302693915813638},
-                'sa1[0]': {'max': 31199.881689536902, 'min': 0.8302693915813638}
-            },
-            'PKAphos': {
-                'dend': {'max': 1514.2981516910081, 'min': 16.812955179522614},
-                'dendsub': {'max': 375.48933234267525, 'min': 13.595661287140112},
-                'sa1[0]': {'max': 1634.2916960090529, 'min': 13.28431026530654}
-            },
             'dualPKA_PAK': {
                 'dend': {'max': 1897.6687533340682, 'min': 88.09431851204957},
-                'dendsub': {'max': 223.7576010311775, 'min': 88.09431851204957},
-                'sa1[0]': {'max': 2222.5344034927098, 'min': 88.09431851204957}
+                'dendsub': {'max': 223.7576010311775, 'min': 87.90477183367689},
+                'sa1[0]': {'max': 2222.5344034927098, 'min': 87.90477183367689}
             },
             'dualCK_PKA': {
-                'dend': {'max': 506.495778462797, 'min': 0.0},
-                'dendsub': {'max': 334.0796464375512, 'min': 0.0},
-                'sa1[0]': {'max': 7327.458073655481, 'min': 0.0}
-            }
-        },
-        'denom': {}
-    },
-    'CK_PKA': {
-        'num': {
+                'dend': {'max': 506.33853047196715, 'min': 0.0},
+                'dendsub': {'max': 334.28721378544657, 'min': 0.0},
+                'sa1[0]': {'max': 7324.900496666423, 'min': 0.0}
+            },
             'CKtot': {
                 'dend': {'max': 15763.796584706137, 'min': 0.8302693915813638},
-                'dendsub': {'max': 1684.8241628664823, 'min': 0.8302693915813638},
-                'sa1[0]': {'max': 31199.881689536902, 'min': 0.8302693915813638}
+                'dendsub': {'max': 1684.8241628664823, 'min': 0.0},
+                'sa1[0]': {'max': 31199.881689536902, 'min': 0.0}
             },
             'PKAphos': {
                 'dend': {'max': 1514.2981516910081, 'min': 16.812955179522614},
                 'dendsub': {'max': 375.48933234267525, 'min': 13.595661287140112},
-                'sa1[0]': {'max': 1634.2916960090529, 'min': 13.28431026530654}
-            },
-            'dualCK_PKA': {
-                'dend': {'max': 506.495778462797, 'min': 0.0},
-                'dendsub': {'max': 334.0796464375512, 'min': 0.0},
-                'sa1[0]': {'max': 7327.458073655481, 'min': 0.0}
+                'sa1[0]': {'max': 1634.2916960090529, 'min': 13.28431026530418}
             }
         },
         'denom': {}
@@ -100,5 +79,19 @@ min_max = {
     }
 }
 
-#{'cof':{'num':{'max':1497.9, 'min':1.45},'denom':{'max':1929, 'min':37}}}
-'''
+
+if __name__ == '__main__':
+    for key in signature.keys():
+        if key in min_max:
+            for nd in ['num','denom']:
+                for mol in signature[key][nd]:
+                    if not mol in min_max[key][nd]:
+                        print('key=',key,', mol',mol,'in sig, not in min_max[key][',nd,']')
+        else:
+            print('key=',key,'in signature, not in min_max - norm signature will fail')
+        if key not in thresh.keys():
+            print('key=',key,'in signature dict, missing from thresh dictionary')
+    for key in thresh.keys():
+        if key not in signature.keys():
+            print('key=',key,'in thresh dict, missing from sig - plot_signature will fail')
+                    

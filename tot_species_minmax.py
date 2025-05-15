@@ -25,8 +25,7 @@ weight={}
 signature={'kinase':{'num':['CKtot','PKAphos'],'denom':[]}, 'CK_PKA_PAK':{'num':['CKtot','PKAphos','dualPKA_PAK','dualCK_PKA'],'denom':[]},'CK_PKA':{'num':['CKtot','PKAphos','dualCK_PKA'],'denom':[]},'cof_act':{'num':['actCof'],'denom':[]}}
 #thresh keys must be regions in the morphology
 thresh={'kinase':{'dend':0.2,'dendsub':0.2,'sa1[0]':0.2},'CK_PKA_PAK':{'dend':0.2,'dendsub':0.2,'sa1[0]':0.3},'CK_PKA':{'dend':0.2,'dendsub':0.2,'sa1[0]':0.3},'cof_act':{'dend':0.2,'dendsub':0.2,'sa1[0]':0.3}}
-min_max={}   
-'''
+#min_max={}   
 min_max = {
     'kinase': {
         'num': {
@@ -100,5 +99,4 @@ min_max = {
     }
 }
 
-#{'cof':{'num':{'max':1497.9, 'min':1.45},'denom':{'max':1929, 'min':37}}}
-'''
+ #{'cof':{'num':{'max':1497.9, 'min':1.45},'denom':{'max':1929, 'min':37}}}

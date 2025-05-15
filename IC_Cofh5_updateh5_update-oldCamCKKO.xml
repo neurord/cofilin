@@ -59,7 +59,7 @@
     <NanoMolarity specieID="Cam" value="13732.8067" />
     <NanoMolarity specieID="CamCa2C" value="231.6404" />
     <NanoMolarity specieID="CamCa2N" value="35.5891" />
-    <NanoMolarity specieID="CamCa4" value="0.5629" />
+    <NanoMolarity specieID="CamCa4" value="3.3029" />
 
     <NanoMolarity specieID="PKAc" value="0.0" />
     <NanoMolarity specieID="cAMP" value="24.3038" />
@@ -141,10 +141,10 @@
     <NanoMolarity specieID="pmca" value="0.0" />
     <NanoMolarity specieID="pmcaCa" value="0.0" />
 
-    <NanoMolarity specieID="Kal" value="4075.148" />
+    <NanoMolarity specieID="Kal" value="4087.1993" />
     <NanoMolarity specieID="pKal" value="11.417" />
     <NanoMolarity specieID="KalCKpCamCa4" value="0.0" />
-    <NanoMolarity specieID="KalCKCamCa4" value="12.0513" />
+    <NanoMolarity specieID="KalCKCamCa4" value="0.0" />
     <NanoMolarity specieID="KalPKAc" value="0.0" />
     <NanoMolarity specieID="pKalPP1" value="93.5562" />
     <NanoMolarity specieID="pKalRac" value="9.8313" />
@@ -166,10 +166,10 @@
     <NanoMolarity specieID="pmca" value="0.0" />
     <NanoMolarity specieID="pmcaCa" value="0.0" />
        
-    <NanoMolarity specieID="Kal" value="22000.8974" />
+    <NanoMolarity specieID="Kal" value="22090.4283" />
     <NanoMolarity specieID="pKal" value="41.2281" />
     <NanoMolarity specieID="KalCKpCamCa4" value="0.0" />
-    <NanoMolarity specieID="KalCKCamCa4" value="89.5309" />
+    <NanoMolarity specieID="KalCKCamCa4" value="0.0" />
     <NanoMolarity specieID="KalPKAc" value="0.0" />
     <NanoMolarity specieID="pKalPP1" value="359.8314" />
     <NanoMolarity specieID="pKalRac" value="73.9179" />
@@ -249,10 +249,10 @@
     <PicoSD specieID="Leak" value="2.3704" />
     <PicoSD specieID="CaextLeak" value="2714.6862" />
 
-    <PicoSD specieID="Kal" value="356.4409" />
+    <PicoSD specieID="Kal" value="357.5804" />
     <PicoSD specieID="pKal" value="0.7576" />
     <PicoSD specieID="KalCKpCamCa4" value="0.0" />
-    <PicoSD specieID="KalCKCamCa4" value="1.1395" />
+    <PicoSD specieID="KalCKCamCa4" value="0.0" />
     <PicoSD specieID="KalPKAc" value="0.0" />
     <PicoSD specieID="pKalPP1" value="11.5823" />
     <PicoSD specieID="pKalRac" value="0.5895" />

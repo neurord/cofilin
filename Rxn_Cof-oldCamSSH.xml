@@ -56,7 +56,7 @@ phosphatase reactions take from revision of Gs to improve Ca dep dphos of Dp32--
 
 <!-- calcium stuff first -->
     <Specie name="Ca"                id="Ca"                kdiff="174.3" kdiffunit="mu2/s"/>
-    <Specie name="Caext"             id="Caext"             kdiff="174.3" kdiffunit="mu2/s"/>
+    <Specie name="Caext"             id="Caext"             kdiff="17.43" kdiffunit="mu2/s"/>
     <Specie name="CaextLeak"         id="CaextLeak"         kdiff="0"     kdiffunit="mu2/s"/>
     <Specie name="Leak"              id="Leak"              kdiff="0"     kdiffunit="mu2/s"/>
     <Specie name="pmca"              id="pmca"              kdiff="0"     kdiffunit="mu2/s"/>
@@ -157,10 +157,6 @@ phosphatase reactions take from revision of Gs to improve Ca dep dphos of Dp32--
   <Specie name="Epac"               id="Epac"               kdiff="5.62"             kdiffunit="mu2/s"/>
   <Specie name="EpacAMP"            id="EpacAMP"           kdiff="5.61"             kdiffunit="mu2/s"/>
 
-   
- <!-- PKAc inhibitor -->
-  <Specie name="IP"               id="IP"               kdiff="0"             kdiffunit="mu2/s"/>
-  <Specie name="IPPKA"            id="IPPKA"           kdiff="0"             kdiffunit="mu2/s"/>
 
   <!--fixed buffer -->
   <Specie name="CB"            id="CB"            kdiff="0"   kdiffunit="mu2/s"/>
@@ -179,8 +175,10 @@ Now, the reactions themselves
 <Reactant specieID="CKCamCa4"/>
 <Product specieID="KalCKCamCa4"/>
 
-<forwardRate> 0.000005e-3 </forwardRate>
-<reverseRate> 0.04e-3 </reverseRate>
+<forwardRate>0.000015e-3</forwardRate>
+<reverseRate> 0.12e-3</reverseRate>
+<!--forwardRate> 0.000005e-3 </forwardRate>
+<reverseRate> 0.04e-3 </reverseRate-->
 
 
 </Reaction>
@@ -189,7 +187,8 @@ Now, the reactions themselves
 <Product specieID="CKCamCa4"/>
 <Product specieID="pKal"/>
 
-<forwardRate> 0.01e-3 </forwardRate>
+<forwardRate> 0.03e-3 </forwardRate>
+<!--forwardRate> 0.01e-3 </forwardRate-->
 <reverseRate> 0 </reverseRate>
 
 </Reaction>
@@ -201,8 +200,10 @@ Now, the reactions themselves
 <Reactant specieID="CKpCamCa4"/>
 <Product specieID="KalCKpCamCa4"/>
 
-<forwardRate>0.000050e-3</forwardRate>
-<reverseRate>0.4e-3</reverseRate>
+<forwardRate>0.00015e-3</forwardRate>
+<reverseRate> 1.2e-3</reverseRate>
+<!--forwardRate>0.000050e-3</forwardRate>
+<reverseRate>0.4e-3</reverseRate-->
 
 
 </Reaction>
@@ -211,7 +212,8 @@ Now, the reactions themselves
 <Product specieID="CKpCamCa4"/>
 <Product specieID="pKal"/>
 
-<forwardRate>0.1e-3 </forwardRate>
+<forwardRate>0.3e-3 </forwardRate>
+<!--forwardRate>0.1e-3 </forwardRate-->
 <reverseRate> 0 </reverseRate>
 
 </Reaction>
@@ -224,8 +226,10 @@ Now, the reactions themselves
 <Reactant specieID="PKAc"/>
 <Product specieID="KalPKAc"/>
 
-<forwardRate>0.00030e-3</forwardRate>
-<reverseRate> 2.4e-3</reverseRate>
+<forwardRate>0.00015e-3</forwardRate>
+<reverseRate> 1.2e-3</reverseRate>
+<!--forwardRate>0.00030e-3</forwardRate>
+<reverseRate> 2.4e-3</reverseRate-->
 
 
 </Reaction>
@@ -234,10 +238,12 @@ Now, the reactions themselves
 <Product specieID="PKAc"/>
 <Product specieID="pKal"/>
 
-<forwardRate>0.6e-3 </forwardRate>
+<forwardRate>0.3e-3 </forwardRate>
+<!--forwardRate>0.6e-3 </forwardRate-->
 <reverseRate> 0 </reverseRate>
 
 </Reaction>
+
 
 
 <!--PP1 inactivates Kal -->
@@ -349,14 +355,16 @@ Now, the reactions themselves
 <!-- CaN activate SSH-->
 <!--  CaNCam+pSSH <->CaNCam+SSH       -->
 <Reaction name="CaNCamCa4+pSSH--CaNCamCa4pSSH" id="CaNCamCa4+pSSH--CaNCamCa4pSSH">
-        <Reactant specieID="pSSH"/>
+        <Reactant specieID="SCappSSH"/>
         <Reactant specieID="CaNCamCa4"/>
         <Product specieID="CaNCamCa4pSSH"/>
 
         <!--forwardRate>0.336e-06</forwardRate-->
         <!--reverseRate>1.344e-3</reverseRate-->
-	<forwardRate>0.48e-06</forwardRate>
-        <reverseRate>1.92e-3</reverseRate>
+	<!--forwardRate>0.48e-06</forwardRate>
+        <reverseRate>1.92e-3</reverseRate-->
+	<forwardRate>0.96e-06</forwardRate>
+        <reverseRate>2.56e-3</reverseRate>
 
 </Reaction>
 
@@ -365,9 +373,10 @@ Now, the reactions themselves
         <Reactant specieID="CaNCamCa4pSSH"/>
         <Product specieID="CaNCamCa4"/>
         <Product specieID="SSH"/>
+	<Product specieID="SCap"/>
 	
-	<!--forwardRate>0.336e-3</forwardRate-->
-	<forwardRate>0.48e-3</forwardRate>
+       	<!--forwardRate>0.336e-3</forwardRate-->
+	<forwardRate>0.64e-3</forwardRate>
         <reverseRate> 0 </reverseRate>
 </Reaction>
 
@@ -377,7 +386,9 @@ Now, the reactions themselves
 <Reactant specieID="SSH"/>
 <Product specieID="RacPAKSSH"/>
 
-
+<!-- decrease RacPAK SSH to reduce pSSH, but that could increase RacPAK LIMK -->
+<!--forwardRate>0.1e-6</forwardRate>
+<reverseRate>0.33e-3</reverseRate-->
 <forwardRate>0.1e-6</forwardRate>
 <reverseRate>0.33e-3</reverseRate>
 </Reaction>
@@ -387,6 +398,8 @@ Now, the reactions themselves
 <Product specieID="pSSH"/>
 <Product specieID="RacPAK"/>
 
+<!-- decrease RacPAK SSH catalytic rate to reduce pSSH, without increasing RacPAK LIMK ?-->
+<!--forwardRate>0.083e-3</forwardRate-->
 <forwardRate>0.083e-3</forwardRate>
 <reverseRate> 0 </reverseRate>
 
@@ -399,8 +412,11 @@ Now, the reactions themselves
 <Reactant specieID="LIMK"/>
 <Product specieID="RacPAKLIMK"/>
 
-<forwardRate>0.2e-6</forwardRate>
-<reverseRate>0.68e-3</reverseRate>
+<!--forwardRate>0.2e-6</forwardRate>
+<reverseRate>0.68e-3</reverseRate-->
+<!--increase rate to compensate for less SSH depho?-->
+<forwardRate>0.4e-6</forwardRate>
+<reverseRate>1.36e-3</reverseRate>
 
 </Reaction>
 
@@ -409,10 +425,12 @@ Now, the reactions themselves
 <Product specieID="pLIMK"/>
 <Product specieID="RacPAK"/>
 
-<forwardRate>0.168e-3</forwardRate>
+<forwardRate>0.336e-3</forwardRate>
+<!--forwardRate>0.168e-3</forwardRate-->
 <reverseRate> 0 </reverseRate>
 
 </Reaction>
+
 
 <!--LIMK activated by PKAc-->
 <!--PKAc+LIMK <->pLIMK+PKAc-->
@@ -421,8 +439,10 @@ Now, the reactions themselves
 <Reactant specieID="LIMK"/>
 <Product specieID="PKAcLIMK"/>
 
-<forwardRate>0.6e-6</forwardRate>
-<reverseRate>2e-3</reverseRate>
+<!--forwardRate>0.6e-6</forwardRate>
+<reverseRate>2e-3</reverseRate-->
+<forwardRate>0.4e-6</forwardRate>
+<reverseRate>1.36e-3</reverseRate>
 
 </Reaction>
 
@@ -431,7 +451,8 @@ Now, the reactions themselves
 <Product specieID="pLIMK"/>
 <Product specieID="PKAc"/>
 
-<forwardRate>0.50e-3</forwardRate>
+<forwardRate>0.336e-3</forwardRate>
+<!--forwardRate>0.50e-3</forwardRate-->
 <reverseRate> 0 </reverseRate>
 
 </Reaction>
@@ -1466,15 +1487,5 @@ Now, the reactions themselves
         <reverseRate> 0.1452e-3   </reverseRate>
     </Reaction>
 
-<!--(PKAc inhibitor) IP+PKAc <-> IPPKAc-->
-    <Reaction name = "IP+PKA--IPPKAc" id="IP+PKA--IPPKA">
-        <Reactant specieID="IP"           />
-        <Reactant  specieID="PKA"               />
-        <Product  specieID="IPPKA"               />
 
-        <!--forwardRate> 2   </forwardRate-->
-	<forwardRate> 10</forwardRate>
-        <reverseRate> 0   </reverseRate>
-    </Reaction>
- 
 </ReactionScheme>

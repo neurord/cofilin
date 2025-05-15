@@ -10,7 +10,7 @@
           <xi:include href="../Morph_dend_0.6um_spine1.xml" />        
           <xi:include href="../IC_Cofh5_update_PKAKOh5_update_PKAKO-oldCam.xml" />
           <xi:include href="../Out_Cof.xml" />
-	  <xi:include href="../Stim_Cof-LFS-ISO.xml" />
+	  <xi:include href="../Stim_Cof-LFS-ISO_PKA.xml" />
 	   
     <!--2D means the morphology is interpreted like a flatworm, 3D for
 

@@ -1,105 +1,102 @@
 <InitialConditions>
   <ConcentrationSet>
 
-    <NanoMolarity specieID="Gap" value="999.2264" />
-    <NanoMolarity specieID="RacGap" value="3.6805" />
-    <NanoMolarity specieID="RacGTP" value="10.055" />
-    <NanoMolarity specieID="RacGDP" value="2.6162" />
+    <NanoMolarity specieID="Gap" value="988.4515" />
+    <NanoMolarity specieID="RacGap" value="4.0857" />
+    <NanoMolarity specieID="RacGTP" value="11.7475" />
+    <NanoMolarity specieID="RacGDP" value="2.708" />
                             
-    <NanoMolarity specieID="PAK" value="1861.9516" />
-    <NanoMolarity specieID="RacPAK" value="101.7891" />
+    <NanoMolarity specieID="PAK" value="1856.0623" />
+    <NanoMolarity specieID="RacPAK" value="115.0958" />
     
-    <NanoMolarity specieID="pSSH" value="611.7296" />
+    <NanoMolarity specieID="pSSH" value="636.1334" />
     
-    <NanoMolarity specieID="SSH" value="128.6817" />
-    <NanoMolarity specieID="CaNCamCa4pSSH" value="0.4681" />
-    <NanoMolarity specieID="RacPAKSSH" value="3.2006" />
-    <NanoMolarity specieID="SSHpCof" value="42.2162" />
+    <NanoMolarity specieID="SSH" value="108.391" />
+    <NanoMolarity specieID="CaNCamCa4pSSH" value="0.2637" />
+    <NanoMolarity specieID="RacPAKSSH" value="2.2428" />
+    <NanoMolarity specieID="SSHpCof" value="36.6261" />
     
-    <NanoMolarity specieID="SSHpLIMK" value="33.4678" />
+    <NanoMolarity specieID="SSHpLIMK" value="35.8676" />
     
-    <NanoMolarity specieID="LIMK" value="697.3685" />
-    <NanoMolarity specieID="pLIMK" value="1235.4458" />
-    <NanoMolarity specieID="RacPAKLIMK" value="16.6517" />
+    <NanoMolarity specieID="LIMK" value="405.5121" />
+    <NanoMolarity specieID="pLIMK" value="1532.3174" />
+    <NanoMolarity specieID="RacPAKLIMK" value="11.6734" />
     <NanoMolarity specieID="PKAcLIMK" value="0.0" />
-    <NanoMolarity specieID="pLIMKCof" value="42.1384" />
+    <NanoMolarity specieID="pLIMKCof" value="36.7387" />
     
-    <NanoMolarity specieID="Cof" value="175.2895" />
-    <NanoMolarity specieID="pCof" value="1655.9602" />
+    <NanoMolarity specieID="Cof" value="126.5055" />
+    <NanoMolarity specieID="pCof" value="1707.3091" />
      
-    <NanoMolarity specieID="actin" value="19923.4878" />
-    <NanoMolarity specieID="Cofactin" value="45.7678" />
+    <NanoMolarity specieID="actin" value="19935.8027" />
+    <NanoMolarity specieID="Cofactin" value="26.046" />
     
-    <NanoMolarity specieID="CaN" value="0.0933" />
-    <NanoMolarity specieID="CaNCam" value="4179.2711" />
-    <NanoMolarity specieID="CaNCamCa2C" value="677.8785" />
-    <NanoMolarity specieID="CaNCamCa2N" value="103.292" />
-    <NanoMolarity specieID="CaNCamCa4" value="1.6829" />  
+    <NanoMolarity specieID="CaN" value="0.0681" />
+    <NanoMolarity specieID="CaNCam" value="4123.6305" />
+    <NanoMolarity specieID="CaNCamCa2C" value="728.0571" />
+    <NanoMolarity specieID="CaNCamCa2N" value="110.225" />
+    <NanoMolarity specieID="CaNCamCa4" value="1.9229" />  
 
-    <NanoMolarity specieID="CK" value="19930.4134" />
+    <NanoMolarity specieID="CK" value="19922.4819" />
     <NanoMolarity specieID="CKp" value="0.0" />
-    <NanoMolarity specieID="CKCamCa4" value="36.6587" />
+    <NanoMolarity specieID="CKCamCa4" value="43.0524" />
     <NanoMolarity specieID="CKpCamCa4" value="0.0" />
-    <NanoMolarity specieID="Complex" value="0.011" />
+    <NanoMolarity specieID="Complex" value="0.0293" />
     <NanoMolarity specieID="pComplex" value="0.0" />  
-    <NanoMolarity specieID="PP1" value="10954.3492" />
+    <NanoMolarity specieID="PP1" value="10956.7336" />
     <NanoMolarity specieID="CKpPP1" value="0.0" />
     <NanoMolarity specieID="CKpCamCa4PP1" value="0.0" />
 
-    <NanoMolarity specieID="Ip35" value="0.0518" />
-    <NanoMolarity specieID="Ip35PP1" value="494.7353" />
-    <NanoMolarity specieID="Ng" value="1787.5506" />
-    <NanoMolarity specieID="NgCam" value="19157.9468" />
+    <NanoMolarity specieID="Ip35" value="0.0652" />
+    <NanoMolarity specieID="Ip35PP1" value="499.1662" />
+    <NanoMolarity specieID="Ng" value="1797.8196" />
+    <NanoMolarity specieID="NgCam" value="19149.1592" />
 
-    <NanoMolarity specieID="Ca" value="52.056" />
-    <NanoMolarity specieID="Caext" value="2000257.6285" />
-    <NanoMolarity specieID="Calbin" value="149814.3622" />
-    <NanoMolarity specieID="CalbinC" value="11141.0973" />
+    <NanoMolarity specieID="Ca" value="54.5901" />
+    <NanoMolarity specieID="Caext" value="1998948.0965" />
+    <NanoMolarity specieID="Calbin" value="149309.7066" />
+    <NanoMolarity specieID="CalbinC" value="11633.9017" />
     
-    <NanoMolarity specieID="Cam" value="13780.2848" />
-    <NanoMolarity specieID="CamCa2C" value="223.3216" />
-    <NanoMolarity specieID="CamCa2N" value="33.83" />
-    <NanoMolarity specieID="CamCa4" value="0.5548" />
+    <NanoMolarity specieID="Cam" value="13687.4552" />
+    <NanoMolarity specieID="CamCa2C" value="240.5673" />
+    <NanoMolarity specieID="CamCa2N" value="36.5017" />
+    <NanoMolarity specieID="CamCa4" value="0.6726" />
 
     <NanoMolarity specieID="PKAc" value="0.0" />
-    <NanoMolarity specieID="cAMP" value="35.8254" />
-     
+    <NanoMolarity specieID="cAMP" value="38.629" />
     
-    <NanoMolarity specieID="PDE4" value="762.2567" /> 
-    <NanoMolarity specieID="pPDE4" value="158.8734" />
-    <NanoMolarity specieID="PDE4cAMP" value="6.8092" />
-    <NanoMolarity specieID="pPDE4cAMP" value="1.4096" />
-    <NanoMolarity specieID="PKAc_PDE4_cAMP" value="3.9324" />
+    <NanoMolarity specieID="PDE4" value="732.2702" />
+    <NanoMolarity specieID="pPDE4" value="193.6544" />
+    <NanoMolarity specieID="PDE4cAMP" value="6.9626" />
+    <NanoMolarity specieID="pPDE4cAMP" value="1.8755" />
+    <NanoMolarity specieID="PKAc_PDE4_cAMP" value="0.0" />
     <NanoMolarity specieID="PKAcPDE4" value="0.0" />
-      
     
-     <NanoMolarity specieID="PDE1" value="2848.6163" />
-    <NanoMolarity specieID="PDE1CamCa4" value="156.6713" />
-    <NanoMolarity specieID="PDE1CamCa4cAMP" value="0.4706" />
+     <NanoMolarity specieID="PDE1" value="2820.9584" />
+    <NanoMolarity specieID="PDE1CamCa4" value="179.7458" />
+    <NanoMolarity specieID="PDE1CamCa4cAMP" value="0.6097" />
     
-    <NanoMolarity specieID="L" value="10.1157" />
-    <NanoMolarity specieID="LOut" value="2500013.9775" />
+    <NanoMolarity specieID="L" value="11.8186" />
+    <NanoMolarity specieID="LOut" value="2500012.4457" />
 
-    <NanoMolarity specieID="IP" value="0.0" />
-    <NanoMolarity specieID="CB" value="3496322.235" />
-    <NanoMolarity specieID="CaB" value="3645.3506" />
+    <NanoMolarity specieID="CB" value="3496137.8764" />
+    <NanoMolarity specieID="CaB" value="3813.4138" />
 
-    <NanoMolarity specieID="Epac" value="466.7839" />
-    <NanoMolarity specieID="EpacAMP" value="13.1893" />
+    <NanoMolarity specieID="Epac" value="467.1496" />
+    <NanoMolarity specieID="EpacAMP" value="15.7864" />
 
       </ConcentrationSet>
 
   
   <ConcentrationSet region="head">
-    <NanoMolarity specieID="R" value="164.8729" />
-    <NanoMolarity specieID="LR" value="5.1535" />
-    <NanoMolarity specieID="GsR" value="898.7933" />
-    <NanoMolarity specieID="LRGs" value="1.5262" />
+    <NanoMolarity specieID="R" value="229.5297" />
+    <NanoMolarity specieID="LR" value="8.0078" />
+    <NanoMolarity specieID="GsR" value="831.302" />
+    <NanoMolarity specieID="LRGs" value="1.5064" />
     <NanoMolarity specieID="LRGsbg" value="0.0" />
-    <NanoMolarity specieID="Gs" value="2736.4584" />
-    <NanoMolarity specieID="GasGDP" value="26.4415" />
-    <NanoMolarity specieID="GasGTP" value="2.8939" />
-    <NanoMolarity specieID="Gsbg" value="10.3269" />
+    <NanoMolarity specieID="Gs" value="2811.7592" />
+    <NanoMolarity specieID="GasGDP" value="95.9347" />
+    <NanoMolarity specieID="GasGTP" value="3.33" />
+    <NanoMolarity specieID="Gsbg" value="2.5371" />
 
     <NanoMolarity specieID="PKAcLR" value="0.0" />
     <NanoMolarity specieID="pLR" value="0.0" />
@@ -112,13 +109,15 @@
     <NanoMolarity specieID="GaiGTP" value="0.0" />
     <NanoMolarity specieID="GaiGDP" value="0.0" />
     <NanoMolarity specieID="Gibg" value="0.0" />
+
     
-    <NanoMolarity specieID="AC1" value="1802.0067" />
-    <NanoMolarity specieID="AC1CamCa4" value="8.0672" />
-    <NanoMolarity specieID="AC1CamCa4ATP" value="72.1294" />
-    <NanoMolarity specieID="AC1GasGTP" value="20.1582" />
-    <NanoMolarity specieID="AC1GasGTPCamCa4" value="0.0198" />
-    <NanoMolarity specieID="AC1GasGTPCamCa4ATP" value="0.4559" />
+    
+    <NanoMolarity specieID="AC1" value="1758.0631" />
+    <NanoMolarity specieID="AC1CamCa4" value="12.6856" />
+    <NanoMolarity specieID="AC1CamCa4ATP" value="109.8889" />
+    <NanoMolarity specieID="AC1GasGTP" value="22.1998" />
+    <NanoMolarity specieID="AC1GasGTPCamCa4" value="0.0" />
+    <NanoMolarity specieID="AC1GasGTPCamCa4ATP" value="0.0" />
     <NanoMolarity specieID="AC1GaiGTP" value="0.0" />
     <NanoMolarity specieID="AC1GaiGTPCamCa4" value="0.0" />
     <NanoMolarity specieID="AC1GaiGTPCamCa4ATP" value="0.0" />
@@ -127,14 +126,14 @@
     <NanoMolarity specieID="AC1GsGiCamCa4ATP" value="0.0" />
     
     
-    <NanoMolarity specieID="AC8" value="3853.9789" />
+    <NanoMolarity specieID="AC8" value="3748.4309" />
     
-    <NanoMolarity specieID="AC8CamCa4" value="3.0128" />
-    <NanoMolarity specieID="AC8CamCa4ATP" value="27.9677" />
+    <NanoMolarity specieID="AC8CamCa4" value="1.5064" />
+    <NanoMolarity specieID="AC8CamCa4ATP" value="16.0948" />
     
-    <NanoMolarity specieID="PKA" value="17763.7788" />
+    <NanoMolarity specieID="PKA" value="17606.8741" />
     <NanoMolarity specieID="PKAr" value="0.0" />
-    <NanoMolarity specieID="PKAcAMP2" value="987.0968" />
+    <NanoMolarity specieID="PKAcAMP2" value="1175.6759" />
     <NanoMolarity specieID="PKAcAMP4" value="0.0" />
     
     <NanoMolarity specieID="ncx" value="0.0" />
@@ -142,126 +141,126 @@
     <NanoMolarity specieID="pmca" value="0.0" />
     <NanoMolarity specieID="pmcaCa" value="0.0" />
 
-    <NanoMolarity specieID="Kal" value="3965.2196" />
-    <NanoMolarity specieID="pKal" value="12.9234" />
+    <NanoMolarity specieID="Kal" value="3994.1823" />
+    <NanoMolarity specieID="pKal" value="27.1154" />
     <NanoMolarity specieID="KalCKpCamCa4" value="0.0" />
-    <NanoMolarity specieID="KalCKCamCa4" value="1.3082" />
+    <NanoMolarity specieID="KalCKCamCa4" value="19.6627" />
     <NanoMolarity specieID="KalPKAc" value="0.0" />
-    <NanoMolarity specieID="pKalPP1" value="130.4236" />
-    <NanoMolarity specieID="pKalRac" value="12.9829" />
+    <NanoMolarity specieID="pKalPP1" value="213.7521" />
+    <NanoMolarity specieID="pKalRac" value="26.719" />
     
-    <NanoMolarity specieID="RCapGDP" value="4681.3444" />
-     <NanoMolarity specieID="RCap" value="260.9523" />
-     <NanoMolarity specieID="SCappSSH" value="11741.0789" />
-     <NanoMolarity specieID="SCap" value="1.0664" />
+    <NanoMolarity specieID="RCapGDP" value="4340.7683" />
+     <NanoMolarity specieID="RCap" value="587.3107" />
+     <NanoMolarity specieID="SCappSSH" value="10063.3373" />
+     <NanoMolarity specieID="SCap" value="0.8563" />
 
   </ConcentrationSet>
 
   
      <ConcentrationSet region="PSD">
-    <NanoMolarity specieID="Leak" value="12163.2774" />
-    <NanoMolarity specieID="CaextLeak" value="7718.9326" />
+    <NanoMolarity specieID="Leak" value="22.1998" />
+    <NanoMolarity specieID="CaextLeak" value="19860.0103" />
     
     <NanoMolarity specieID="ncx" value="0.0" />
     <NanoMolarity specieID="ncxCa" value="0.0" />
     <NanoMolarity specieID="pmca" value="0.0" />
     <NanoMolarity specieID="pmcaCa" value="0.0" />
        
-    <NanoMolarity specieID="Kal" value="21325.6097" />
-    <NanoMolarity specieID="pKal" value="91.4216" />
+    <NanoMolarity specieID="Kal" value="21670.2184" />
+    <NanoMolarity specieID="pKal" value="74.6498" />
     <NanoMolarity specieID="KalCKpCamCa4" value="0.0" />
-    <NanoMolarity specieID="KalCKCamCa4" value="71.4784" />
+    <NanoMolarity specieID="KalCKCamCa4" value="120.0251" />
     <NanoMolarity specieID="KalPKAc" value="0.0" />
-    <NanoMolarity specieID="pKalPP1" value="974.6552" />
-    <NanoMolarity specieID="pKalRac" value="101.9726" />
+    <NanoMolarity specieID="pKalPP1" value="626.7165" />
+    <NanoMolarity specieID="pKalRac" value="74.1619" />
     
-    <NanoMolarity specieID="RCapGDP" value="5269.4504" />
-    <NanoMolarity specieID="RCap" value="2556.8705" />
-    <NanoMolarity specieID="SCappSSH" value="13935.3983" />
-    <NanoMolarity specieID="SCap" value="1.9577" />
+    <NanoMolarity specieID="RCapGDP" value="6075.9058" />
+    <NanoMolarity specieID="RCap" value="1775.2984" />
+    <NanoMolarity specieID="SCappSSH" value="12965.86" />
+    <NanoMolarity specieID="SCap" value="0.9026" />
 
      </ConcentrationSet>
 
   <ConcentrationSet region="neck">
     
-    <NanoMolarity specieID="ncx" value="20549.5855" />
-    <NanoMolarity specieID="ncxCa" value="1121.6169" />
-    <NanoMolarity specieID="pmca" value="2524.607" />
-    <NanoMolarity specieID="pmcaCa" value="646.7885" />
+    <NanoMolarity specieID="ncx" value="20471.0054" />
+    <NanoMolarity specieID="ncxCa" value="1200.197" />
+    <NanoMolarity specieID="pmca" value="2467.3457" />
+    <NanoMolarity specieID="pmcaCa" value="704.0498" />
     
   </ConcentrationSet>
   
 
 <SurfaceDensitySet region="dend">
 
-    <PicoSD specieID="R" value="27.8561" />
-    <PicoSD specieID="LR" value="2.578" />
-    <PicoSD specieID="GsR" value="446.0544" />
-    <PicoSD specieID="LRGs" value="1.2942" />
+    <PicoSD specieID="R" value="31.7038" />
+    <PicoSD specieID="LR" value="2.8125" />
+    <PicoSD specieID="GsR" value="440.3251" />
+    <PicoSD specieID="LRGs" value="1.5256" />
     <PicoSD specieID="LRGsbg" value="0.0" />
-    <PicoSD specieID="Gs" value="1009.1006" />
-    <PicoSD specieID="GasGTP" value="2.6143" />
-    <PicoSD specieID="GasGDP" value="0.0005" />
-    <PicoSD specieID="Gsbg" value="217.5814" />
+    <PicoSD specieID="Gs" value="991.5534" />
+    <PicoSD specieID="GasGTP" value="2.7378" />
+    <PicoSD specieID="GasGDP" value="0.0" />
+    <PicoSD specieID="Gsbg" value="237.5131" />
 
-    <PicoSD specieID="PKAcLR" value="0.0021" />
-    <PicoSD specieID="pLR" value="1.2527" />
-    <PicoSD specieID="PKAcpLR" value="0.0036" />
+    <PicoSD specieID="PKAcLR" value="0.0" />
+    <PicoSD specieID="pLR" value="2.0756" />
+    <PicoSD specieID="PKAcpLR" value="0.0" />
     <PicoSD specieID="ppLR" value="0.0" />
     <PicoSD specieID="PKAcppLR" value="0.0" />
-    <PicoSD specieID="ppLRGi" value="0.4396" />
+    <PicoSD specieID="ppLRGi" value="0.0" />
 
-    <PicoSD specieID="Gi" value="822.6097" />
-    <PicoSD specieID="GaiGTP" value="0.0712" />
+    <PicoSD specieID="Gi" value="830.2694" />
+    <PicoSD specieID="GaiGTP" value="0.0" />
     <PicoSD specieID="GaiGDP" value="0.0" />
-    <PicoSD specieID="Gibg" value="6.1822" />
+    <PicoSD specieID="Gibg" value="0.0" />
 
     
     
-    <PicoSD specieID="AC1" value="2038.4515" />
-    <PicoSD specieID="AC1CamCa4" value="5.4466" />
-    <PicoSD specieID="AC1CamCa4ATP" value="48.2412" />
-    <PicoSD specieID="AC1GasGTP" value="205.6416" />
-    <PicoSD specieID="AC1GasGTPCamCa4" value="0.5355" />
-    <PicoSD specieID="AC1GasGTPCamCa4ATP" value="4.7559" />
-    <PicoSD specieID="AC1GaiGTP" value="5.0191" />
-    <PicoSD specieID="AC1GaiGTPCamCa4" value="0.0203" />
-    <PicoSD specieID="AC1GaiGTPCamCa4ATP" value="0.1759" />
-    <PicoSD specieID="AC1GasGTPGaiGTP" value="0.8957" />
+    <PicoSD specieID="AC1" value="2013.6441" />
+    <PicoSD specieID="AC1CamCa4" value="6.5425" />
+    <PicoSD specieID="AC1CamCa4ATP" value="57.3384" />
+    <PicoSD specieID="AC1GasGTP" value="219.1309" />
+    <PicoSD specieID="AC1GasGTPCamCa4" value="0.7016" />
+    <PicoSD specieID="AC1GasGTPCamCa4ATP" value="6.6401" />
+    <PicoSD specieID="AC1GaiGTP" value="0.0" />
+    <PicoSD specieID="AC1GaiGTPCamCa4" value="0.0" />
+    <PicoSD specieID="AC1GaiGTPCamCa4ATP" value="0.0" />
+    <PicoSD specieID="AC1GasGTPGaiGTP" value="0.0" />
     <PicoSD specieID="AC1GasGTPGaiGTPCamCa4" value="0.0" />
     <PicoSD specieID="AC1GsGiCamCa4ATP" value="0.0" />    
 
     
-    <PicoSD specieID="AC8" value="398.0747" />
+    <PicoSD specieID="AC8" value="396.3748" />
     
-    <PicoSD specieID="AC8CamCa4" value="0.1526" />
-    <PicoSD specieID="AC8CamCa4ATP" value="1.3398" />
+    <PicoSD specieID="AC8CamCa4" value="0.2179" />
+    <PicoSD specieID="AC8CamCa4ATP" value="1.9366" />
     
-    <PicoSD specieID="PKA" value="857.92" />
+    <PicoSD specieID="PKA" value="858.0661" />
     <PicoSD specieID="PKAr" value="0.0" />
-    <PicoSD specieID="PKAcAMP2" value="29.4304" />
+    <PicoSD specieID="PKAcAMP2" value="34.2050" />
     <PicoSD specieID="PKAcAMP4" value="0.0" />
 
-    <PicoSD specieID="ncx" value="7092.4294" />
-    <PicoSD specieID="ncxCa" value="376.8816" />
-    <PicoSD specieID="pmca" value="1004.5248" />
-    <PicoSD specieID="pmcaCa" value="254.3712" />
+    <PicoSD specieID="ncx" value="7073.5507" />
+    <PicoSD specieID="ncxCa" value="391.609" />
+    <PicoSD specieID="pmca" value="1003.7978" />
+    <PicoSD specieID="pmcaCa" value="266.5144" />
 
-    <PicoSD specieID="Leak" value="2.6361" />
-    <PicoSD specieID="CaextLeak" value="2713.3826" />
+    <PicoSD specieID="Leak" value="2.0321" />
+    <PicoSD specieID="CaextLeak" value="2716.0623" />
 
-    <PicoSD specieID="Kal" value="354.8109" />
-    <PicoSD specieID="pKal" value="1.2963" />
+    <PicoSD specieID="Kal" value="355.0751" />
+    <PicoSD specieID="pKal" value="1.0378" />
     <PicoSD specieID="KalCKpCamCa4" value="0.0" />
-    <PicoSD specieID="KalCKCamCa4" value="0.8707" />
+    <PicoSD specieID="KalCKCamCa4" value="1.0254" />
     <PicoSD specieID="KalPKAc" value="0.0" />
-    <PicoSD specieID="pKalPP1" value="15.7295" />
-    <PicoSD specieID="pKalRac" value="0.9174" />
+    <PicoSD specieID="pKalPP1" value="9.6581" />
+    <PicoSD specieID="pKalRac" value="0.5999" />
     
-    <PicoSD specieID="RCapGDP" value="330.5654" />
-    <PicoSD specieID="RCap" value="5.8195" />
-    <PicoSD specieID="SCappSSH" value="149.0314" />
-    <PicoSD specieID="SCap" value="0.0057" />
+    <PicoSD specieID="RCapGDP" value="330.2455" />
+    <PicoSD specieID="RCap" value="4.3757" />
+    <PicoSD specieID="SCappSSH" value="56.8419" />
+    <PicoSD specieID="SCap" value="0.0" />
    
   </SurfaceDensitySet>
 
