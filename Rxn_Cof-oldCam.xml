@@ -119,10 +119,9 @@ phosphatase reactions take from revision of Gs to improve Ca dep dphos of Dp32--
   <Specie name="GaiGDP" id="GaiGDP" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Gibg" id="Gibg" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Gsbg" id="Gsbg" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="LRGsbg" id="LRGsbg" kdiff="0" kdiffunit="mu2/s"/>
   
   <Specie name="cAMP"     id="cAMP"     kdiff="86.4"     kdiffunit="mu2/s"/>
-  <Specie name="AMP"       id="AMP"      kdiff="84.8" kdiffunit="mu2/s"/>
+  <Specie name="AMP"       id="AMP"      kdiff="0.848" kdiffunit="mu2/s"/><!-- diffusion rate not important-->
   <Specie name="AC1"         id="AC1"      kdiff="0"      kdiffunit="mu2/s"/>
   <Specie name="AC1GasGTP"   id="AC1GasGTP"  kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="AC1GasGTPCamCa4"   id="AC1GasGTPCamCa4"   kdiff="0"         kdiffunit="mu2/s"/>
@@ -179,8 +178,8 @@ Now, the reactions themselves
 
 <forwardRate>0.000015e-3</forwardRate>
 <reverseRate> 0.12e-3</reverseRate>
-<!--forwardRate> 0.000005e-3 </forwardRate>
-<reverseRate> 0.04e-3 </reverseRate-->
+<!--forwardRate> 0.000010e-3 </forwardRate>
+<reverseRate> 0.08e-3 </reverseRate-->
 
 
 </Reaction>
@@ -190,7 +189,7 @@ Now, the reactions themselves
 <Product specieID="pKal"/>
 
 <forwardRate> 0.03e-3 </forwardRate>
-<!--forwardRate> 0.01e-3 </forwardRate-->
+<!--forwardRate> 0.02e-3 </forwardRate-->
 <reverseRate> 0 </reverseRate>
 
 </Reaction>
@@ -204,8 +203,8 @@ Now, the reactions themselves
 
 <forwardRate>0.00015e-3</forwardRate>
 <reverseRate> 1.2e-3</reverseRate>
-<!--forwardRate>0.000050e-3</forwardRate>
-<reverseRate>0.4e-3</reverseRate-->
+<!--forwardRate>0.00010e-3</forwardRate>
+<reverseRate>0.8e-3</reverseRate-->
 
 
 </Reaction>
@@ -215,7 +214,7 @@ Now, the reactions themselves
 <Product specieID="pKal"/>
 
 <forwardRate>0.3e-3 </forwardRate>
-<!--forwardRate>0.1e-3 </forwardRate-->
+<!--forwardRate>0.2e-3 </forwardRate-->
 <reverseRate> 0 </reverseRate>
 
 </Reaction>
@@ -230,8 +229,8 @@ Now, the reactions themselves
 
 <forwardRate>0.00015e-3</forwardRate>
 <reverseRate> 1.2e-3</reverseRate>
-<!--forwardRate>0.00030e-3</forwardRate>
-<reverseRate> 2.4e-3</reverseRate-->
+<!--forwardRate>0.00010e-3</forwardRate>
+<reverseRate> 0.8e-3</reverseRate-->
 
 
 </Reaction>
@@ -241,7 +240,7 @@ Now, the reactions themselves
 <Product specieID="pKal"/>
 
 <forwardRate>0.3e-3 </forwardRate>
-<!--forwardRate>0.6e-3 </forwardRate-->
+<!--forwardRate>0.2e-3 </forwardRate-->
 <reverseRate> 0 </reverseRate>
 
 </Reaction>
@@ -256,6 +255,8 @@ Now, the reactions themselves
 
 <forwardRate> 0.00005e-3 </forwardRate>
 <reverseRate> 0.04e-3 </reverseRate>
+<!--forwardRate> 0.0000333e-3 </forwardRate>
+<reverseRate> 0.0267e-3 </reverseRate-->
 
 </Reaction>
 <Reaction id="pKalPP1--Kal+PP1" name="pKalPP1--Kal+PP1">
@@ -264,6 +265,7 @@ Now, the reactions themselves
 <Product specieID="Kal"/>
 
 <forwardRate> 0.01e-3 </forwardRate>
+<!--forwardRate> 0.0033e-3 </forwardRate-->
 <reverseRate> 0 </reverseRate>
 
 </Reaction>
@@ -468,7 +470,7 @@ Now, the reactions themselves
 <reverseRate> 0 </reverseRate>
 
 </Reaction>
-
+<!-- if increase these two SSH rates,will that reduce RacPAK binding to SSH, and increase pLIMK? -->
 <!--SSH inactivation LIMK-->
 <!--pLIMK+SSH <->SSH+LIMK-->
 <Reaction id="pLIMK+SSH--SSHpLIMK" name="pLIMK+SSH--SSHpLIMK">
@@ -476,7 +478,7 @@ Now, the reactions themselves
 <Reactant specieID="SSH"/>
 <Product specieID="SSHpLIMK"/>
 
-<forwardRate>0.113e-6</forwardRate>
+<forwardRate>0.113e-6</forwardRate> <!-- increase rate to reduce pCof --> 
 <reverseRate>0.420e-3</reverseRate>
 
 </Reaction>
@@ -499,7 +501,7 @@ Now, the reactions themselves
 <Reactant specieID="pLIMK"/>
 <Product specieID="pLIMKCof"/>
 
-<forwardRate>3.61e-6</forwardRate>
+<forwardRate>3.61e-6</forwardRate><!-- increase rate to reduce pCof --> 
 <reverseRate>0.014</reverseRate>
 
 
@@ -1021,7 +1023,7 @@ Now, the reactions themselves
 	<Reactant specieID="PKAc"/>
 	<Product specieID="PKAcpLR"/>
 
-	<forwardRate>0.008e-04</forwardRate>
+	<forwardRate>0.008e-04</forwardRate><!-- cooperative.  Non-coop would have 0.004 -->
 	<reverseRate>44.8e-04</reverseRate>
 	<Q10>0.2</Q10>
     </Reaction>
@@ -1033,7 +1035,7 @@ Now, the reactions themselves
 	<Product specieID="PKAc"/>
 
 	<forwardRate>0.01712e-03</forwardRate>
-	<reverseRate>2.24e-03</reverseRate>
+	<reverseRate>0</reverseRate><!-- Should be zero, wasa 2.24e-3 -->
 	<Q10>0.2</Q10>
     </Reaction>
 
@@ -1147,7 +1149,7 @@ Now, the reactions themselves
 	<Reactant specieID="CamCa4"/>
 	<Product specieID="AC1GasGTPCamCa4"/>
 
-	<forwardRate>6.0e-6</forwardRate>
+	<forwardRate>12.0e-6</forwardRate><!-- K_D = 75 nM -->
 	<reverseRate>0.9e-3</reverseRate>
 	<Q10>0.2</Q10>
     </Reaction>
@@ -1257,7 +1259,7 @@ Now, the reactions themselves
 	<Reactant specieID="CamCa4"/>
 	<Product specieID="AC1CamCa4"/>
 
-	<forwardRate>0.006e-3</forwardRate>
+	<forwardRate>0.0045e-3</forwardRate><!-- K_D = 150-200 nM, Wang&Storm Molec Pharm -->
 	<reverseRate>0.9e-3</reverseRate>
 	<Q10>0.2</Q10>
     </Reaction>
@@ -1304,7 +1306,7 @@ Now, the reactions themselves
 	<Reactant specieID="CamCa4"/>
 	<Product specieID="AC8CamCa4"/>
 
-	<forwardRate>0.00125e-3</forwardRate>
+	<forwardRate>0.00125e-3</forwardRate> <!-- K_D = 800 nM, Wang&Storm Molec Pharm-->
 	<reverseRate>1e-3</reverseRate>
 	<Q10>0.2</Q10>
     </Reaction>

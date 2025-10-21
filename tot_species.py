@@ -1,30 +1,30 @@
 sub_species={'PKA':['PKA'],'PKAr':['PKA','PKAr','PKAcAMP2','PKAcAMP4'],
-             'PKAc':['PKAc','KalPKAc','PKAcLIMK','PKAc_PDE4_cAMP','PKAcPDE4','PKAcLR','PKAcpLR','PKAcppLR'],
-             'Rac':['pKalRac','RacGap','RacGDP','RacGTP','RacPAK','RacPAKLIMK','RacPAKSSH','RCapGDP'],
+             'PKActot':['PKAc','KalPKAc','PKAcLIMK','PKAc_PDE4_cAMP','PKAcPDE4','PKAcLR','PKAcpLR','PKAcppLR'],
+             'Rac':['pKalRac','RacGap','RacGDP','RacGTP','RacPAK','RacPAKLIMK','RacPAKSSH'],
+             'totRac':['pKalRac','RacGap','RacGDP','RacGTP','RacPAK','RacPAKLIMK','RacPAKSSH','RCapGDP'],
              'actCof':['Cof','Cofactin'],'InCof':['pCof'],
-             'totPAK':['RacPAK','RacPAKLIMK','RacPAKSSH'],
+             'totPAK':['PAK','RacPAK','RacPAKLIMK','RacPAKSSH'],
              'totCofALL':['Cof','Cofactin','pCof','pLIMKCof','SSHpCof'],
-             'totCof':['Cof','Cofactin','pCof'],
-             'totRac':['pKalRac','RacGap','RacGDP','RacGTP','RacPAK','RacPAKLIMK','RacPAKSSH'],
              'CKtot':['KalCKCamCa4','KalCKpCamCa4','CKp','CKCamCa4','CKpCamCa4','CKpPP1','CKpCamCa4PP1'],
              'CKonly':['CKp','CKCamCa4','CKpCamCa4'],
-             'epac':['EpacAMP'],
              'LIMK':['RacPAKLIMK','PKAcLIMK','LIMK','pLIMK','pLIMKCof','SSHpLIMK'],
              'ssh':['CaNCamCa4pSSH','pSSH','SSH','SSHpLIMK','SSHpCof','RacPAKSSH','SCappSSH'],
              'Kal':['Kal','KalCKCamCa4','KalCKpCamCa4','KalPKAc','pKal','pKalPP1','pKalRac'],
              'phos':['KalCKpCamCa4','pKal','pKalPP1','pKalRac','CKp','CKCamCa4','CKpCamCa4','CKpPP1','CKpCamCa4PP1','pPDE4','pPDE4cAMP','pLR', 'ppLR', 'ppLRGi'],
-             'PKAphos':['pPDE4','pPDE4cAMP','pLR', 'ppLR', 'ppLRGi','EpacAMP'],
+             'PKAphos':['pPDE4','pPDE4cAMP','pLR', 'ppLR', 'ppLRGi'],#'EpacAMP'],
              'phoslimk':['KalCKpCamCa4','pKal','pKalPP1','pKalRac','CKp','CKCamCa4','CKpCamCa4','CKpPP1','CKpCamCa4PP1','pPDE4','pPDE4cAMP','pLR', 'ppLR', 'ppLRGi','pLIMK','pLIMKCof','SSHpLIMK'],
              'dualPKA_PAK':{'pLIMK','pLIMKCof','SSHpLIMK'},
              'dualCK_PKA':{'pKal','pKalPP1','pKalRac'}}
 ##phos=pka and ck, 
-tot_species=['actCof','CKtot','PKAphos','phoslimk','dualPKA_PAK','dualCK_PKA']#'totactCof'#
-#tot_species=['CK','PKAc','ncx','pmca','PKAc','Cof','LIMK','SSH','ssh','Rac','Kal','PAK','Cam','CaN','PKAr','actin','Gap','CK','PP1','Ip35','AC1','AC8','PDE4','PDE1','Epac','Calbin']
+tot_species=['actCof','dualCK_PKA','totPAK','totCofALL','CKtot', 'PKAphos','dualPKA_PAK']# 'PKActot',
+#tot_species=['CK','PKActot','totCofALL','LIMK','SSH','totRac','Kal','totPAK','CaN','PKAr','actin','Gap','CK','PP1','Ip35','PDE4','Epac','Calbin'] #sum molecules to ensure totals are correct
 weight={}
 #signature molecules must be in tot_species
-signature={'kinase':{'num':['CKtot','PKAphos'],'denom':[]}, 'CK_PKA_PAK':{'num':['CKtot','PKAphos','dualPKA_PAK','dualCK_PKA'],'denom':[]},'CK_PKA':{'num':['CKtot','PKAphos','dualCK_PKA'],'denom':[]},'cof_act':{'num':['actCof'],'denom':[]}}
+signature={'kinase':{'num':['CKtot','PKAphos','EpacAMP'],'denom':[]}, 'CK_PKA_PAK':{'num':['CKtot','PKAphos','dualPKA_PAK','dualCK_PKA','EpacAMP'],'denom':[]},'CK_PKA':{'num':['CKtot','PKAphos','dualCK_PKA','EpacAMP'],'denom':[]},'cof_act':{'num':['actCof'],'denom':[]}}
 #thresh keys must be regions in the morphology
-thresh={'kinase':{'dend':0.2,'dendsub':0.2,'sa1[0]':0.2},'CK_PKA_PAK':{'dend':0.2,'dendsub':0.2,'sa1[0]':0.3},'CK_PKA':{'dend':0.2,'dendsub':0.2,'sa1[0]':0.3},'cof_act':{'dend':0.2,'dendsub':0.2,'sa1[0]':0.3}}
+thresh={'kinase':{'dend':0.4,'dendsub':0.45,'sa1[0]':0.45},'CK_PKA_PAK':{'dend':0.22,'dendsub':0.22,'sa1[0]':0.22},'CK_PKA':{'dend':0.32,'dendsub':0.36,'sa1[0]':0.45},'cof_act':{'dend':0.2,'dendsub':0.2,'sa1[0]':0.3}}
+#signature={}
+#thresh={}
 min_max={}   
 '''
 min_max = {
