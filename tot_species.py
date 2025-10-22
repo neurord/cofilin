@@ -17,14 +17,14 @@ sub_species={'PKA':['PKA'],'PKAr':['PKA','PKAr','PKAcAMP2','PKAcAMP4'],
              'dualCK_PKA':{'pKal','pKalPP1','pKalRac'}}
 ##phos=pka and ck, 
 tot_species=['actCof','dualCK_PKA','totPAK','totCofALL','CKtot', 'PKAphos','dualPKA_PAK']# 'PKActot',
-#tot_species=['CK','PKActot','totCofALL','LIMK','SSH','totRac','Kal','totPAK','CaN','PKAr','actin','Gap','CK','PP1','Ip35','PDE4','Epac','Calbin'] #sum molecules to ensure totals are correct
+tot_species=['CK','totCofALL','LIMK','SSH','totRac','Kal','totPAK','CaN','PKAr','actin','Gap','CK','PP1','Ip35','PDE4','Epac','Calbin'] #sum molecules to ensure totals are correct
 weight={}
 #signature molecules must be in tot_species
 signature={'kinase':{'num':['CKtot','PKAphos','EpacAMP'],'denom':[]}, 'CK_PKA_PAK':{'num':['CKtot','PKAphos','dualPKA_PAK','dualCK_PKA','EpacAMP'],'denom':[]},'CK_PKA':{'num':['CKtot','PKAphos','dualCK_PKA','EpacAMP'],'denom':[]},'cof_act':{'num':['actCof'],'denom':[]}}
 #thresh keys must be regions in the morphology
 thresh={'kinase':{'dend':0.4,'dendsub':0.45,'sa1[0]':0.45},'CK_PKA_PAK':{'dend':0.22,'dendsub':0.22,'sa1[0]':0.22},'CK_PKA':{'dend':0.32,'dendsub':0.36,'sa1[0]':0.45},'cof_act':{'dend':0.2,'dendsub':0.2,'sa1[0]':0.3}}
-#signature={}
-#thresh={}
+signature={}
+thresh={}
 min_max={}   
 '''
 min_max = {

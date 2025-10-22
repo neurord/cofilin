@@ -8,7 +8,7 @@
           <xi:include href="../Rxn_Cof-oldCamSSHenh40_Kalslow2.xml" />
           <xi:include href="../Morph_dend_0.6um_spine1.xml" />
 	  <!--xi:include href="IC_Cof.xml" /-->
-	  <xi:include href="../IC_Cof_PKAKO_oldCam.xml" />
+	  <xi:include href="IC_Cof_PKAKO_oldCam.xml" />
           <xi:include href="../Out_Cof.xml" />
 
 	  <!--2D means the morphology is interpreted like a flatworm, 3D for
