@@ -8,7 +8,7 @@
 
           <xi:include href="../Rxn_Cof-oldCam.xml" />
           <xi:include href="../Morph_dend_0.6um_spine1.xml" />        
-          <xi:include href="../IC_Cofh5_update_PKAKOh5_update_PKAKO-oldCam.xml" />
+          <xi:include href="../IC_Cof_PKAKO_oldCamh5_updateNEW.xml" />
           <xi:include href="../Out_Cof.xml" />
 	  <xi:include href="../Stim_Cof-LFS-ISO_PKA.xml" />
 	   
