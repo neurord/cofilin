@@ -82,6 +82,7 @@ So the "io file" will be dependent on information stated in the
   <OutputSpecie name="PKAcppLR"/>
   <OutputSpecie name="pLR"/>
   <OutputSpecie name="ppLR"/>
+  <OutputSpecie name="ppLRGi"/>
   <OutputSpecie name="GsR"/>
   <OutputSpecie name="GasGTP"/>
   <OutputSpecie name="GasGDP"/>
