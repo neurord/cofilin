@@ -21,10 +21,10 @@ sub_species={'PKA':['PKA'],'PKAr':['PKA','PKAr','PKAcAMP2','PKAcAMP4'],
 tot_species=['actCof','CKtot','PKAphos','phoslimk','dualPKA_PAK','dualCK_PKA']#'totactCof'#
 #tot_species=['CK','PKAc','ncx','pmca','PKAc','Cof','LIMK','SSH','ssh','Rac','Kal','PAK','Cam','CaN','PKAr','actin','Gap','CK','PP1','Ip35','AC1','AC8','PDE4','PDE1','Epac','Calbin']
 weight={}
-#signature molecules must be in tot_species
-signature={'kinase':{'num':['CKtot','PKAphos'],'denom':[]}, 'CK_PKA_PAK':{'num':['CKtot','PKAphos','dualPKA_PAK','dualCK_PKA'],'denom':[]},'cof_act':{'num':['actCof'],'denom':[]}} #,'CK_PKA':{'num':['CKtot','PKAphos','dualCK_PKA'],'denom':[]}
+#signature molecules must be in tot_species or specified in -molx
+signature={'kinase':{'num':['CKtot','PKAphos','EpacAMP'],'denom':[]}, 'CK_PKA_PAK':{'num':['CKtot','PKAphos','dualPKA_PAK','dualCK_PKA','EpacAMP'],'denom':[]},'cof_act':{'num':['actCof'],'denom':[]}} #,'CK_PKA':{'num':['CKtot','PKAphos','dualCK_PKA'],'denom':[]}
 #thresh keys must be regions in the morphology
-thresh={'kinase':{'dend':0.2,'dendsub':0.2,'sa1[0]':0.2},'CK_PKA_PAK':{'dend':0.2,'dendsub':0.2,'sa1[0]':0.3},'cof_act':{'dend':0.2,'dendsub':0.2,'sa1[0]':0.3}} #,'CK_PKA':{'dend':0.2,'dendsub':0.2,'sa1[0]':0.3}
+thresh={'kinase':{'dend':0.4,'dendsub':0.45,'sa1[0]':0.45},'CK_PKA_PAK':{'dend':0.22,'dendsub':0.22,'sa1[0]':0.22},'cof_act':{'dend':0.2,'dendsub':0.2,'sa1[0]':0.3}} #'CK_PKA':{'dend':0.32,'dendsub':0.36,'sa1[0]':0.45},
 min_max={}
 min_max = {
     'kinase': {
@@ -38,6 +38,11 @@ min_max = {
                 'dend': {'max': 1834.69, 'min': 20.86},
                 'dendsub': {'max': 411.139, 'min': 20.86},
                 'sa1[0]': {'max': 2069.08, 'min': 20.70}
+            },
+            'EpacAMP': {
+                'dend': {'max': 332.58, 'min': 0},
+                'dendsub': {'max': 347.68, 'min': 0},
+                'sa1[0]': {'max': 415.61, 'min': 0}
             }
         },
         'denom': {}
@@ -63,6 +68,11 @@ min_max = {
                 'dend': {'max': 1834.69, 'min': 20.86},
                 'dendsub': {'max': 411.139, 'min': 20.86},
                 'sa1[0]': {'max': 2069.08, 'min': 20.70}
+            },
+            'EpacAMP': {
+                'dend': {'max': 332.58, 'min': 0},
+                'dendsub': {'max': 347.68, 'min': 0},
+                'sa1[0]': {'max': 415.61, 'min': 0}
             }
         },
         'denom': {}
