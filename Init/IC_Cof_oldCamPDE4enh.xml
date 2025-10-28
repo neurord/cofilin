@@ -64,10 +64,10 @@
     <NanoMolarity specieID="PKAc" value="0" /> 
     <NanoMolarity specieID="cAMP" value="28.57" />
     
-    <NanoMolarity specieID="PDE4" value="698.8" />
-    <NanoMolarity specieID="pPDE4" value="103.8" />
-    <NanoMolarity specieID="PDE4cAMP" value="5.0" />
-    <NanoMolarity specieID="pPDE4cAMP" value="0.7" />
+    <NanoMolarity specieID="PDE4" value="3144.7" />
+    <NanoMolarity specieID="pPDE4" value="466.9" />
+    <NanoMolarity specieID="PDE4cAMP" value="22.6" />
+    <NanoMolarity specieID="pPDE4cAMP" value="3.3" />
     <NanoMolarity specieID="PKAc_PDE4_cAMP" value="0.0" />
     <NanoMolarity specieID="PKAcPDE4" value="0" />
     
