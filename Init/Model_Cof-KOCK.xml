@@ -5,10 +5,10 @@
     <!-- this file defines a single run of the calculation, using morphology and 
 
 	 reaction data brought in from other files --> 
-          <xi:include href="../Rxn_Cof_CKKO-oldCam.xml" />
+          <xi:include href="../Rxn_Cof_PP1lowSSHfast_CKKO2.xml" />
           <xi:include href="../Morph_dend_0.6um_spine1.xml" />
-	  <!--xi:include href="IC_Cof.xml" /-->
-	  <xi:include href="IC_Cof_CKKO_oldCam.xml" />
+	  <!--xi:include href="IC_Cof.xml" /--><!-- used for init sims using 1st set of params -->
+	  <xi:include href="IC_Cof_CKKO_oldCam.xml" /><!-- used for init sims using PP1lowSSHfast params -->
           <xi:include href="../Out_Cof.xml" />
 	           
     <!--2D means the morphology is interpreted like a flatworm, 3D for
