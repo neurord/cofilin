@@ -84,7 +84,7 @@ phosphatase reactions take from revision of Gs to improve Ca dep dphos of Dp32--
     <Specie name="PP1"                                 id="PP1"               kdiff="0"    kdiffunit="mu2/s"/>
     <Specie name="CKpPP1"                              id="CKpPP1"            kdiff="0"    kdiffunit="mu2/s"/>
     <Specie name="CKpCamCa4PP1"                        id="CKpCamCa4PP1"      kdiff="0"    kdiffunit="mu2/s"/>
-    <Specie name="Ip35"                                 id="Ip35"               kdiff="0"    kdiffunit="mu2/s"/>
+    <Specie name="Ip35"                                 id="Ip35"               kdiff="7.02"    kdiffunit="mu2/s"/>
     <Specie name="Ip35PP1"                              id="Ip35PP1"            kdiff="0"    kdiffunit="mu2/s"/>
     <Specie name="Ng"                                   id="Ng"                   kdiff="0"     kdiffunit="mu2/s"/>
     <Specie name="NgCam"                                id="NgCam"                kdiff="0"     kdiffunit="mu2/s"/>
@@ -220,15 +220,16 @@ Now, the reactions themselves
 </Reaction>
 
 
-<!--PKA to Kal Restore original rates-->
+<!--PKA to Kal Restore original rates
+2025 dec 18: double (back to 2023 rates) to add role for PKA -->
 <!--PKAc+Kal<->PKAc +pKal-->
 <Reaction id="Kal+PKAc--KalPKAc" name="Kal+PKAc--KalPKAc">
 <Reactant specieID="Kal"/>
 <Reactant specieID="PKAc"/>
 <Product specieID="KalPKAc"/>
 
-<forwardRate>0.00015e-3</forwardRate>
-<reverseRate> 1.2e-3</reverseRate>
+<forwardRate>0.0003e-3</forwardRate>
+<reverseRate> 2.4e-3</reverseRate>
 <!--forwardRate>0.00010e-3</forwardRate>
 <reverseRate> 0.8e-3</reverseRate-->
 
@@ -239,23 +240,24 @@ Now, the reactions themselves
 <Product specieID="PKAc"/>
 <Product specieID="pKal"/>
 
-<forwardRate>0.3e-3 </forwardRate>
+<forwardRate>0.6e-3 </forwardRate>
 <!--forwardRate>0.2e-3 </forwardRate-->
 <reverseRate> 0 </reverseRate>
 
 </Reaction>
 
 
-<!--PP1 inactivates Kal 3x faster to maintain balance with phos Kal-->
+<!--PP1 inactivates Kal 3x faster to maintain balance with phos Kal
+2025 dec 18: 20% additional increase, to maintain basal -->
 <!--PP1+Kal<->PP1 +pKal-->
 <Reaction id="pKal+PP1--pKalPP1" name="pKal+PP1--pKalPP1">
 <Reactant specieID="pKal"/>
 <Reactant specieID="PP1"/>
 <Product specieID="pKalPP1"/>
 
-<forwardRate> 0.00005e-3 </forwardRate>
+<forwardRate> 0.00006e-3 </forwardRate>
 <!--forwardRate> 0.0000333e-3 </forwardRate-->
-<reverseRate> 0.12e-3 </reverseRate>
+<reverseRate> 0.144e-3 </reverseRate>
 <!--reverseRate> 0.0267e-3 </reverseRate-->
 
 </Reaction>
@@ -264,7 +266,7 @@ Now, the reactions themselves
 <Product specieID="PP1"/>
 <Product specieID="Kal"/>
 
-<forwardRate> 0.03e-3 </forwardRate>
+<forwardRate> 0.036e-3 </forwardRate>
 <!--forwardRate> 0.0033e-3 </forwardRate-->
 <reverseRate> 0 </reverseRate>
 
@@ -330,15 +332,15 @@ Now, the reactions themselves
 
 </Reaction>
 
-<!--RacGTP activate PAK-->
+<!--RacGTP activate PAK, make faster to better follow RacGTP, but same affffinity - same basal?-->
 <!--RacGTP+PAK <->RacPAK-->
 <Reaction id="RacGTP+PAK--RacGTPPAK" name="RacGTP+PAK--RacGTPPAK">
 <Reactant specieID="PAK"/>
 <Reactant specieID="RacGTP"/>
 <Product specieID="RacPAK"/>
 
-<forwardRate>0.009432854292459061e-6</forwardRate>
-<reverseRate>0.001639e-3</reverseRate>
+<forwardRate>0.09432854292459061e-6</forwardRate>
+<reverseRate>0.01639e-3</reverseRate>
 
 </Reaction>
 
@@ -446,7 +448,8 @@ Now, the reactions themselves
 </Reaction>
 
 
-<!--LIMK activated by PKAc restore original rates-->
+<!--LIMK activated by PKAc restore original rates
+2025 dec 18: 50% increase (back to 2023 rates) to add role for PKA -->
 <!--PKAc+LIMK <->pLIMK+PKAc-->
 <Reaction id="PKAc+LIMK--LIMKPKAc" name="PKAc+LIMK--LIMKPKAc">
 <Reactant specieID="PKAc"/>
@@ -455,8 +458,8 @@ Now, the reactions themselves
 
 <!--forwardRate>0.133e-6</forwardRate--><!-- restore original rates-->
 <!--reverseRate>0.455e-3</reverseRate-->
-<forwardRate>0.4e-6</forwardRate>
-<reverseRate>1.36e-3</reverseRate>
+<forwardRate>0.6e-6</forwardRate>
+<reverseRate>2e-3</reverseRate>
 
 </Reaction>
 
@@ -465,12 +468,13 @@ Now, the reactions themselves
 <Product specieID="pLIMK"/>
 <Product specieID="PKAc"/>
 
-<forwardRate>0.336e-3</forwardRate>
+<forwardRate>0.5e-3</forwardRate>
 <!--forwardRate>0.112e-3</forwardRate-->
 <reverseRate> 0 </reverseRate>
 
 </Reaction>
-<!-- increase these two SSH rates by 40% and then 3x more to reduce pLIMK and pCof -->
+<!-- increase these two SSH rates by 40% and then 3x more to reduce pLIMK and pCof
+2025 dec 18: 20% increase to maintain basal -->
 <!--SSH inactivation LIMK-->
 <!--pLIMK+SSH <->SSH+LIMK-->
 <Reaction id="pLIMK+SSH--SSHpLIMK" name="pLIMK+SSH--SSHpLIMK">
@@ -478,8 +482,8 @@ Now, the reactions themselves
 <Reactant specieID="SSH"/>
 <Product specieID="SSHpLIMK"/>
 
-<forwardRate>0.4746e-6</forwardRate> <!-- increased rates to reduce pCof --> 
-<reverseRate>1.764e-3</reverseRate>
+<forwardRate>0.5695e-6</forwardRate> <!-- increased rates to reduce pCof --> 
+<reverseRate>2.118e-3</reverseRate>
 
 </Reaction>
 
@@ -489,7 +493,7 @@ Now, the reactions themselves
 <Product specieID="SSH"/>
 <Product specieID="LIMK"/>
 
-<forwardRate>0.441e-3</forwardRate>
+<forwardRate>0.5292e-3</forwardRate>
 <reverseRate> 0 </reverseRate>
 </Reaction>
 
@@ -526,8 +530,8 @@ Now, the reactions themselves
 <Product specieID="SSHpCof"/>
 
 
-<forwardRate>15.162e-6</forwardRate>
-<reverseRate>0.0588</reverseRate>
+<forwardRate>0.0182e-3</forwardRate>
+<reverseRate>0.0706</reverseRate>
 
 </Reaction>
 
@@ -537,7 +541,7 @@ Now, the reactions themselves
 <Product specieID="Cof"/>
 
 
-<forwardRate>0.01596</forwardRate>
+<forwardRate>0.0192</forwardRate>
 <reverseRate> 0 </reverseRate>
 
 </Reaction>
@@ -831,33 +835,41 @@ Now, the reactions themselves
 
     <!-- PP1 inhibitor -->
     
- <!-- Ip35 + PP1 <-> Ip35PP1 -->
+    <!-- Ip35 + PP1 <-> Ip35PP1 -->
     <Reaction name = "Ip35+PP1" id="Ip35+PP1">
 	<Reactant specieID="Ip35"/>
         <Reactant specieID="PP1"/>
-`	<Product specieID="Ip35PP1"/>
+	<Product specieID="Ip35PP1"/>
 
-	
     <forwardRate> 1.00e-6 </forwardRate>
         <reverseRate> 1.10e-6 </reverseRate>
     </Reaction>
 
-    
-    <!-- Ng binding to Cam -->
-    
+        <!-- Ng binding to Cam -->
+
  <!-- Ng+Cam <-> NgCam -->
     <Reaction name = "Ng+Cam" id="Ng+Cam">
 	<Reactant specieID="Ng"/>
         <Reactant specieID="Cam"/>
-`	<Product specieID="NgCam"/>
-
+	<Product specieID="NgCam"/>
 	
-    <forwardRate> 2.80e-5 </forwardRate>
-        <reverseRate> 3.60e-2 </reverseRate>
+    <forwardRate> .0280e-3 </forwardRate>
+        <reverseRate> .036 </reverseRate>
     </Reaction>
 	
 	
 <!-- Cam to CaN.-->
+    <!-- Cam or CamC2N or CamC2C or CamCa4 binding to PP2B.  Check rates for microscopic reversibility -->
+     <!--4x) Cam    +   CaN     <->  CaNCam     (in xpp: k33a=1 k_33a=3)  -->
+    <Reaction name = "Cam+CaN--CaNCam reac" id="Cam+CaN--CaNCam_id">
+        <Reactant specieID="Cam"                    />
+        <Reactant specieID="CaN"                   />
+        <Product  specieID="CaNCam"                />
+
+        <forwardRate> 0.0046e-3       </forwardRate>
+        <reverseRate> 0.0012e-3      </reverseRate>
+    </Reaction>
+
 <!--4C) CamCa2C    +   CaN    <->  CaNCamCa2C (in xpp: k33c=1 k_33c=0.3) -->
     <Reaction name = "CamCa2C+CaN--CaNCamCa2C reac" id="CamCa2C+CaN--CaNCamCa2C_id">
         <Reactant specieID="CamCa2C"                 />
