@@ -10,7 +10,7 @@
           <xi:include href="../Morph_10um_dend_spines.xml" />        
           <xi:include href="../IC_Cof_ctrl_oldCamh5_updateI1PKA.xml" />
           <xi:include href="../Out_Cof.xml" />
-s	   
+	   
     <!--2D means the morphology is interpreted like a flatworm, 3D for
 
 	roundworms. The 2D case is good for testing as it is easy to visualize the
