@@ -1,5 +1,5 @@
 <StimulationSet>
-UPDATE: change sa1[0] to sa1[1] or sa1[2] for these sims
+
   <!--onset and duration in ms, rate in particles/ms-->
 <!--###########################4 train HFS#################### -->
    <!--ligand --> 
@@ -146,10 +146,10 @@ UPDATE: change sa1[0] to sa1[1] or sa1[2] for these sims
 	<numTrains>           4       </numTrains>
 </InjectionStim>
     
-  <!--###########################1 train HFS#################### -->
+  <!--###########################1 train HFS, ~10 min after end of massed stimulation #################### -->
 
  <!--ligand --> 
-<InjectionStim specieID="L" injectionSite="sa1[0].pointA">
+<InjectionStim specieID="L" injectionSite="sa1[2].pointA">
         <onset>900000   </onset>
         <duration>1    </duration>
         <rate> 2.5 </rate>
@@ -169,7 +169,7 @@ UPDATE: change sa1[0] to sa1[1] or sa1[2] for these sims
 </InjectionStim>
 
  <!--Ca -->
-<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+<InjectionStim specieID="Ca" injectionSite="sa1[2].pointA">
         <onset>               900000          </onset>
         <duration>        1         </duration> 
        	<!--rate>               1500      </rate-->
@@ -177,7 +177,7 @@ UPDATE: change sa1[0] to sa1[1] or sa1[2] for these sims
 </InjectionStim>
 
  
-<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+<InjectionStim specieID="Ca" injectionSite="sa1[2].pointA">
            <onset>               900002          </onset>
         <duration>        3         </duration> 
        	<rate>               1144     </rate> 	
@@ -186,7 +186,7 @@ UPDATE: change sa1[0] to sa1[1] or sa1[2] for these sims
 	
 </InjectionStim>
 
-<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+<InjectionStim specieID="Ca" injectionSite="sa1[2].pointA">
            <onset>               900010          </onset>
         <duration>        3         </duration> 
        	<rate>               531.7      </rate>
@@ -195,7 +195,7 @@ UPDATE: change sa1[0] to sa1[1] or sa1[2] for these sims
 	
 </InjectionStim>
 
-<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+<InjectionStim specieID="Ca" injectionSite="sa1[2].pointA">
            <onset>               900110          </onset>
         <duration>        3         </duration> 
        	<rate>               448.5      </rate>
@@ -204,7 +204,7 @@ UPDATE: change sa1[0] to sa1[1] or sa1[2] for these sims
 	
 </InjectionStim>
 
-<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+<InjectionStim specieID="Ca" injectionSite="sa1[2].pointA">
            <onset>               900210          </onset>
         <duration>        3         </duration> 
        	<rate>               416.5      </rate>
@@ -213,7 +213,7 @@ UPDATE: change sa1[0] to sa1[1] or sa1[2] for these sims
 	
 </InjectionStim>
 
-<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+<InjectionStim specieID="Ca" injectionSite="sa1[2].pointA">
            <onset>               900310          </onset>
         <duration>        3         </duration> 
        	<rate>               384.5     </rate>
@@ -222,7 +222,7 @@ UPDATE: change sa1[0] to sa1[1] or sa1[2] for these sims
 	
 </InjectionStim>
 
-<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+<InjectionStim specieID="Ca" injectionSite="sa1[2].pointA">
            <onset>               900410          </onset>
         <duration>        3         </duration> 
        	<rate>            346.1         </rate>
@@ -231,7 +231,7 @@ UPDATE: change sa1[0] to sa1[1] or sa1[2] for these sims
 	
 </InjectionStim>
 
-<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+<InjectionStim specieID="Ca" injectionSite="sa1[2].pointA">
            <onset>               900510          </onset>
         <duration>        3         </duration> 
        	<rate>               330.1      </rate>
@@ -240,7 +240,7 @@ UPDATE: change sa1[0] to sa1[1] or sa1[2] for these sims
 	
 </InjectionStim>
 
-<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+<InjectionStim specieID="Ca" injectionSite="sa1[2].pointA">
            <onset>               900610          </onset>
         <duration>        3         </duration> 
        	<rate>               298.1      </rate>
@@ -249,7 +249,7 @@ UPDATE: change sa1[0] to sa1[1] or sa1[2] for these sims
 	
 </InjectionStim>
 
-<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+<InjectionStim specieID="Ca" injectionSite="sa1[2].pointA">
            <onset>               900710          </onset>
         <duration>        3         </duration> 
        	<rate>               234.1     </rate>
@@ -258,7 +258,7 @@ UPDATE: change sa1[0] to sa1[1] or sa1[2] for these sims
 	
 </InjectionStim>
 
-<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+<InjectionStim specieID="Ca" injectionSite="sa1[2].pointA">
            <onset>               900810          </onset>
         <duration>        3         </duration> 
        	<rate>               234.1     </rate>
@@ -267,7 +267,7 @@ UPDATE: change sa1[0] to sa1[1] or sa1[2] for these sims
 	
 </InjectionStim>
 
-<InjectionStim specieID="Ca" injectionSite="sa1[0].pointA">
+<InjectionStim specieID="Ca" injectionSite="sa1[2].pointA">
            <onset>               900910          </onset>
         <duration>        3         </duration> 
        	<rate>               211.7     </rate>
