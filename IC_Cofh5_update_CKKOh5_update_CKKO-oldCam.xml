@@ -92,7 +92,6 @@
     <NanoMolarity specieID="LR" value="8.3249" />
     <NanoMolarity specieID="GsR" value="803.7109" />
     <NanoMolarity specieID="LRGs" value="1.2686" />
-    <NanoMolarity specieID="LRGsbg" value="0.0" />
     <NanoMolarity specieID="Gs" value="2839.0332" />
     <NanoMolarity specieID="GasGDP" value="92.3669" />
     <NanoMolarity specieID="GasGTP" value="4.5985" />
@@ -197,7 +196,6 @@
     <PicoSD specieID="LR" value="2.6693" />
     <PicoSD specieID="GsR" value="444.0945" />
     <PicoSD specieID="LRGs" value="1.4011" />
-    <PicoSD specieID="LRGsbg" value="0.0" />
     <PicoSD specieID="Gs" value="994.2912" />
     <PicoSD specieID="GasGTP" value="2.8893" />
     <PicoSD specieID="GasGDP" value="0.0" />
