@@ -26,7 +26,7 @@ sub_species={'PKA':['PKA'],'PKAr':['PKA','PKAr','PKAcAMP2','PKAcAMP4'],
              'PP1':['PP1','Ip35PP1', 'pKalPP1','CKpPP1','CKpCamCa4PP1'],
              'I1':['Ip35','Ip35PP1','Ip35CaNCamCa4','Ip35PP1CaNCamCa4','I1']}
 ##phos=pka and ck, 
-tot_species=['pLIMKall','LIMKall','pCoftot']#['RacPAKtot','totCof','totCofALL']#'PKAphos','CKtot','dualCK_PKA','dualPKA_PAK','actCof']#,'RacPAKtot','totCof','totCofALL']#]## 'PKActot',
+tot_species=['RacPAKtot','totCof','totCofALL','CKtot']#['pLIMKall','LIMKall','pCoftot']#'PKAphos','CKtot','dualCK_PKA','dualPKA_PAK','actCof']#,'RacPAKtot','totCof','totCofALL']#]## 'PKActot',
 #tot_species=['CK','totCofALL','LIMKtot','ssh','totRac','Kal','totPAK','CaN','Ng','PKAr','PKActot','actin','Gap','PP1','I1','PDE4','Epac','Calbin', 'AC8', 'AC1', 'Gs','R','GasGTP','RCap','SCap'] #sum molecules to ensure totals are correct
 #tot_species=['pCoftot','pLIMKall','LIMKall']
 weight={}

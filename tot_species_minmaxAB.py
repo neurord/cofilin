@@ -14,7 +14,9 @@ sub_species={'PKA':['PKA'],'PKAr':['PKA','PKAr','PKAcAMP2','PKAcAMP4'],
              'LIMKall':['RacPAKLIMK','PKAcLIMK','LIMK'],
              'pLIMKall':['pLIMK','pLIMKCof','SSHpLIMK'],
              'ssh':['CaNCamCa4pSSH','pSSH','SSH','SSHpLIMK','SSHpCof','RacPAKSSH','SCappSSH'],
+             'sshfree':['SSH','SCappSSH'],
              'Kal':['Kal','KalCKCamCa4','KalCKpCamCa4','KalPKAc','pKal','pKalPP1','pKalRac'],
+             'KalCK':['KalCKCamCa4','KalCKpCamCa4'],
              'phos':['KalCKpCamCa4','pKal','pKalPP1','pKalRac','CKp','CKCamCa4','CKpCamCa4','CKpPP1','CKpCamCa4PP1','pPDE4','pPDE4cAMP','pLR', 'ppLR', 'ppLRGi'],
              'PKAphos':['pPDE4','pPDE4cAMP','pLR', 'ppLR', 'ppLRGi'],#'EpacAMP'],
              'phoslimk':['KalCKpCamCa4','pKal','pKalPP1','pKalRac','CKp','CKCamCa4','CKpCamCa4','CKpPP1','CKpCamCa4PP1','pPDE4','pPDE4cAMP','pLR', 'ppLR', 'ppLRGi','pLIMK','pLIMKCof','SSHpLIMK'],
@@ -26,7 +28,7 @@ sub_species={'PKA':['PKA'],'PKAr':['PKA','PKAr','PKAcAMP2','PKAcAMP4'],
              'PP1':['PP1','Ip35PP1', 'pKalPP1','CKpPP1','CKpCamCa4PP1'],
              'I1':['Ip35','Ip35PP1','Ip35CaNCamCa4','Ip35PP1CaNCamCa4','I1']}
 ##phos=pka and ck, 
-tot_species=['dualPKA_PAK','PKAphos','dualCK_PKA','CKtot','actCof']# 'totCofALL','totCof']#, 'pCoftot','pLIMKall','LIMKall','totCofALL','totCof','RacPAK']# 'PKActot',
+tot_species=['dualPKA_PAK','PKAphos','dualCK_PKA','CKtot','actCof','CKonly','KalCK','sshfree']# 'totCofALL','totCof']#, 'pCoftot','pLIMKall','LIMKall','totCofALL','totCof','RacPAK']# 'PKActot',
 #tot_species=['CK','totCofALL','LIMKtot','ssh','totRac','Kal','totPAK','CaN','Ng','PKAr','PKActot','actin','Gap','CK','PP1','I1','PDE4','Epac','Calbin', 'AC8', 'AC1', 'Gs','R','GasGTP','RCap','SCap'] #sum molecules to ensure totals are correct
 #tot_species=['pCoftot','pLIMKall','LIMKall']
 weight={}
