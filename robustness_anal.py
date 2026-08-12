@@ -13,8 +13,11 @@ import robustness_functions as rf
 
 prog_path_name='/local/vol00/Users/klblackwell/neurord-3.3.0-all-deps.jar'
 ###################################################################################set up args#####
-#ARGS='rand -model Model_Cof-basalctrlATP -change mol_change -frange 24 -start 36 -prog ss'
-ARGS='set -model Model_Cof_10um3spines-4trains_massedtag -modeldir Exp_10um_3spines/ -change mol_change_set -factor 0.1'
+ARGS='rand -model Model_Cof-basalctrlATP -change mol_change -frange 20 -start 0 -prog ss -outdir robust1/'
+ARGS='rand -model Model_Cof-basalctrlATP -change mol_change -frange 20 -start 20 -prog ss -outdir robust2/'
+#ARGS='rand -model Model_Cof-basalctrlATP -change mol_change -frange 20 -start 40 -prog ss -outdir robust3/'
+#ARGS='rand -model Model_Cof-basalctrlATP -change mol_change -frange 20 -start 60 -prog ss -outdir robust4/'
+#ARGS='set -model Model_Cof_10um3spines-4trains_massedtag -modeldir Exp_10um_3spines/ -change mol_change_set -factor 0.1'
 try:
     args = ARGS.split(" ")
     print("ARGS =", ARGS, "commandline=", args)
@@ -41,15 +44,25 @@ else:
     print('unknown program')
 
 main_path=pars.dir
-if main_path.endswith('/') and pars.modeldir=='./':
+if main_path.endswith('/') and pars.modeldir=='/':
     model_path=main_path
 else:
-    model_path=main_path+pars.modeldir
+    model_path=main_path+pars.modeldir #e.g. cof/Exp_3spines/
 ICfile=pars.ICfile#+'.xml'
 find_ICfile=main_path+ICfile #full path to IC file
 frange=pars.frange #number of random variation sims
 suffix_name=pars.modtype
-output_path=main_path+pars.outdir
+if not pars.outdir.endswith('/'):
+    pars.outdir+='/'
+output_path=main_path+pars.outdir #cof/robust1/
+if output_path==main_path:
+    print('model files being placed in main directory')
+elif model_path.count('/')==output_path.count('/'): #model files won't work otherwise since xml files may be specified with ../
+    print('model files being placed in output directory with IC files')
+elif output_path==model_path:
+    print('model files being placed directory with top level model files')
+else:
+    print('model files being placed in output directory, but may not run properly')
 
 ########## create new IC files with random variations
 if suffix_name=='rand':
@@ -60,23 +73,15 @@ else:
 #create new model file(s) for each new IC file
 pattern_mod=model_path+pars.model+'.xml'
 model_filename=sorted(glob.glob(pattern_mod)) #set of files
-if model_path==main_path:
-    model_output_path=main_path
-    print('model files being placed in main directory')
-elif pars.modeldir.count('/')==pars.outdir.count('/'): #model files won't work otherwise since xml files may be specified with ../
-    model_output_path=main_path+pars.outdir
-    print('model files being placed in output directory with IC files')
-else:
-    model_output_path=main_path+pars.outdir
-    print('model files being placed in output directory, but may not run properly')
+fileNames_batch=rf.modelrobust_file(ICfileNames,model_filename,find_ICfile,output_path,pars.prog)
 
-fileNames_batch=rf.modelrobust_file(ICfileNames,model_filename,find_ICfile,model_output_path,pars.prog)
-
+if pars.outdir[-2].isdigit():
+    suffix_name+=pars.outdir[-2]
 rf.bat_file(text,fileNames_batch,suffix_name,pars.prog)
 
 ####################
 ## Next steps:
-## 6. read in params and pCof and analyze with discriminant analysis
-## 7. select a subset of params and run sims
+## 6. read in params and pCof and analyze with discriminant analysis (analyze_json.py, analyze_robust_results.py)
+## 7. select a subset of params and run sims (robustness_anal.py using prog=neurord)
 ##      edit Model files to remove extra params OR, input IC files and orig Model files and generate new Model files (simpler prog##      those with largest basal change - two biggest in opposite directions, next two biggest
 ##      which stim files? massed tagging, test with RF

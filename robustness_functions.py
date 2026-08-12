@@ -37,7 +37,7 @@ def random_file(oPath,frange,find_ICfile,mol_change,start=0):
     now = datetime.now()
     date_string = now.strftime("%Y-%m-%d")
     find_name=os.path.basename(find_ICfile) #find the ctrl ICfile starting point
-    all_change_rows={} 
+    all_change_rows={}
     all_IC_files=[]
     for i in range(frange):
         outfile=oPath+find_name+'-random'+str(i+start)+'.xml' #output filename
@@ -113,7 +113,7 @@ def modelrobust_file(newIC_files,model_filenames,orig_ICfile,output_path,prog):
                 output.write(line) #write new model file line by line
                 if '<calculation>' in line:  #place new parameters for steadystate after calculation and before  /SDRun                 
                     if prog=='ss':
-                        line='    <absTolerance>     2.3e-5  </absTolerance>\n    <iterations>     20    </iterations>\n'
+                        line='    <absTolerance>     1e-5  </absTolerance>\n    <iterations>     100    </iterations>\n'
                         output.write(line)
             #close both files before doing the next file
             input.close()
@@ -124,9 +124,9 @@ def modelrobust_file(newIC_files,model_filenames,orig_ICfile,output_path,prog):
 
 ##################################### create batch file #############################3
 def bat_file(text,fileNames_batch,suffix_name,prog):
-    outfname=suffix_name+'_'+prog+'1.bat'
+    outfname=suffix_name+'_'+prog+'.bat'
     f=open(outfname,'w')
-    if prog=='ss': #add a line to activate the environment - commented out since doesn't work
+    if prog=='ss': #how to activate the environment - commented out since doesn't work in .bat file
         textline='#source /iahome/k/kl/klblackwell/python/sscalculation/.venv/bin/activate\n'
         f.write(textline)
     for files in fileNames_batch:
