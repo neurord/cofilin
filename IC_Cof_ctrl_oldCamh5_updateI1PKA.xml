@@ -110,7 +110,7 @@
     <NanoMolarity specieID="GaiGDP" value="0.0" />
     <NanoMolarity specieID="Gibg" value="0.0" />
 
-x    <NanoMolarity specieID="AC1" value="3736.75" /> 
+    <NanoMolarity specieID="AC1" value="3736.75" /> 
     <NanoMolarity specieID="AC1CamCa4" value="10.88" />
     <NanoMolarity specieID="AC1CamCa4ATP" value="94.15" />
     <NanoMolarity specieID="AC1GasGTP" value="42.85" />
