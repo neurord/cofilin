@@ -10,7 +10,7 @@ import utils
 #6 process files
 def process_files(folder,traces_files, basal_data, onset_times,baseline_times,mol, diff_calc,regions=['dend','sa1'],plot_traces=False):
     results = {}
-    
+    tr_count={}
     for file,onset_time,base_time in zip(traces_files, onset_times, baseline_times):
         print('onset time, in process files',onset_time)
         #reinitialize critical points for each file
@@ -36,7 +36,7 @@ def process_files(folder,traces_files, basal_data, onset_times,baseline_times,mo
             diff_calc.find_points(time,stim_onset_idx,baseline_idx, trace_means[reg],basal_data,reg,ylbl=mol+par) #find critical points from mean traces
         file_results = {}
         trial_count = {reg:0 for reg in regions} #{"dend": 0, "sa1": 0}
-
+        
         # Process each trial
         for region,traces in trace_sets.items():
             for trial_idx,single_trace in enumerate(traces.T):
@@ -64,7 +64,7 @@ def process_files(folder,traces_files, basal_data, onset_times,baseline_times,mo
                 trial_count[region] += 1 
 
         results[par]=file_results
-    tr_count=np.max(list(trial_count.values()))
+        tr_count[par]=np.max(list(trial_count.values()))
 
     return results,tr_count
 
@@ -87,8 +87,11 @@ def do_calculations (traces_files,basal_files,mol,std_multiplier,params,thresh=N
 
         return results,trial_count,diff_calc
 
-ARGS="CK_PKA_Gi -keys  sig trials -dir resultsCKhalf2 -thresh 0.06 0.06 -remove 10u" #  -tag_reg sa1[1] sa1[2]"# -tag_time 300" #
-#thresh: kinase: 0.06 0.07 (0.03 for dend, 10um) , CK_PKA_PAK: 0.09 0.1 (dend=0.05 for 10um), cof_act: 0.1 0.1 (dend=0.04 for 10um), CK_PKA_Gi:0.06 0.06 (dend=0.03 for 10um)
+ARGS="kinase -keys 10u sig trials -dir resultsCKhalf2 -thresh 0.03 0.05 -tag_reg sa1[1] sa1[2]"# -tag_time 900"#  Exp10umtag # -remove tag
+ARGS="kinase -keys sig trials -dir Exp10umtag -thresh 0.03 0.05  -tag_reg sa1[1] sa1[2] -tag_time 600"#  # -remove tag
+#ARGS="cof_act -keys sig trials -dir resultsCKhalf2 -thresh 0.04 0.11 -remove 10u"
+#thresh from 5/8 analysis: kinase: 0.06 0.07 (0.03 for dend, 10um) , CK_PKA_PAK: 0.09 0.1 (dend=0.05 for 10um), cof_act: 0.1 0.1 (dend=0.04 for 10um), CK_PKA_Gi:0.06 0.06 (dend=0.03 for 10um)
+#threshold from 5/20 analysis: CK_PKA_Gi: 0.03 dend 0.03 sp for all;  kinase 0.03 dend 0.05 sp for all; CK_PKA_PAK: 0.05, 0.08 for all; cof_act: 0.04 dend 0.1 sp for all
 # 8. Process files and perform calculations
 try:
     args = ARGS.split()
@@ -131,13 +134,15 @@ for mol,traces_keywords in zip(pars.mols,traces_keyword_sets):
         all_results,trial_count,difcalc=do_calculations (traces_files,basal_files[0],mol,std_multiplier,pars,thresh[basal_keywords[0]],regions=pars.reg)
     elif len(basal_files)>1: #if this works, perhaps can have all files in one directory?
         all_results={}
+        trial_count={}
         for bas_fil in basal_files:
             prefix=bas_fil.split('basal')[0]  #verify basal is first keyword
             trace_fil=[f for f in traces_files if prefix in f]
             trace_fil.remove(bas_fil)
             print('BASAL file:', bas_fil, ', trace files:', trace_fil)
-            results,trial_count,difcalc=do_calculations (trace_fil,bas_fil,mol,std_multiplier,pars,thresh[basal_keywords[0]],regions=pars.reg)
+            results,trcount,difcalc=do_calculations (trace_fil,bas_fil,mol,std_multiplier,pars,thresh[basal_keywords[0]],regions=pars.reg)
             all_results.update(results)
+            trial_count.update(trcount)
     else:
         print( ' no basal files found using',basal_keywords, 'in dir:',pars.dir)
     if len(traces_files):
@@ -148,7 +153,5 @@ for mol,traces_keywords in zip(pars.mols,traces_keyword_sets):
 
 """
 1. FIXME: onset_time from filename is problematic!
-2. please go back and add more comments or else you might forget ohhh
-3. include thresholds in output file names
 
 """

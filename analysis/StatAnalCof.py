@@ -100,8 +100,8 @@ def start_clusterAnal(X_train, X_test, y_train, y_test,epochs,ylabels,x_unknown=
     listTopFeatures=sorted(collectionTopFeatures.items(),key=operator.itemgetter(1),reverse=True)
     return listBestFeatures,listTopFeatures
 
-def reg_and_plot(X_train, X_test, y_train, y_test,label_train,label_test,x_unknown=[],label_unk=[],reg=0):
-    if reg:
+def reg_and_plot(X_train, X_test, y_train, y_test,label_train,label_test,x_unknown=[],label_unk=[],regtype=0):
+    if regtype:
         feature_importance, predict_dict=RFU.rand_for(X_train, X_test, y_train, y_test,x_unknown)
         RFU.plot_importance(feature_importance, X_test,y_test,predict_dict,x_unknown)
         print('predictions from RandomForest Regression')
@@ -111,42 +111,47 @@ def reg_and_plot(X_train, X_test, y_train, y_test,label_train,label_test,x_unkno
         #print('\nGLM using variables from RF regression')
         #RFU.run_glm(X_train,y_train,X_test,y_test,variables,'RFreg',label_test)
         #lin_reg(X_train, X_test, y_train, y_test,variables,label_train,label_test)
-    if reg==0 or reg == 2:
+    if regtype==0 or regtype == 2:
         print('\nRANDOM FOREST CLASSIFIER')
         epochs=100
         listBestFeatures,listTopFeatures=start_clusterAnal(X_train, X_test, y_train, y_test,epochs,label_test,x_unknown,label_unk)
         RFU.plot_features(listBestFeatures,str(epochs),'Total Weight ')
         RFU.plot_features(listTopFeatures,str(epochs),'Count ')
         print('best features=',listBestFeatures)
-    if reg:
-        return feature_importance
+    if regtype:
+        return feature_importance,predict_dict
 
 if __name__ == '__main__':
     ### arg parsers: -train list, -test list, ycol, train par, drop par, reg
     ### file_dict = {'train': par.train,'test':par.test}
-    reg=1 #reg=0 means cluster anal alone, reg=2 means both reg and cluster
-    mol='CK_PKA_Gi'
-    file_dict={'train':['./resultsCKhalf2_'+mol+'.csv','./resultsCKhalf2_cof_act.csv'], 'test': []}#['resultsCKhalf2_multispine_tag_'+mol+'.csv','./resultsCKhalf2_multispine_tag_cof_act.csv']} #{'train':['results2025oct/ctrl_*.csv'],'test': ['results2025oct/KO*.csv', 'results2025oct/PDE4*.csv']} #
+    regtype=1 #regtype=0 means cluster anal alone, regtype=2 means both regtype and cluster
+    mol='CK_PKA_PAK'
+    thr='_0.05_0.08'
+    file_dict={'train':['./resultsCKhalf2'+thr+mol+'.csv','./resultsCKhalf2_0.04_0.11cof_act.csv'], 'test': ['./resultsCKhalf2'+thr+'multispinetag_'+mol+'.csv','./resultsCKhalf2_0.04_0.11multispinetag_cof_act.csv']} #[]}#{'train':['results2025oct/ctrl_*.csv'],'test': ['results2025oct/KO*.csv', 'results2025oct/PDE4*.csv']} #
     train_par='' #'-ctrl'#used if test files are not separate or to train on controls
-    drop=['DropTime']#,'DecrDur','IncrDur'] 
+    drop=['DropTime']
     ycol='outcomeLTP'
     drop_kin_spine=False
     drop_kin_below=False
     regions=['dend','sa1']
-    extra_plots=False
+    extra_plots=True
+    create_output_df=True
     ### end of parameters
     
     df_dict=RFU.read_files(file_dict,drop)
     if extra_plots:
-        pairs=[[ 'AUCabove_dend'+mol,'peak_dend'+mol],['peak_dend'+mol,'AUCabove_sa1cof_act'],['AUCabove_dend'+mol,'IncrDur_dendcof_act']]
-        fig1=RFU.paired_feature_plot(pairs,df_dict['train'],ycol)
+        pairs=[[ 'peak_sa1'+mol,'IncrDur_dend'+mol],['peak_sa1'+mol,'AUCabove_sa1cof_act'],['peak_sa1'+mol,'DecrDur_dendcof_act']]
+        fig1=RFU.paired_feature_plot(pairs,df_dict['train'],ycol,'train')
         if len(df_dict['test']):
-            fig2=RFU.paired_feature_plot(pairs,df_dict['test'],ycol)
+            fig2=RFU.paired_feature_plot(pairs,df_dict['test'],ycol,fig=fig1,title='train and test')
+            #fig2=RFU.paired_feature_plot(pairs,df_dict['test'],ycol,title='test')
     ###### Drop_col: columns need to be dropped, because analysis uses all columns, cannot specify only a subset
     drop_col=['Trial']
     if len(df_dict['test']):
         if not re.match('^[0-9\.]*$',df_dict['test']['Trial'][0]):
             df_dict['test']['Par']=df_dict['test']['Par']+df_dict['test']['Trial'] #update par with spine ID
+        else:
+            df_dict['test']['Par']=df_dict['test']['Par']+df_dict['test']['Trial'] #keep trial as part of par anyway
     if drop_kin_spine:
         drop_col=drop_col+['sa1'+mol]
     if drop_kin_below:
@@ -169,27 +174,37 @@ if __name__ == '__main__':
     if len(newdf['test']): #train on training set, test on testing set
         newdf['test'].sort_index(axis=1,inplace=True)    
         if extra_plots:
-            kin_features=[ 'AUCabove_dend'+mol,'peak_dend'+mol]
+            kin_features=[ 'peak_sa1'+mol,'AUCabove_sa1cof_act','IncrDur_dend'+mol]
             feature_mol='cof_act'
             features=['AUC'+where+'_' + struct+feature_mol for where in ['below','above'] for struct in ['dend','sa1']]+['peak_'+struct+feature_mol for struct in ['dend','sa1']]+kin_features
             panels=['1tr','4tr']
             RFU.plot_outcome_feature(features,panels,df_dict['train'],train_par,ycol)
         print('\n***************** train on Ctrl, test on others **************')
         X_train, X_test, y_train, y_test,label_train,label_test,x_unknown,label_unk=RFU.select_test_train(newdf['train'],ycol,newdf['test'],label='Par') #separate train and test
-        feature_importance=reg_and_plot(X_train, X_test, y_train, y_test,label_train,label_test,x_unknown,label_unk,reg=reg) #,reg=2 for  regression and cluster, reg=0 for cluster only
+        feature_importance,predict_dict=reg_and_plot(X_train, X_test, y_train, y_test,label_train,label_test,x_unknown,label_unk,regtype=regtype) #,regtype=2 for  regression and cluster, reg=0 for cluster only
         entire_df=pd.concat([newdf['train'],newdf['test']],ignore_index=True)
     else:
         entire_df=newdf['train']                            
     print('\n***************** randomly select trials from ctrl and others for both train and test **************')
     X_train, X_test, y_train, y_test,label_train,label_test,x_unknown,label_unk=RFU.select_test_train(entire_df,ycol,label='Par') #random select train-test
-    feature_importance=reg_and_plot(X_train, X_test, y_train, y_test,label_train,label_test,x_unknown,label_unk,reg=reg) #make reg=1 to do regressions
-    #barfig=RFU.importance_bar(feature_importance,4)
-    #7. make rand forest regression a class?
-    '''CKhalf2: CK_PKA_Gi - 100% correct, without using cof_act.  This is the most similar to prior research, so that is good for consistency
-            CK_PKA_PAK: using RF reg, gets 3 wrong, cof_act is 3d important, repeatable
-                errors: PDE4enh-4trspaced
-            kinase: using RF reg, gets 2 wrong. can get 100% using RF clustering.  cof_act sa1 AUC above is 4th, repeatable
+    feature_importance,predict_dict=reg_and_plot(X_train, X_test, y_train, y_test,label_train,label_test,x_unknown,label_unk,regtype=regtype) #make regtype=1 to do regressions
 
-    NEXT:
-        two RFs.  train on 2/3 test on 1/3.  then train on 100% and test on long dend.  Alternate: train on 2/3 test on long dend
-    '''
+    if create_output_df:
+        top_features=feature_importance[0:4].index
+        output_df=X_train[top_features].copy() #create new df with top four feature
+        output_df.loc[:,'predict']=predict_dict['train']#add in prediction and whether train or test, (c) parameter+trial, 
+        output_df.loc[:,'train_test']=['train']*len(predict_dict['train'])
+        output_df.loc[:,'ParTrial']=label_train
+        output_df.loc[:,'outcomeLTP']=y_train
+        y_unk=[2]*len(label_unk)
+        for tp,Xdf,labeldf,outcome in zip(['test','unknown'],[X_test,x_unknown],[label_test,label_unk],[y_test,y_unk]):
+            test_rows=Xdf[top_features].copy()
+            test_rows.loc[:,'predict']=predict_dict[tp]
+            test_rows.loc[:,'train_test']=[tp]*len(predict_dict[tp])
+            test_rows.loc[:,'ParTrial']=labeldf
+            test_rows.loc[:,'outcomeLTP']=outcome
+            output_df=pd.concat([output_df,test_rows])
+        output_df.sort_index(inplace=False)
+        output_df.to_csv(mol+'_predict_df.csv')
+        feature_importance.to_csv(mol+'_features.csv')
+

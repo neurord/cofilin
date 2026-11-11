@@ -93,21 +93,33 @@ def plot_outcome_feature(features,panels,df,train_par,outcome):
             axes[ax].set_ylabel(outcome)
         axes[-1].set_xlabel(var)
     
-def paired_feature_plot(pairs,df,ycol):
-    fig,axes=plt.subplots(len(pairs),1)
-    colors=['r','b']
-    labels=['NC','LTP']
+def paired_feature_plot(pairs,df,ycol,title=None,fig=None,lines=[],line_labels=[]):
+    labels=['NC','LTP','unk']
+    if not fig:
+        fig,axes=plt.subplots(len(pairs),1)
+        edgecol='face'
+    else:
+        colors=['m','cyan','gray']
+        edgecol='k'
+        #labels=['NC test','LTP test','unknown']
+        axes=fig.axes
+    colors=['r','b','gray']
     plot_df=df[df[ycol].notnull()] 
-    for ax,pair in zip(axes,pairs):
+    for axnum,(ax,pair) in enumerate(zip(axes,pairs)):
         for outcome in np.unique(plot_df[ycol]):
             rows=plot_df.loc[plot_df[ycol]==outcome]
-            ax.scatter(rows[pair[0]],rows[pair[1]],color=colors[int(outcome)],label=labels[int(outcome)])
-        ax.legend()
+            lbl=ax.scatter(rows[pair[0]],rows[pair[1]],color=colors[int(outcome)],label=labels[int(outcome)],edgecolors=edgecol)
+            if axnum==0:
+                lines.append(lbl)
+                line_labels.append(labels[int(outcome)])
+                ax.legend(lines,line_labels,ncols=3,title='Train     Test      Other',columnspacing=0.2,handletextpad=0.05)
         ax.set_ylabel(pair[1])
         ax.set_xlabel(pair[0])
-    return fig
+    fig.suptitle(title)
+    print('before return',lines,line_labels)
+    return fig,lines,line_labels
     
-def merge_files(files,drop_col):
+def merge_file_cols(files,drop_col):
     merge_dfs=[]
     suffix=[]
     for f in files:
@@ -128,11 +140,11 @@ def read_files(file_dict,drop_col=[]):
         if len([x for x in patterns if '*' in x]):
             for pat in patterns:
                 files=glob.glob(pat) #should be two files - one for cofact and one for kinases
-                merge_dfs=merge_files(files,drop_col)
+                merge_dfs=merge_file_cols(files,drop_col)
                 if len(files):
                     df_dict[ftype].append(merge_dfs[0])
         elif len(patterns):
-            merge_dfs=merge_files(patterns,drop_col)
+            merge_dfs=merge_file_cols(patterns,drop_col)
             df_dict[ftype].append(merge_dfs[0])
         else:
             print('no files for',ftype)
@@ -229,7 +241,7 @@ def print_predict(ytest,pred_dict,ylabels,accuracy=None,incorrect_only=False,lab
     delta=[]
     for yt,ypsk in zip(ytest,pred_dict['test']):
         yrnd=round(ypsk)
-        yrnd=round(ypsk-0.15) #change threshold to 0.65 instead of 0.5
+        #yrnd=round(ypsk-0.1) #change threshold to 0.6 instead of 0.5
         if yt==1:
             delta.append(0 if ypsk>yt else yt-yrnd)
         elif yt==0:
@@ -241,7 +253,7 @@ def print_predict(ytest,pred_dict,ylabels,accuracy=None,incorrect_only=False,lab
     else:
         for ylbl,yt,ypsk,d in zip(ylabels,ytest,pred_dict['test'],delta):
             print(ylbl.rjust(12), yt,' ',round(ypsk,2), ' ',d)
-    print('Mean Delta=',np.mean(delta),'out of',len(ytest),'Test accuracy=',accuracy)
+    print('Mean Delta=',np.mean([np.abs(d) for d in delta]),'out of',len(ytest),'Test accuracy=',accuracy)
     if len(pred_dict['unknown']):
         print('predictions with unknown outcomes:')
         for ylbl,ypred in zip(label_unk,pred_dict['unknown']):
