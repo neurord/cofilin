@@ -1,0 +1,99 @@
+1. Analyze files using nrdh5_analv2.py (in NeuroRDanal pacakge)
+	A. analyze all control files, and get the min and max values of signature molecules across the set of control files.  Molecules to total for the signature are in tot_species.py
+	python NeuroRDanal/nrdh5_analv2.py /local/vol00/Users/klblackwell/sigpath/cofilin/Exp_1spine/resultsCKhalf22/Model_Cof -par ctrl  -mol EpacAMP Gibg -start 250 300 -showplot 00 -tot /local/vol00/Users/klblackwell/sigpath/cofilin/tot_species -write_trials 1 -write_output 1 -savedir /local/vol00/Users/klblackwell/sigpath/cofilin/Exp_1spine/resultsCKhalf22/txt/ >> /local/vol00/Users/klblackwell/sigpath/cofilin/Exp_1spine/resultsCKhalf22/CKhalf22_ctrl.log
+
+	B. update values of min max in tot_species_minmax.py, from the output values in the controlfiles.log.  Then, analyze the files with altered PKA, PDE4 of CamKII, e.g.
+	python -i NeuroRDanal/nrdh5_analv2.py /local/vol00/Users/klblackwell/sigpath/cofilin/Exp_1spine/resultsCKhalf2/Model_Cof -par KO 4tr -mol pKal KalPKAc KalCKCamCa4 KalCKpCamCa4 PKAcLIMK RacPAKLIMK pLIMK -start 250 300 -showplot 30 -write_trials 1 -write_output 1 -tot /local/vol00/Users/klblackwell/sigpath/cofilin/tot_species_minmaxAB -savedir /local/vol00/Users/klblackwell/sigpath/cofilin/Exp_1spine/resultsCKhalf2/txt/  >> /local/vol00/Users/klblackwell/sigpath/cofilin/Exp_1spine/resultsCKhalf2/CKhalf2_KO4tr.log
+	
+	C. to analyze the multi-spine models, specify regions (i.e., spines)
+	python -i NeuroRDanal/nrdh5_analv2.py /local/vol00/Users/klblackwell/sigpath/cofilin/Exp_10um_3spines/resultsCKhalf2/Model_Cof -par ctrl10u 4tr -mol EpacAMP Gibg KalPKAc pKal RacGTP RacPAK RacPAKLIMK PKAcLIMK pLIMK PKAc PP1 -start 250 300 -showplot 00 -tot /local/vol00/Users/klblackwell/sigpath/cofilin /tot_species_minmaxAB -write_trials 1 -write_output 1 -savedir /local/vol00/Users/klblackwell/sigpath/cofilin/Exp_10um_3spines/resultsCKhalf2/txt/ -regions dend sa1[0] sa1[1] sa1[2] >> /local/vol00/Users/klblackwell/sigpath/cofilin/Exp_10um_3spines/resultsCKhalf2/CKhalf2_ctrl10u.log
+	
+	In all of above -write_trials and -write_output produces output files for the next stage of analysis.
+	
+2. Analyze / Extract features from the output files, using dataset_analysis.py (and DifferenceCalculator.py and utils.py)
+	Arguments include
+		which signature to analyze, e.g. kinase or cof_act - both are needed, but program analyzes one at a time
+		-keys: the keywords that specify the files to read in, e.g. 10u to analyze the multiplespine simulations
+		-remove:  the keywords that specify files to not read in
+		-dir: in which directory are the files located
+		-thresh: threshold to apply (for calculating AUC; either one value or 1 value per region)
+		for multi-spine and tagging sims, use two additonal
+		-tag_reg: to specify which spines to analyze as to whether it was tagged, and
+		-tag_time: to specify the time of the tag (i.e., different from the time of the stong stimulation)
+		
+	Example for 1 spine simulations:
+	python -i dataset_analysis.py cof_act -keys sig trials -dir resultsCKhalf2 -thresh 0.04 0.11 -remove 10u
+	
+	For tagging:
+	python -i dataset_analysis.py kinase -keys sig trials -dir Exp10umtag -thresh 0.03 0.05  -tag_reg sa1[1] sa1[2] -tag_time 600
+	
+	Output: csv file, one line per simulation, or one line per spine for tagging simulations, with feature values as columns
+	
+3. Statistical analysis, using StatAnalCof.py (and RandForstUtils.py)
+	a. add a column to the cof_act output file with  column heading outcomeLTP which indicates whether LTP is observed or not.  Leave blank if outcome is unknown
+	b. specify in the file (lines 128-130)
+		the signature molecule to use (in addition to actCof), e.g. CK_PKA_PAK			
+		the thresholds used in step 2 (they are part of the filename)
+		the files to use as training and testing files
+		which molecules to ignroe, i.e., drop=['DropTime']
+		which regions to analyze, e.g. ['dend','sa1']; 'sa1' includes all spines of type sa1
+	c. run program using python -i StatAnalCof.py
+
+4. Create manuscript figures from nrdh5_analv2 output using MS_figures.py
+	Args are similar to that used for datatset_analysis.py:
+		which signatures to plot, e.g. CK_PKA_PAK and cof_act in a single figure.  
+			Can also specify components other molecules, e.g., pKal, sshfree, if you requested that output from nrdh5_analv2.py
+		-keys: the keywords that specify the files to read in, e.g. avg.txt or sig.txt to read in those files
+		-remove:  the keywords that specify files to not read in
+		-dir: in which directory are the files located
+		-thresh: value at which to draw a gray line to suggest a threshold, specify large negative number to not draw the line
+		-col_key: which keywords (part of filename) to use to determine color code for traces
+		-color: key into a dictionary that specifies the set of colors to use.  
+			A different number and set of colors are used depending on how many traces will be in each panel
+			
+5. robustness simulations
+	A. robustness_anal.py (and robustness_functions.py) will create a set of .xml files for testing robustness to parameters
+		1. rand vs set: 
+			rand will create IC files with random changes to the molecules specified in mol_change.py
+				-frange: how many differ IC files to create.  IC files are numbered
+				-start: if you already created 0 through 20, and you want 20 more, specify -start 20
+				-factor: the maximum fractional change to each molecule (randomly select between +/- this value)
+				-change: python file that specifies molecules to change.  This is a dictionary, where the key is the name of the molecule and the value is a list of different forms/species of that molecule.  E.g. 'calbin':['Calbin','CalbinCa']
+				Output file is a list, one line per file, of the factor change of each molecule.  It is date stamped, but not time stamped.  It is needed to analyze the simulation results
+			set will create IC files with the specified changes to the molecules specified in mol_change.py
+			-change: python file that specifies molecules to change, slighlty different than that specified with rand.  
+				This is a dictionary of dictionaries: one dictionary per output file.  
+				The key to the upper level dictionary is the name of the change file, e.g. 'set1'.
+				The keys in the lower level dictionary is a tuple specifying the name of the molecule and the value to vary the parameter.  
+				The value of the dictionary again is a list of different molecules to apply that same factor change.
+		2. for both rand and set, specify:
+ 			-model: name(s) of model file
+			-output_dir: where to save the output IC and Model files
+			-modeldir: where to find the model files
+			-prog: neurord - will create a .bat file to run all the output model files.  Will need to update prog_path_name to location of neurord
+			-dir: where to find  the IC file
+			Output: IC files with parameter changes, and model files to use the IC files.
+	B.	Analysis of robustness simulations created using rand (to find which molecule concentrations have greatest impact):
+		analyze_random.py - part of the NeuroRDanal package, because it uses many of those classes
+		specify in the file (lines 116-124)
+			dirname: directory with simulation hdf5 files
+			ctrlfile: hdf5 file that does not have random parameter changes (to calculate changes)
+			fileroot: base name of h5 file
+			par: parameter that is found in all random parameter change files, e.g. ['random']
+			start, end: time for extracting the steady state values
+			showplot: whether to create graphs or not.  Recommend '00' when analyzing numerous files
+			tot_name: dictionary of dictionaries of molecules to analyze.  
+				key is the desired name of the molecule, value is a dictionary specifying a list of molecules to sum for numerator, and optionally a list of molecules to sum for denominator, if you want to calculate the change in a ratio
+		Output file: name of ctrlfile with '_compare' appended
+	C. analyze_robust_results.py: perform linear discriminant analysis on the output of analyze_random.py
+		ARGS:
+			name of change file - output from robustness_anal.py
+			name of _compare file - output from analyze_random.py
+			list of molecules to analyze
+				with region (e.g. Overall or sa1[0]) to analyze
+				must be subset of molecules specified in tot_name (part B above)
+		Output (to terminal): Feature Loadings per Component for each molecule
+		
+	
+		
+	
