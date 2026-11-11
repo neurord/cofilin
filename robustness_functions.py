@@ -8,12 +8,12 @@ def parse_args(commandline,do_exit):
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument('modtype',type=str,choices=['rand','set'],help='type of parameter variations,rand:randomly change all, set: single factor changes') 
-    parser.add_argument('-prog',type=str,choices=['neurord','ss'],help='type of sim: neurord or steadystate',default='neurord') 
+    parser.add_argument('-prog',type=str,choices=['neurord','ss','argon'],help='type of sim: neurord or steadystate',default='neurord') 
     parser.add_argument('-dir', type=str, help = 'Main path, must contain IC file',default='/local/vol00/Users/klblackwell/sigpath/cofilin/')
     parser.add_argument('-modeldir', type=str, help = 'subdirectory with model files, specify "/" if same as Main path', default='robust/')
     parser.add_argument('-outdir', type=str, help = 'subdirectory with model files', default='robust/')
     parser.add_argument('-ICfile', type=str, help = 'name of IC files to change', default='IC_Cof_ctrl_oldCamh5_updateI1PKA')
-    parser.add_argument('-model', type=str, help = 'name of Model files to change', default='')
+    parser.add_argument('-model', type=str, nargs='+',help = 'name of Model files to change', default='')
     parser.add_argument('-change', type=str, help = 'name of python file with sets of molecules to change IC', default='mol_change.py')
     
     parser.add_argument('-frange',type=int,help='number of random variations to do', default=1 )
@@ -95,7 +95,10 @@ def modelrobust_file(newIC_files,model_filenames,orig_ICfile,output_path,prog):
     for replace in newIC_files: #list of new IC files
         print('model, IC=',replace,all_modl_files)
         replace_filename=os.path.basename(replace)
-        newICdir=os.path.dirname(replace)
+        if prog=='argon':
+            newICdir='' #model file is in subdir with IC file, so do not specify dir
+        else:
+            newICdir=os.path.dirname(replace)+'/'
         orig_IC=os.path.basename(orig_ICfile)
         for modl_file in model_filenames: #name of model files
             new_fname=replace_filename.split('-')[-1]
@@ -109,7 +112,7 @@ def modelrobust_file(newIC_files,model_filenames,orig_ICfile,output_path,prog):
             for line in input: #read Model file line by line
                 if orig_IC in line: #fine the line with IC file in it
                     spaces=line.find('<')
-                    line=' '*spaces+'<xi:include href="'+newICdir+'/'+replace_filename+'" />\n' #construct new line
+                    line=' '*spaces+'<xi:include href="'+newICdir+replace_filename+'" />\n' #construct new line
                 output.write(line) #write new model file line by line
                 if '<calculation>' in line:  #place new parameters for steadystate after calculation and before  /SDRun                 
                     if prog=='ss':
@@ -127,10 +130,12 @@ def bat_file(text,fileNames_batch,suffix_name,prog):
     outfname=suffix_name+'_'+prog+'.bat'
     f=open(outfname,'w')
     if prog=='ss': #how to activate the environment - commented out since doesn't work in .bat file
-        textline='#source /iahome/k/kl/klblackwell/python/sscalculation/.venv/bin/activate\n'
+        textline='#source /local/vol00/Users/klblackwell/sscalculation/.venv/bin/activate\n'
         f.write(textline)
     for files in fileNames_batch:
         textline=text+' '+files+'\n' #write one line for each simulation, use full path to model file
+        if prog=='argon':
+            textline=textline+'"'
         print(textline)
         f.write(textline)
     f.write('#deactivate\n')

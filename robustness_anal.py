@@ -13,10 +13,8 @@ import robustness_functions as rf
 
 prog_path_name='/local/vol00/Users/klblackwell/neurord-3.3.0-all-deps.jar'
 ###################################################################################set up args#####
-ARGS='rand -model Model_Cof-basalctrlATP -change mol_change -frange 20 -start 0 -prog ss -outdir robust1/'
-ARGS='rand -model Model_Cof-basalctrlATP -change mol_change -frange 20 -start 20 -prog ss -outdir robust2/'
-#ARGS='rand -model Model_Cof-basalctrlATP -change mol_change -frange 20 -start 40 -prog ss -outdir robust3/'
-#ARGS='rand -model Model_Cof-basalctrlATP -change mol_change -frange 20 -start 60 -prog ss -outdir robust4/'
+ARGS='set -model Model_Cof_10um3spines-4trains_massedtag Model_Cof_10um3spines-basal -change mol_change_set -prog neurord -outdir robustSet/ -modeldir Exp_10um_3spines/'
+#ARGS='rand -model Model_Cof-basalctrlATP -change mol_change -frange 20 -start 20 -prog ss -outdir robust2/'
 #ARGS='set -model Model_Cof_10um3spines-4trains_massedtag -modeldir Exp_10um_3spines/ -change mol_change_set -factor 0.1'
 try:
     args = ARGS.split(" ")
@@ -38,6 +36,9 @@ change_file=importlib.import_module(pars.change)
 mol_change=change_file.sub_species
 if pars.prog=='neurord':
     text='java -jar  '+prog_path_name+' '+'-Dneurord.trials=5 '+'-t 3600000'#update for desire textline
+elif pars.prog=='argon':
+    text='java -Dneurord.trials=5 -Dneurord.threads=5 \n neurord.StochDiff "$HOME/'
+    text='neurord '
 elif pars.prog=='ss':
     text='steadystate'
 else:
@@ -54,7 +55,10 @@ frange=pars.frange #number of random variation sims
 suffix_name=pars.modtype
 if not pars.outdir.endswith('/'):
     pars.outdir+='/'
-output_path=main_path+pars.outdir #cof/robust1/
+if pars.prog=='argon':
+    output_path=pars.outdir
+else:
+    output_path=main_path+pars.outdir #cof/robust1/
 if output_path==main_path:
     print('model files being placed in main directory')
 elif model_path.count('/')==output_path.count('/'): #model files won't work otherwise since xml files may be specified with ../
@@ -71,17 +75,14 @@ else:
     ICfileNames=rf.set_file(output_path,find_ICfile,pars.factor,mol_change)
 
 #create new model file(s) for each new IC file
-pattern_mod=model_path+pars.model+'.xml'
-model_filename=sorted(glob.glob(pattern_mod)) #set of files
+if isinstance(pars.model,str):
+    pattern_mod=model_path+pars.model+'.xml'
+    model_filename=sorted(glob.glob(pattern_mod)) #set of files
+else:
+    model_filename=[model_path+m+'.xml' for m in pars.model]
 fileNames_batch=rf.modelrobust_file(ICfileNames,model_filename,find_ICfile,output_path,pars.prog)
 
 if pars.outdir[-2].isdigit():
     suffix_name+=pars.outdir[-2]
 rf.bat_file(text,fileNames_batch,suffix_name,pars.prog)
 
-####################
-## Next steps:
-## 6. read in params and pCof and analyze with discriminant analysis (analyze_json.py, analyze_robust_results.py)
-## 7. select a subset of params and run sims (robustness_anal.py using prog=neurord)
-##      edit Model files to remove extra params OR, input IC files and orig Model files and generate new Model files (simpler prog##      those with largest basal change - two biggest in opposite directions, next two biggest
-##      which stim files? massed tagging, test with RF
